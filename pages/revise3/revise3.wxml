@@ -1,0 +1,19 @@
+<!--pages/revise3/revise3.wxml-->
+<text>pages/revise3/revise3.wxml</text>
+<view class="view-contain-q1">
+    <text class="text-q1">信息1</text>
+    <input class="inputq1"></input>
+</view>
+<view class="view-contain-q2">
+    <text class="text-q2">信息2</text>
+    <input class="inputq2"></input>
+</view>
+<view class="view-contain-q3">
+    <text class="text-q3">信息3</text>
+    <input class="inputq3"></input>
+</view>
+<button 
+    
+    type="primary"
+    size="default"
+>publish</button>

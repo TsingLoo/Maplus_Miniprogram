@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/map/map",
+    "pages/activity/activity",
+    "pages/personal/personal",
+    "pages/AC_upload1/AC_upload1",
+    "pages/AC_upload2/AC_upload2",
+    "pages/AC_upload3/AC_upload3",
+    "pages/revise1/revise1",
+    "pages/revise2/revise2",
+    "pages/revise3/revise3",
+    "pages/AC_detail/AC_detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Maplus",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/map/map",
+        "text": "map",
+        "iconPath": "icon/map.png",
+        "selectedIconPath": "icon/map1.png"
+      },
+      {
+        "pagePath": "pages/activity/activity",
+        "text": "acticity",
+        "iconPath": "icon/activity.png",
+        "selectedIconPath": "icon/activity1.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "personal",
+        "iconPath": "icon/personal.png",
+        "selectedIconPath": "icon/personal1.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

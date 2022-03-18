@@ -1,0 +1,30 @@
+<!--pages/activity/activity.wxml-->
+<button 
+type="default"
+size="default"
+bindtap="go_AC_upload" >upload</button>
+
+
+<view class="view-contain-ti1">
+    <text class="text-ti1">活动1</text>
+    <input class="input1"></input>
+</view>
+<button bindtap="go_1_Detail">1</button>
+<view class="view-contain-ti2">
+    <text class="text-ti2">活动2</text>
+    <input class="input2"></input>
+</view>
+<button bindtap="go_2_Detail">2</button>
+<view class="view-contain-ti3">
+    <text class="text-ti3">活动3</text>
+    <input class="input3"></input>
+</view>
+<view class="view-contain-ti4">
+    <text class="text-ti4">活动4</text>
+    <input class="input4"></input>
+</view>
+<button 
+class="more"
+type="default"
+size="mini"
+ >get more</button>

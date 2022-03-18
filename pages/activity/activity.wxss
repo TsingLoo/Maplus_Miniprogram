@@ -1,0 +1,85 @@
+/* pages/activity/activity.wxss */
+.view-contain-ti1 {
+    display: flex;
+    height: 110px;
+    margin: 40rpx 0rpx;
+    border: 3rpx solid #faca82;
+    border-radius: 0rpx;
+  }
+  
+  .text-ti1 {
+    position: absolute;
+    font-size: 40px;
+    background: white;
+    margin: -10px 0 0 10px;
+    padding: 0px 0px 0px 0px ;
+    color: rgb(144, 147, 167);
+  }
+  
+  .input1 {
+    margin:  auto 10px;
+
+  }
+  .view-contain-ti2 {
+    display: flex;
+    height: 110px;
+    margin: 40rpx 0rpx;
+    border: 3rpx solid #faca82;
+    border-radius: 0rpx;
+  }
+  
+  .text-ti2 {
+    position: absolute;
+    font-size: 12px;
+    background: white;
+    margin: -10px 0 0 10px;
+    padding: 0 5px;
+    color: rgb(144, 147, 167);
+  }
+  
+  .input2 {
+    margin:  auto 10px;
+  }
+  .view-contain-ti3 {
+    display: flex;
+    height: 110px;
+    margin: 40rpx 0rpx;
+    border: 3rpx solid #faca82;
+    border-radius: 0rpx;
+  }
+  
+  .text-ti3 {
+    position: absolute;
+    font-size: 12px;
+    background: white;
+    margin: -10px 0 0 10px;
+    padding: 0 5px;
+    color: rgb(144, 147, 167);
+  }
+  
+  .input3 {
+    margin:  auto 10px;
+  }
+  .view-contain-ti4 {
+    display: flex;
+    height: 110px;
+    margin: 40rpx 0rpx;
+    border: 3rpx solid #faca82;
+    border-radius: 0rpx;
+  }
+  
+  .text-ti4 {
+    position: absolute;
+    font-size: 12px;
+    background: white;
+    margin: -10px 0 0 10px;
+    padding: 0 5px;
+    color: rgb(144, 147, 167);
+  }
+  
+  .input4 {
+    margin:  auto 10px;
+  }
+  .more {
+    margin-left: 500rpx;
+  }

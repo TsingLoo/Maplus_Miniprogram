@@ -1,0 +1,45 @@
+/* pages/revise2/revise2.wxss */
+.view-contain-q1 {
+    display: flex;
+    height: 2000px;
+    margin: 40rpx 0rpx;
+    border: 3rpx solid #faca82;
+    border-radius: 0rpx;
+  }
+  
+  .text-q1 {
+    position: absolute;
+    font-size: 40px;
+    background: white;
+    margin: -10px 0 0 10px;
+    padding: 0px 0px 0px 0px ;
+    color: rgb(144, 147, 167);
+  }
+  
+  .inputq1 {
+    margin:  auto 10px;
+
+  }
+  .view-contain-q2 {
+    display: flex;
+    height: 200px;
+    margin: 40rpx 0rpx;
+    border: 3rpx solid #faca82;
+    border-radius: 0rpx;
+  }
+  
+  .text-q2 {
+    position: absolute;
+    font-size: 12px;
+    background: white;
+    margin: -10px 0 0 10px;
+    padding: 0 5px;
+    color: rgb(144, 147, 167);
+  }
+  
+  .inputq2 {
+    margin:  auto 10px;
+  }
+  .go_to_3 {
+    margin-left: 570rpx;
+  }
