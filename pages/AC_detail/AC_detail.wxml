@@ -7,6 +7,6 @@
 </view>
 <!--下面是信息abc的文本框-->
 <view class="view-contain-q2">
-    <text class="text-q2">信息2</text>
+    <text class="text-q2">信息 晚上好</text>
     <input class="inputq2"></input>
 </view>

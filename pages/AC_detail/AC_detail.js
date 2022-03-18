@@ -18,8 +18,11 @@ Page({
 
   onLoad()
   {
-    activityTitle = "Test0",
-    activityDesc = "Desc0"
+    this.setData({
+      activityTitle = "Test0",
+      activityDesc = "Desc0"
+    })
+  
   },
 
   go_to_revise1 (){
