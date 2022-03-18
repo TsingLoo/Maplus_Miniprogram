@@ -2,7 +2,7 @@
 <button bindtap="go_to_revise1">revise</button>
 <!--下面是信息1的文本框-->
 <view class="view-contain-q1">
-    <text class="text-q1">信息1</text>
+    <text class="text-q1">{{activityTitle}}</text>
     <input class="inputq1"></input>
 </view>
 <!--下面是信息2的文本框-->

@@ -16,6 +16,12 @@ Page({
       hot:0,
   },
 
+  onLoad()
+  {
+    activityTitle = "Test0",
+    activityDesc = "Desc0"
+  },
+
   go_to_revise1 (){
     wx.navigateTo({
       url: '/pages/revise1/revise1',
