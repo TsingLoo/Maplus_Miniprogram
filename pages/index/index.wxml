@@ -1,4 +1,4 @@
 <!--pages/index/index.wxml-->
-<view>111111</view>
+
 <view class="title">maplus</view>
 <button bindtap="start">start</button>
