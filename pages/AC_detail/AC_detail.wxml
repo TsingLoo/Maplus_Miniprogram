@@ -5,7 +5,7 @@
     <text class="text-q1">{{activityTitle}}</text>
     <input class="inputq1"></input>
 </view>
-<!--下面是信息2的文本框-->
+<!--下面是信息abc的文本框-->
 <view class="view-contain-q2">
     <text class="text-q2">信息2</text>
     <input class="inputq2"></input>
