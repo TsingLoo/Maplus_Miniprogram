@@ -19,8 +19,8 @@ Page({
   onLoad()
   {
     this.setData({
-      activityTitle = "Test0",
-      activityDesc = "Desc0"
+      activityTitle : "Test0",
+      activityDesc : "Desc0"
     })
   
   },

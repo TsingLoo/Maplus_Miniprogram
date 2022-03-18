@@ -1,8 +1,7 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs",
     "pages/map/map",
+    "pages/logs/logs",
     "pages/activity/activity",
     "pages/personal/personal",
     "pages/AC_upload1/AC_upload1",
