@@ -63,6 +63,10 @@ Page({
   onShareAppMessage: function () {
 
   },
+  
+    /**
+   * 这是发布板块第二页next>按钮绑定的bindtap事件
+   */
   go_to_AC_upload3(){
     wx.navigateTo({
       url: '/pages/AC_upload3/AC_upload3',

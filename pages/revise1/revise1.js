@@ -63,7 +63,10 @@ Page({
   onShareAppMessage: function () {
 
   },
-  go_to_AC_upload2(){
+    /**
+ * 这是修改板块第一页next>按钮绑定的bindtap事件
+ */
+  go_to_revise2(){
     wx.navigateTo({
       url:'/pages/revise2/revise2',
     })
