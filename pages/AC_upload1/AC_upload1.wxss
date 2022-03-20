@@ -9,7 +9,7 @@
   
   .text-q1 {
     position: absolute;
-    font-size: 40px;
+    font-size: 12px;
     background: white;
     margin: -10px 0 0 10px;
     padding: 0px 0px 0px 0px ;
