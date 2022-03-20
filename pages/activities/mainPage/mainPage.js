@@ -7,23 +7,23 @@ Page({
     feed: [],
     feed_length: 0
   },
-  //事件处理函数
-  bindItemTap: function() {
-    wx.navigateTo({
-      url: '../answer/answer'
-    })
-  },
-  bindQueTap: function() {
-    wx.navigateTo({
-      url: '../question/question'
-    })
-  },
-  onLoad: function () {
-    console.log('onLoad')
-    var that = this
-    //调用应用实例的方法获取全局数据
-    this.getData();
-  },
+  // //事件处理函数
+  // bindItemTap: function() {
+  //   wx.navigateTo({
+  //     url: '../answer/answer'
+  //   })
+  // },
+  // bindQueTap: function() {
+  //   wx.navigateTo({
+  //     url: '../question/question'
+  //   })
+  // },
+  // onLoad: function () {
+  //   console.log('onLoad')
+  //   var that = this
+  //   //调用应用实例的方法获取全局数据
+  //   this.getData();
+  // },
   upper: function () {
    //现在是发布新活动的按钮。
 
@@ -52,49 +52,49 @@ Page({
   //},
 
   //网络请求数据, 实现首页刷新
-  refresh0: function(){
-    var index_api = '';
-    util.getData(index_api)
-        .then(function(data){
-          //this.setData({
-          //
-          //});
-          console.log(data);
-        });
-  },
+  // refresh0: function(){
+  //   var index_api = '';
+  //   util.getData(index_api)
+  //       .then(function(data){
+  //         //this.setData({
+  //         //
+  //         //});
+  //         console.log(data);
+  //       });
+  // },
 
   //使用本地 fake 数据实现刷新效果
-  getData: function(){
-    var feed = util.getData2();
-    console.log("loaddata");
-    var feed_data = feed.data;
-    this.setData({
-      feed:feed_data,
-      feed_length: feed_data.length
-    });
-  },
-  refresh: function(){
-    wx.showToast({
-      title: '刷新中',
-      icon: 'loading',
-      duration: 3000
-    });
-    var feed = util.getData2();
-    console.log("loaddata");
-    var feed_data = feed.data;
-    this.setData({
-      feed:feed_data,
-      feed_length: feed_data.length
-    });
-    setTimeout(function(){
-      wx.showToast({
-        title: '刷新成功',
-        icon: 'success',
-        duration: 2000
-      })
-    },3000)
+  // getData: function(){
+  //   var feed = util.getData2();
+  //   console.log("loaddata");
+  //   var feed_data = feed.data;
+  //   this.setData({
+  //     feed:feed_data,
+  //     feed_length: feed_data.length
+  //   });
+  // },
+  // refresh: function(){
+  //   wx.showToast({
+  //     title: '刷新中',
+  //     icon: 'loading',
+  //     duration: 3000
+  //   });
+  //   //var feed = util.getData2();
+  //   console.log("loaddata");
+  //   var feed_data = feed.data;
+  //   this.setData({
+  //     feed:feed_data,
+  //     feed_length: feed_data.length
+  //   });
+  //   setTimeout(function(){
+  //     wx.showToast({
+  //       title: '刷新成功',
+  //       icon: 'success',
+  //       duration: 2000
+  //     })
+  //   },3000)
 
-  },
+  // },
 
   //使用本地 fake 数据实现继续加载效果
   nextLoad: function(){
