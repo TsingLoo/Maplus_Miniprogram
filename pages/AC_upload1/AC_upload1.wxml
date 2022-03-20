@@ -20,7 +20,7 @@
 <!--下面是布板块第一页信息4的文本框-->
 <view class="view-contain-q4">
     <text class="text-q4">信息4</text>
-    <input class="inputq4"></input>
+    <input class="inputq4" bindtap="getInput"></input>
 </view>
 <!--下面是发布板块第一页的next>按钮-->
 <button 

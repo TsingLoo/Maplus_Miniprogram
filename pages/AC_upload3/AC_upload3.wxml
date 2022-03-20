@@ -17,7 +17,7 @@
 </view>
 <!--下面这个是是发布板块第三页的publish按钮-->
 <button 
-    
+    bindtap = "createActivity"
     type="primary"
     size="default"
 >publish</button>
