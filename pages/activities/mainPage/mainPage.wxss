@@ -1,53 +1,47 @@
 /**index.wxss**/
-.swiper__container{
-  height: 11rem;
-}
-.swiper__desc{
-  position: absolute;
-  width:100%;
-  bottom: 0;
-  padding: 10rpx;
-  background-color: rgba(0,0,0,0.5);
-  color: #fff;
-  font-size: 28rpx;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
 
-.swiper__item{
-  display: block;
-  width: 20rem;
-  height: 11rem;
+.container{
+  height: 1500rpx;
 }
-
-.swiper__id{
-  float: right;
-  padding-right: 20rpx;
-  font-weight: 700;
+.container .search{
+  width: 735rpx;
+  height: 65rpx;
+  padding: 12.5rpx 0 12.5rpx 15rpx;
+  background: #2A8CE5;
 }
-
-/* header 部分导航 */
-.header{
-  width: 100%;
-  background-color: #fff;
-  font-size: 30rpx;
-  display: flex;
-  align-items: center;
-  height: 64rpx;
-  position: relative;
+.container .search-left{
+  flex: 8;
+  background: #4EA3E7;
+  text-align: left;
 }
-.sv__container{
-  width: 18rem;
-  height: 64rpx;
-  white-space: nowrap;
-}
-.sv__item{
-  padding: 14rpx;
+.container .search-left input{
   display: inline-block;
+  height: 65rpx;
+  font-size: 26rpx;
 }
-.sv-manager{
-  padding-left:20rpx;
-  width: 1rem;
-  height: 1rem;
-  vertical-align: center;
+.search-placeholder{
+  color: #8CCEFD;
+  line-height: 20rpx;
 }
+.container .search .search-left image{
+  display: inline-block;
+  width: 35rpx;
+  height: 35rpx;
+  padding: 15rpx 15rpx 15rpx 20rpx;
+}
+.container .search .search-right{
+  flex: 1;
+}
+.container .search .search-right image{
+  width: 45rpx;
+  height: 45rpx;
+  padding: 10rpx;
+}
+
+.container{
+  padding: 0;
+  font-size: 14rpx;
+  background: #F0F4F3;
+  color: #000;
+}
+/*feed-item part is in app.wxss for multiplexing*/

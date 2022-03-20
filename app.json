@@ -26,6 +26,7 @@
         "text": "map",
         "iconPath": "icon/map.png",
         "selectedIconPath": "icon/map1.png"
+        
       },
       {
         "pagePath": "pages/activities/mainPage/mainPage",

@@ -1,5 +1,8 @@
 <!--pages/AC_upload1/AC_upload1.wxml-->
 <!--下面是布板块第一页信息1的文本框-->
+<scroll-view scroll-y="true" class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+ 
+
 <view class="view-contain-q1">
     <text class="text-q1">信息1</text>
     <input class="inputq1"></input>
@@ -27,3 +30,4 @@
     bindtap="go_to_AC_upload2"
 >next></button>
 
+</scroll-view>
