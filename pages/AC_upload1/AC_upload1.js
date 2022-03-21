@@ -10,7 +10,32 @@ Page({
     building:"CB",
   },
 
-  
+  getModifyId: function(e){
+    this.setData({
+      activityid: e.detail.value,
+      requestUrl: "http://localhost:8080/preModifyActivity/" + e.detail.value
+    })
+  },
+
+  checkModify: function(event){
+    wx.request({
+      url: this.requestUrl,
+      method: 'GET',
+      success:function(res)
+      {
+        console.log(res.data)
+      },
+      fail:function(res)
+      {
+        console.log("can not modify")
+      }
+      
+    })
+
+
+
+  },
+
 
 
   getbuilding: function(e) {

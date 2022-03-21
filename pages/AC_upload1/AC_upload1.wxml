@@ -31,6 +31,8 @@
     
 </view>
 <!--下面是发布板块第一页的next>按钮-->
+
+<view>
 <button 
     class="go_to_2"
     type="default"
@@ -39,4 +41,15 @@
     
 >Next></button>
 
+
+<button 
+    class="modifyButton"
+    type="default"
+    size="mini"
+    bindtap="checkModify"
+>Modify</button>
+
+<input class="modifyInput" bindinput="getModifyId" placeholder="id"></input>
+
+</view>
 </scroll-view>
