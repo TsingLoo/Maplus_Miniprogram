@@ -42,12 +42,20 @@ inputactivityDesc: function(e){
     
 },
 
-inputactivityDetail: function(e){
-  var detail = e.detail.value
+inputroom:function(event)
+{
   this.setData
   ({
-      
-      activityDetail: detail
+      room: event.detail.value
+    })
+    console.log("room: " + this.data.room)
+},
+
+inputactivityDetail: function(e){
+
+  this.setData
+  ({
+      activityDetail: e.detail.value
     })
     console.log("activityDetail: " + this.data.activityDetail)
 },
@@ -56,13 +64,14 @@ inputactivityDetail: function(e){
 
   go_to_AC_upload2(event){
     
-    console.log(this.data.activityDesc) 
+   
     let info1 = 
          {
           activityTitle:this.data.activityTitle,
           activityDesc:this.data.activityDesc,
           activityDetail:this.data.activityDetail,
-          building:this.data.building
+          building:this.data.building,
+          room:this.data.room
          }
 
     console.log(info1)     
