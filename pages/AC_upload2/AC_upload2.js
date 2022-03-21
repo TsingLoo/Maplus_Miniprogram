@@ -8,7 +8,6 @@ Page({
 
   onLoad:function(option)
   {
-    
     let eventChannel = this.getOpenerEventChannel()
     eventChannel.on('page1to2',(info1) =>
     {
@@ -16,8 +15,6 @@ Page({
       	info1: info1 || {},
       })
     })
-    
-    console.log(this.data.info1)
   },
   
   go_to_AC_upload3(){
