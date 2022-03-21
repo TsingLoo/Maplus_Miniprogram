@@ -1,5 +1,4 @@
-let isInitSelfShow = true;
-let app = getApp();
+
 Page({
 
   data:{
@@ -8,19 +7,18 @@ Page({
     activityTitle:"",
     activityDesc:"",
     activityDetail:"",
-    building:""
+    building:"",
   },
 
-  onLoad()
-  {
-    console.log('选择改变，携带值为' + this.data.array[this.data.index])
-  },
+
+
 
   getbuilding: function(e) {
     this.setData({
-      index: e.detail.value   
+      index: e.detail.value,   
+      building: this.data.array[this.data.index]
     })
-    console.log('选择改变，携带值为' + this.data.array[this.data.index])
+    console.log('选择改变，携带值为' + this.data.building)
   },
 
 inputactivityTitle: function(e){
@@ -42,15 +40,32 @@ inputactivityDesc: function(e){
 inputactivityDetail: function(e){
   this.setData
     {
-      console.log("activityDetail: " + e.detail.value)
+      
       activityDetail: e.detail.value
     }
+    console.log("activityDetail: " + this.data.activityDetail)
 },
   
 
   go_to_AC_upload2(event){
+    
+    console.log(this.data.activityDesc) 
+    let info1 = 
+         {
+          activityTitle:that.data.activityTitle,
+          activityDesc:that.data.activityDesc,
+          activityDetail:that.data.activityDetail,
+           building:that.data.building
+         }
+
+    console.log(info1)     
+
     wx.navigateTo({
       url:'/pages/AC_upload2/AC_upload2',
+      success: function(res)
+      {
+        res.eventChannel.emit("page1to2",info1)
+      }
     })
   }
 })

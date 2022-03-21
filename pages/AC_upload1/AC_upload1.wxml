@@ -34,6 +34,7 @@
     type="default"
     size="mini"
     bindtap="go_to_AC_upload2"
+    
 >next></button>
 
 </scroll-view>
