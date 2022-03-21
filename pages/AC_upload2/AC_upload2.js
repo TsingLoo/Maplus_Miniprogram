@@ -16,8 +16,8 @@ Page({
       	info1: info1 || {},
       })
     })
-    let arr = JSON.parse(this.data.info1)
-    console.log(arr)
+    
+    console.log(this.data.info1)
   },
   
   go_to_AC_upload3(){

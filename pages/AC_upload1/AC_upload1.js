@@ -7,55 +7,62 @@ Page({
     activityTitle:"",
     activityDesc:"",
     activityDetail:"",
-    building:"",
+    building:"CB",
   },
 
-
+  
 
 
   getbuilding: function(e) {
     this.setData({
       index: e.detail.value,   
-      building: this.data.array[this.data.index]
+      building: this.data.array[e.detail.value]
     })
-    console.log('选择改变，携带值为' + this.data.building)
+
+    console.log(this.data.index + '选择改变，携带值为' + this.data.building)
   },
 
 inputactivityTitle: function(e){
-    this.setData
-    {
-      console.log("activityTitle: " + e.detail.value)
-      activityTitle: e.detail.value
-    }
+
+    this.setData(
+      {
+        activityTitle: e.detail.value
+      }
+    )
+    console.log("activityTitle: " + this.data.activityTitle)
 },
 
 inputactivityDesc: function(e){
-  this.setData
+  this.setData(
     {
-      console.log("activityDesc: " + e.detail.value)
       activityDesc: e.detail.value
     }
+    )
+    console.log("activityDesc: " + this.data.activityDesc)
+    
 },
 
 inputactivityDetail: function(e){
+  var detail = e.detail.value
   this.setData
-    {
+  ({
       
-      activityDetail: e.detail.value
-    }
+      activityDetail: detail
+    })
     console.log("activityDetail: " + this.data.activityDetail)
 },
   
+
 
   go_to_AC_upload2(event){
     
     console.log(this.data.activityDesc) 
     let info1 = 
          {
-          activityTitle:that.data.activityTitle,
-          activityDesc:that.data.activityDesc,
-          activityDetail:that.data.activityDetail,
-           building:that.data.building
+          activityTitle:this.data.activityTitle,
+          activityDesc:this.data.activityDesc,
+          activityDetail:this.data.activityDetail,
+          building:this.data.building
          }
 
     console.log(info1)     
