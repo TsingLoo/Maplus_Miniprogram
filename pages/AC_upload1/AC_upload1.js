@@ -11,14 +11,19 @@ Page({
     building:""
   },
 
-  bindPickerChange: function(e) {
+  onLoad()
+  {
+    console.log('选择改变，携带值为' + this.data.array[this.data.index])
+  },
+
+  getbuilding: function(e) {
     this.setData({
       index: e.detail.value   
     })
     console.log('选择改变，携带值为' + this.data.array[this.data.index])
   },
 
-input1: function(e){
+inputactivityTitle: function(e){
     this.setData
     {
       console.log("activityTitle: " + e.detail.value)
@@ -26,7 +31,7 @@ input1: function(e){
     }
 },
 
-input2: function(e){
+inputactivityDesc: function(e){
   this.setData
     {
       console.log("activityDesc: " + e.detail.value)
@@ -34,7 +39,7 @@ input2: function(e){
     }
 },
 
-input3: function(e){
+inputactivityDetail: function(e){
   this.setData
     {
       console.log("activityDetail: " + e.detail.value)
@@ -42,13 +47,6 @@ input3: function(e){
     }
 },
   
-input4: function(e){
-  this.setData
-  {
-    console.log("building: " + e.detail.value)
-    activityDetail: e.detail.value
-  }
-},
 
   go_to_AC_upload2(event){
     wx.navigateTo({

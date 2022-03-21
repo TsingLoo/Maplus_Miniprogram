@@ -6,23 +6,23 @@
 
 <view class="view-contain-q1">
     <text class="text-q1">活动标题 activityTitile</text>
-    <input class="inputq1" bindinput = "input1"></input>
+    <input class="inputq1" bindinput = "inputactivityTitle"></input>
 </view>
 <!--下面是布板块第一页信息2的文本框-->
 <view class="view-contain-q2">
     <text class="text-q2">活动简介 activityDesc</text>
-    <input class="inputq2" bindinput = "input2"></input>
+    <input class="inputq2" bindinput = "inputactivityDesc"></input>
 </view>
 <!--下面是布板块第一页信息3的文本框-->
 <view class="view-contain-q3">
     <text class="text-q3">活动详情 activityDetail</text>
-    <input class="inputq3" bindinput = "input3"></input>
+    <input class="inputq3" bindinput = "inputactivityDetail"></input>
 </view>
 <!--下面是布板块第一页信息4的文本框-->
 <view class="view-contain-q4">
   
     <text class="text-q4">活动地点 building 供用户选择</text>
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" class="inputq4">
+    <picker bindchange="getbuilding" value="{{index}}" range="{{array}}" class="inputq4">
     <view class="picker">
       当前选择：{{array[index]}}
     </view>
