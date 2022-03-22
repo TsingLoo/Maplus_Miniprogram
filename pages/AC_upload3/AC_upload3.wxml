@@ -8,12 +8,12 @@
 <!--下面是发布板块第三页信息2的文本框-->
 <view class="view-contain-q2">
     <text class="text-q2">预计人数 estimateNum</text>
-    <input bindinput = "inputestimateNum" class="inputq2"></input>
+    <input bindinput = "inputestimateNum" class="inputq2" value="{{estimateNum}}"></input>
 </view>
 <!--下面是发布板块第三页信息3的文本框-->
 <view class="view-contain-q3">
     <text class="text-q3">推荐人群 targetPeople</text>
-    <input bindinput = "inputtargetPeople" class="inputq3"></input>
+    <input bindinput = "inputtargetPeople" class="inputq3" value="{{targetPeople}}"></input>
 </view>
 <!--下面这个是是发布板块第三页的publish按钮-->
 <button 

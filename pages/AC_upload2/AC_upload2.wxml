@@ -3,12 +3,14 @@
 <!--下面是发布板块第二页信息1的文本框-->
 <view class="view-contain-q1">
     <text class="text-q1">俱乐部 clubName</text>
-    <input bindinput = "inputclubName" class="inputq1"></input>
+    <input bindinput = "inputclubName" class="inputq1" value = "{{clubName}}"></input>
 </view>
+
+
 <!--下面是发布板块第二页信息2的文本框-->
 <view class="view-contain-q2">
     <text class="text-q2">活动发布人 publisher</text>
-    <input bindinput = "inputpublisher" class="inputq2"></input>
+    <input bindinput = "inputpublisher" class="inputq2" value = "{{publisher}}"></input>
 </view>
 <!--下面是发布板块第二页的next>按钮-->
 <button 

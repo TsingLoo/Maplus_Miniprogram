@@ -6,17 +6,17 @@
 
 <view class="view-contain-q1">
     <text class="text-q1">活动标题 activityTitile</text>
-    <input class="inputq1" bindinput = "inputactivityTitle"></input>
+    <input class="inputq1" value = "{{activityTitle}}"bindinput = "inputactivityTitle"></input>
 </view>
 <!--下面是布板块第一页信息2的文本框-->
 <view class="view-contain-q2">
     <text class="text-q2">活动简介 activityDesc</text>
-    <input class="inputq2" bindinput = "inputactivityDesc"></input>
+    <input class="inputq2" bindinput = "inputactivityDesc" value= "{{activityDesc}}"></input>
 </view>
 <!--下面是布板块第一页信息3的文本框-->
 <view class="view-contain-q3">
     <text class="text-q3">活动详情 activityDetail</text>
-    <input class="inputq3" bindinput = "inputactivityDetail"></input>
+    <input class="inputq3" bindinput = "inputactivityDetail" value = "{{activityDetail}}"></input>
 </view>
 <!--下面是布板块第一页信息4的文本框-->
 <view class="view-contain-q4">
@@ -27,7 +27,7 @@
       当前选择：{{array[index]}}
     </view>
     </picker>
-    <input class="inputq3" bindinput = "inputroom" placeholder="Room:"></input>
+    <input class="inputq3" bindinput = "inputroom" placeholder="房间号:" value = "{{room}}"></input>
     
 </view>
 <!--下面是发布板块第一页的next>按钮-->
@@ -37,8 +37,7 @@
     class="go_to_2"
     type="default"
     size="mini"
-    bindtap="go_to_AC_upload2"
-    
+    bindtap="go_to_AC_upload2"    
 >Next></button>
 
 

@@ -13,8 +13,12 @@ Page({
     {
       this.setData({  
       	info1: info1 || {},
+        publisher: info1.publisher,
+        clubName: info1.clubName
       })
     })
+
+  
   },
   
   inputclubName: function(event)
@@ -43,7 +47,10 @@ Page({
       building:this.data.info1.building,
       room: this.data.info1.room,
       clubName:this.data.clubName,
-      publisher:this.data.publisher
+      publisher:this.data.publisher,
+      estimateNum: this.data.info1.estimateNum,
+      targetPeople: this.data.info1.targetPeople,
+      id:this.data.info1.id
     }
 
     console.log(info2)

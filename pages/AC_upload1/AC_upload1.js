@@ -18,16 +18,32 @@ Page({
   },
 
   checkModify: function(event){
+    var that = this
     wx.request({
-      url: this.requestUrl,
+      url: this.data.requestUrl,
       method: 'GET',
       success:function(res)
       {
+        var findIndex =  (that.data.array || {}).findIndex((item) => item === res.data.building);
         console.log(res.data)
+        that.setData({
+          
+          activityTitle: res.data.activityTitle,
+          activityDesc: res.data.activityDesc,
+          //activityDetail: res.data.activityDetail,
+          room: res.data.room,
+     
+          index: findIndex,
+         
+          clubName: res.data.clubName,
+          publisher: res.data.publisher,
+          estimateNum: res.data.estimateNum,
+          targetPeople: res.data.targetPeople
+        })
       },
       fail:function(res)
       {
-        console.log("can not modify")
+        console.log(res.data)
       }
       
     })
@@ -94,9 +110,14 @@ inputactivityDetail: function(e){
          {
           activityTitle:this.data.activityTitle,
           activityDesc:this.data.activityDesc,
-          activityDetail:this.data.activityDetail,
+          //activityDetail:this.data.activityDetail,
           building:this.data.building,
-          room:this.data.room
+          room:this.data.room,
+          clubName : this.data.clubName,
+          publisher : this.data.publisher,
+          estimateNum : this.data.estimateNum,
+          targetPeople : this.data.targetPeople,
+          id:this.data.activityid
          }
 
     console.log(info1)     
