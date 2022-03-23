@@ -1,5 +1,4 @@
 let app = getApp();
-
 // pages/AC_upload2/AC_upload2.js
 Page({
   data: {

@@ -11,7 +11,9 @@
     "pages/revise2/revise2",
     "pages/revise3/revise3",
     "pages/AC_detail/AC_detail",
-    "pages/activities/mainPage/mainPage"
+    "pages/activities/mainPage/mainPage",
+    "pages/PS_2L/PS_L",
+    "pages/PS_1R/PS_R"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -26,7 +28,6 @@
         "text": "map",
         "iconPath": "icon/map.png",
         "selectedIconPath": "icon/map1.png"
-        
       },
       {
         "pagePath": "pages/activities/mainPage/mainPage",

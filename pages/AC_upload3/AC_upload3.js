@@ -98,13 +98,10 @@ Page({
       },
 
      
-      success:(res)=>
-      {
-  
+      success:(res)=>{
         console.log(res.data);
       },
-      fail:(res)=>
-      {
+      fail:(res)=>{
     
       }
     

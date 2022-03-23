@@ -1,0 +1,67 @@
+/* pages/PS_L/PS_L.wxss */
+.view-contain-1 {
+  display: flex;
+  height: 200px;
+  margin: 40rpx 0rpx;
+  border: 3rpx solid #faca82;
+  border-radius: 0rpx;
+}
+
+.text-1 {
+  position: absolute;
+  font-size: 12px;
+  background: white;
+  margin: -10px 0 0 10px;
+  padding: 0px 0px 0px 0px ;
+  color: rgb(144, 147, 167);
+}
+
+.input1 {
+  margin:  auto 10px;
+}
+.view-contain-2 {
+  display: flex;
+  height: 200px;
+  margin: 40rpx 0rpx;
+  border: 3rpx solid #faca82;
+  border-radius: 0rpx;
+}
+
+.text-2 {
+  position: absolute;
+  font-size: 12px;
+  background: white;
+  margin: -10px 0 0 10px;
+  padding: 0 5px;
+  color: rgb(144, 147, 167);
+}
+
+.input2 {
+  margin:  auto 10px;
+}
+
+.view-contain-3 {
+  display: flex;
+  height: 200px;
+  margin: 40rpx 0rpx;
+  border: 3rpx solid #faca82;
+  border-radius: 0rpx;
+}
+
+.text-3 {
+  position: absolute;
+  font-size: 12px;
+  background: white;
+  margin: -10px 0 0 10px;
+  padding: 0 5px;
+  color: rgb(144, 147, 167);
+}
+
+.input3 {
+  margin:  auto 10px;
+}
+
+.login{
+  margin: 20rpx 0 20rpx 0;
+  float: middle;
+ }
