@@ -1,4 +1,19 @@
 <view>
 <button class="go_to_PS_R" type="primary" size="default" bindtap="go_to_PS_R">注册 R</button>
 <button class="go_to_PS_L" type="primary" size="default" bindtap="go_to_PS_L">登录 L</button>
+<button
+class="go_to_change_PW"
+type="default"
+size="default"
+bindtap="go_to_change_PW"
+>改密码</button>
+
+<button
+class="go_to_change_NN"
+type="default"
+size="default"
+bindtap="go_to_change_NN"
+>改昵称</button>
+
 </view>
+

@@ -1,0 +1,28 @@
+<!--pages/change_PW/change_PW.wxml-->
+<view class="view-contain-1">
+    <text class="text-1">用户名 userName</text>
+    <input class="input1"></input>
+</view>
+
+<view class="view-contain-2">
+    <text class="text-2">旧密码 userPassword</text>
+    <input class="input2"></input>
+</view>
+
+<view class="view-contain-3">
+    <text class="text-3">新密码 newPassword</text>
+    <input class="input3"></input>
+</view>
+
+<button 
+class="submit"
+type="primary"
+size="default"
+bindtap = "submit"
+>submit</button>
+
+<button
+class="wrong"
+type="warn"
+bindtap="wrong"
+>wrong</button>

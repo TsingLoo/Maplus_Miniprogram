@@ -15,7 +15,10 @@
     "pages/PS_2L/PS_L",
     "pages/PS_1R/PS_R",
     "pages/Login_wrong/Login_wrong",
-    "pages/Register_wrong/Register_wrong"
+    "pages/Register_wrong/Register_wrong",
+    "pages/change_PW/change_PW",
+    "pages/change_NN/change_NN",
+    "pages/change_PW_wrong/change_PW_wrong"
   ],
   "window": {
     "backgroundTextStyle": "light",

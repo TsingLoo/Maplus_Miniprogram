@@ -14,5 +14,17 @@ go_to_PS_R(e){
   wx.navigateTo({
     url: '/pages/PS_1R/PS_R',
   })
+},
+
+go_to_change_PW(){
+  wx.navigateTo({
+    url: '/pages/change_PW/change_PW',
+  })
+},
+
+go_to_change_NN(){
+  wx.navigateTo({
+    url: '/pages/change_NN/change_NN',
+  })
 }
 })

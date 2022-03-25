@@ -8,3 +8,14 @@
   margin: 20rpx 0 20rpx 0;
   float: middle;
  }
+
+ .go_to_change_PW{
+   margin: 20rpx 0 20rpx 0;
+   float: middle;
+ }
+
+ .go_to_change_NN{
+  margin: 20rpx 0 20rpx 0;
+  float: middle;
+}
+ 
