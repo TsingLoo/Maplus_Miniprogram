@@ -6,6 +6,7 @@ userNickname:"",
 userPassword:""
   },
 
+
   inputuserName:function(e){
     this.setData({
     userName:e.detail.value
@@ -47,5 +48,13 @@ userPassword:""
         
         })
         
+        },
+
+        R_wrong(){
+          wx.navigateTo({
+            url: '/pages/Register_wrong/Register_wrong',
+          })
         }
+
+
         })

@@ -13,7 +13,9 @@
     "pages/AC_detail/AC_detail",
     "pages/activities/mainPage/mainPage",
     "pages/PS_2L/PS_L",
-    "pages/PS_1R/PS_R"
+    "pages/PS_1R/PS_R",
+    "pages/Login_wrong/Login_wrong",
+    "pages/Register_wrong/Register_wrong"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,4 +1,9 @@
-/* pages/PS_L/PS_L.wxss */
+/* pages/Register_wrong/Register_wrong.wxss */
+.wrong{
+  font-size: 40rpx;
+  color: red;
+}
+
 .view-contain-1 {
   display: flex;
   height: 200px;
@@ -61,12 +66,7 @@
   margin:  auto 10px;
 }
 
-.login{
+.submit{
   margin: 20rpx 0 20rpx 0;
   float: middle;
- }
-
- .wrong{
-   margin: 20rpx 0 20rpx 0;
-   float: middle;
  }

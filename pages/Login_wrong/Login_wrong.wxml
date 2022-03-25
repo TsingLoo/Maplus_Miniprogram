@@ -1,3 +1,6 @@
+<!--pages/Login_wrong/Login_wrong.wxml-->
+<text class="wrong">userName、userNickname或userPsssword错误！</text>
+
 <view class="view-contain-1">
     <text class="text-1">用户名 userName</text>
     <input class="inputq1"></input>
@@ -19,9 +22,3 @@ type="primary"
 size="default"
 bindtap = "login"
 >login</button>
-
-<button
-class="wrong"
-type="warn"
-bindtap="wrong"
->wrong</button>

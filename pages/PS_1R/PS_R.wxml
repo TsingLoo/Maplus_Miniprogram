@@ -19,3 +19,9 @@ type="primary"
 size="default"
 bindtap = "submit"
 >submit</button>
+
+<button
+class="wrong"
+type="warn"
+bindtap="R_wrong"
+>wrong</button>

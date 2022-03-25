@@ -28,6 +28,12 @@ inputuserPassword:function(e){
 
 login(){
 console.log(this.data.userName+"" +this.data.userNickname+""+this.data.userPassword);
+},
+
+wrong(){
+  wx.navigateTo({
+    url: '/pages/Login_wrong/Login_wrong',
+  })
 }
 
 })
