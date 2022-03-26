@@ -26,14 +26,33 @@ inputuserPassword:function(e){
   console.log("userPassword: " + this.data.userPassword)
   },
 
-login(){
-console.log(this.data.userName+"" +this.data.userNickname+""+this.data.userPassword);
-},
-
-wrong(){
-  wx.navigateTo({
-    url: '/pages/Login_wrong/Login_wrong',
+login:function(){
+  wx.request({
+  url: 'http://localhost:8080/userCheck',
+  method: 'post',
+  data:{
+  userName:this.data.userName, 
+  userNickname:this.data.userNickname,
+  userPassword:this.data.userPassword
+  },
+  })
+  wx.request({
+  url: 'http://localhost:8080/userCheck',
+  method: 'get',
+  })
+  var a = this.data.request;
+  if(a == 1){
+  wx.showToast({
+  title: '注册成功！',
+  icon:'success',
+  duration:1000
+  })
+  }else if( a == -1){
+  wx.showToast({
+  title: '该用户名已存在！',
+  icon:'error',
+  duration:1000
   })
 }
-
+}
 })

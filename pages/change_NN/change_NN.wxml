@@ -1,11 +1,5 @@
 <!--pages/change_NN/change_NN.wxml-->
 
-<view class="view-contain-1">
-    <text class="text-1">用户名 userName</text>
-    <input bindinput="inputuserName" placeholder="请输入用户名！" class="input1"  value="{{userName}}"
-   ></input>
-</view>
-
 <view class="view-contain-2">
     <text class="text-2">用户昵称 userNickname</text>
     <input bindinput="inputuserNickname" placeholder="请输入新昵称！" 

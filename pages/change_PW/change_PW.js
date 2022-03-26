@@ -1,123 +1,81 @@
-// pages/change_PW/change_PW.js
+const app = getApp();
 Page({
+data: {
+userPassword:"",
+newPassword:"",
+newPassword2:""
+},
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
-    userName:"",
-    userPassword:"",
-    newuserPassword:""
-  },
+inputuserPassword:function(event){
+this.setData({
+userPassword:event.detail.value
+})
+console.log("userPassword: " + this.data.userPassword)
+},
+  
+inputnewPassword:function(event){
+this.setData({
+newPassword:event.detail.value
+})
+console.log("newPassword: " + this.data.newPassword)
+},
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+inputnewPassword2:function(event){
+this.setData({
+newPassword2:event.detail.value
+})
+console.log("newPassword2: " + this.data.newPassword2)
+},
 
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
-  /** 
-   * 以下是模仿的逻辑
-  */
-
-  inputuserName:function(e){
-    this.setData({
-    userName:e.detail.value
-    })
-    console.log("userName: " + this.data.userName)
-    },
-    
-    inputuserPassword:function(e){
-    this.setData({
-    userPassword:e.detail.value
-    })
-    console.log("userPassword: " + this.data.userPassword)
-    },
-    
-    inputnewPassword:function(e){
-      this.setData({
-      newPassword:e.detail.value
-      })
-      console.log("newPassword: " + this.data.newPassword)
-      },
-
-      submit:function(){
-        console.log(this.data.userName+"" +this.data.userPassword+""+this.data.newPassword);
-        
-        wx.request({
-        url: 'http://127.0.0.1:8080/createActivity',
-        method: 'post',
-        data:{
-        userName:this.data.userName, 
-        userPassword:this.data.userPassword,
-        newPassword:this.data.newPassword
-        },
-        
-        success:(res)=>{
-          console.log(res.data);
-        },
-        fail:(res)=>{
-        }
-        
-        })
-        
-        },
-
-        wrong(){
-          wx.navigateTo({
-            url: '/pages/change_PW_wrong/change_PW_wrong',
-          })
-        }
-
-
-
+submit:function(event){     
+var old = this.data.userPassword;
+var new1 = this.data.newPassword;
+var new2 = this.data.newPassword2;
+console.log(event)
+if(old == '' || new1 == '' || new2 == ''){
+wx.showToast({
+title: '密码不能为空！',
+icon:'error',
+duration:1000
+})
+}else if(old == new1){
+  wx.showToast({
+  title: '新旧密码一致！',
+  icon:'error',
+  duration:1000
+  })
+}else if(new1 != new2){
+wx.showToast({
+title: '两次密码不一致！',
+icon:'error',
+duration:1000
+})
+}else{
+wx.request({
+url: 'http://localhost:8080/changePsw',
+method: 'post',
+data:{
+userPassword:this.data.newPassword,
+}
+})
+wx.request({
+url: 'http://localhost:8080/changePsw',
+method: 'get',
+}) 
+var a = this.data.request;
+if(a == true){
+wx.showToast({
+title: '修改成功！',
+icon:'success',
+duration:1000
+})
+}else if(a == false){
+wx.showToast({
+title: '异常请重试！',
+icon:'error',
+duration:1000
+})
+}
+}
+}
 })

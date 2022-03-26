@@ -4,13 +4,13 @@ Page({
 
   },
 
-  go_to_PS_L(e){
+  go_to_PS_L(){
     wx.navigateTo({
       url: '/pages/PS_2L/PS_L',
     })
   },
 
-go_to_PS_R(e){
+go_to_PS_R(){
   wx.navigateTo({
     url: '/pages/PS_1R/PS_R',
   })

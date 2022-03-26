@@ -40,7 +40,6 @@
     bindtap="go_to_AC_upload2"    
 >Next></button>
 
-
 <button 
     class="modifyButton"
     type="default"

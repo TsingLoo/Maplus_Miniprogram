@@ -24,8 +24,3 @@ size="default"
 bindtap = "login"
 >login</button>
 
-<button
-class="wrong"
-type="warn"
-bindtap="wrong"
->wrong</button>

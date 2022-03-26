@@ -1,72 +1,73 @@
 /* pages/change_PW/change_PW.wxss */
 .view-contain-1 {
   display: flex;
-  height: 200px;
-  margin: 40rpx 0rpx;
+  height: 60px;
+  margin: 50rpx 0rpx;
   border: 3rpx solid #faca82;
   border-radius: 0rpx;
 }
 
 .text-1 {
   position: absolute;
-  font-size: 12px;
+  font-size: 13px;
   background: white;
   margin: -10px 0 0 10px;
   padding: 0px 0px 0px 0px ;
-  color: rgb(144, 147, 167);
+  color: rgb(104, 105, 114);
 }
 
 .input1 {
-  margin:  auto 10px;
+  margin:  auto 12px;
+  font-size: 15px;
+  color: rgb(12, 12, 14);
 }
 .view-contain-2 {
   display: flex;
-  height: 200px;
-  margin: 40rpx 0rpx;
+  height: 60px;
+  margin: 50rpx 0rpx;
   border: 3rpx solid #faca82;
   border-radius: 0rpx;
 }
 
 .text-2 {
   position: absolute;
-  font-size: 12px;
+  font-size: 13px;
   background: white;
   margin: -10px 0 0 10px;
   padding: 0 5px;
-  color: rgb(144, 147, 167);
+  color: rgb(104, 105, 114);
 }
 
 .input2 {
-  margin:  auto 10px;
+  margin:  auto 12px;
+  font-size: 15px;
+  color: rgb(12, 12, 14);
 }
 
 .view-contain-3 {
   display: flex;
-  height: 200px;
-  margin: 40rpx 0rpx;
+  height: 60px;
+  margin: 50rpx 0rpx;
   border: 3rpx solid #faca82;
   border-radius: 0rpx;
 }
 
 .text-3 {
   position: absolute;
-  font-size: 12px;
+  font-size: 13px;
   background: white;
   margin: -10px 0 0 10px;
   padding: 0 5px;
-  color: rgb(144, 147, 167);
+  color: rgb(104, 105, 114);
 }
 
 .input3 {
-  margin:  auto 10px;
+  margin:  auto 12px;
+  font-size: 15px;
+  color: rgb(12, 12, 14);
 }
 
 .submit{
-  margin: 20rpx 0 20rpx 0;
+  margin: 80rpx 0 10rpx 0;
   float: middle;
  }
- 
- .wrong{
-  margin: 20rpx 0 20rpx 0;
-  float: middle;
-}
