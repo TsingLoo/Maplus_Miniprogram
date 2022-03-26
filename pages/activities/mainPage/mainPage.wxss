@@ -44,4 +44,11 @@
   background: #F0F4F3;
   color: #000;
 }
+
+.answer-txt{
+  font-size: 28rpx;
+}
+
+
+
 /*feed-item part is in app.wxss for multiplexing*/

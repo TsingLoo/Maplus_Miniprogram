@@ -117,6 +117,12 @@ Page({
         duration: 2000
       })
     },3000)
+  },
+
+  bindItemTap:function() {
+    wx.navigateTo({
+      url: '/pages/AC_detail/AC_detail',
+    }) 
   }
 
 

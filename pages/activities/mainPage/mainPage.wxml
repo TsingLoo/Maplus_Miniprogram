@@ -59,10 +59,10 @@
               </text>
             </view>
             <view class="answer-actions" bindtap="bindItemTap">
-              <view class="like dot">
+              <view class="like_dot">
                 <a>111 赞同 </a>
               </view>
-              <view class="comments dot">
+              <view class="comments_dot">
                 <a>111 评论 </a>
               </view>
               <view class="follow-it">

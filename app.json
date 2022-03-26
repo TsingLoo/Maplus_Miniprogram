@@ -35,7 +35,7 @@
         "selectedIconPath": "icon/map1.png"
       },
       {
-        "pagePath": "pages/activity/activity",
+        "pagePath": "pages/activities/mainPage/mainPage",
         "text": "acticity",
         "iconPath": "icon/activity.png",
         "selectedIconPath": "icon/activity1.png"
