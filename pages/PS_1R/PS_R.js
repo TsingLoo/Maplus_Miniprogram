@@ -28,6 +28,16 @@ console.log("userPassword: " + this.data.userPassword)
 },
 
 submit:function(){
+var a = this.data.userName;
+var b = this.data.userNickname;
+var c = this.data.userPassword;
+if(a == '' || b == '' || c == ''){
+wx.showToast({
+title: '信息不得为空！',
+icon:'error',
+duration:1000
+}) 
+}
 wx.request({
 url: 'http://localhost:8080/userRegister',
 method: 'post',

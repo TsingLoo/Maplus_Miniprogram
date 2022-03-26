@@ -12,6 +12,14 @@ console.log("userNickname: " + this.data.userNickname)
 },
 
 submit:function(){
+var N = this.data.userNickname;
+if(N == ''){
+wx.showToast({
+title: '昵称不得为空！',
+icon:'error',
+duration:1000
+}) 
+}
 wx.request({
 url: 'http://localhost:8080/changeNickname',
 method: 'post',
