@@ -76,7 +76,7 @@ Page({
     console.log("userName: " + this.data.userName)
     },
     
-    inputuerPassword:function(e){
+    inputuserPassword:function(e){
     this.setData({
     userPassword:e.detail.value
     })
