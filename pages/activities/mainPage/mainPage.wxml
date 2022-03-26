@@ -47,4 +47,28 @@
             </view>
         </view>
     </block> -->
+
+    <view class="answer-body">
+            <view bindtap="bindItemTap">
+              <text class="answer-txt" aid="啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊多西叠，为什么做不出来啊啊啊啊啊啊啊啊啊啊啊">也许，可能，就是那样了吧
+              已经是，没有关系了，做不出来就从这里跳下去吧
+              不要冲突啊啊啊啊啊啊啊啊啊啊求你啦
+              nonono
+              写长一点，应该就可以了吧
+              这次一定要成啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+              </text>
+            </view>
+            <view class="answer-actions" bindtap="bindItemTap">
+              <view class="like dot">
+                <a>111 赞同 </a>
+              </view>
+              <view class="comments dot">
+                <a>111 评论 </a>
+              </view>
+              <view class="follow-it">
+                <a>关注问题</a>
+              </view>
+            </view>
+          </view>
+
 </scroll-view>
