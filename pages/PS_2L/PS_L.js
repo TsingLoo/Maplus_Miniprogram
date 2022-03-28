@@ -1,68 +1,56 @@
 Page({
   data: {
     userName:"",
-    userNickname:"",
     userPassword:""
   },
 
 inputuserName:function(e){
-this.setData({
-userName:e.detail.value
-})
-console.log("userName: " + this.data.userName)
+  this.setData({
+    userName:e.detail.value
+  })
+  console.log("userName: " + this.data.userName)
 },
 
 inputuserNickname:function(e){
-this.setData({
-userNickname:e.detail.value
-})
-console.log("userNickname: " + this.data.userNickname)
+  this.setData({
+    userNickname:e.detail.value
+  })
+  console.log("userNickname: " + this.data.userNickname)
 },
 
 inputuserPassword:function(e){
   this.setData({
-  userPassword:e.detail.value
+    userPassword:e.detail.value
   })
-  console.log("userPassword: " + this.data.userPassword)
+    console.log("userPassword: " + this.data.userPassword)
   },
 
 login:function(){
-var a = this.data.userName;
-var b = this.data.userNickname;
-var c = this.data.userPassword;
-if(a == '' || b == '' || c == ''){
-wx.showToast({
-title: '信息不得为空！',
-icon:'error',
-duration:1000
-}) 
-}
   wx.request({
-  url: 'http://localhost:8080/userCheck',
-  method: 'post',
-  data:{
-  userName:this.data.userName, 
-  userNickname:this.data.userNickname,
-  userPassword:this.data.userPassword
-  },
-  })
-  wx.request({
-  url: 'http://localhost:8080/userCheck',
-  method: 'get',
-  })
-  var a = this.data.request;
-  if(a == 1){
-  wx.showToast({
-  title: '注册成功！',
-  icon:'success',
-  duration:1000
-  })
-  }else if( a == -1){
-  wx.showToast({
-  title: '该用户名已存在！',
-  icon:'error',
-  duration:1000
+    url: 'http://localhost:8080/login',
+    method: 'POST',
+    data:{
+      userName:this.data.userName, 
+      userPassword:this.data.userPassword
+    },
+    success:function(res)
+    {
+      if(res.data == false)
+      {
+        wx.showToast({
+          title: '昵称密码不匹配',
+          icon:'error',
+          duration:1000
+        }) 
+      }else
+      {
+        console.log("Login Correct!")
+      }
+      
+    },
+  
+
   })
 }
-}
+
 })

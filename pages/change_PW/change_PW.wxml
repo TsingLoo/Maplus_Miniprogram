@@ -1,3 +1,4 @@
+
 <!--pages/change_PW/change_PW.wxml-->
 <view class="view-contain-1">
     <text class="text-1">旧密码 userPassword</text>
@@ -10,12 +11,14 @@
     <text class="text-2">新密码 newPassword</text>
     <input bindinput="inputnewPassword" placeholder="请输入新密码！" 
      class="input2" value="{{newPassword}}"></input>
+     <view>{{newPasswordStatus}}</view>
 </view>
 
 <view class="view-contain-3">
     <text class="text-3">新密码 newPassword</text>
     <input bindinput="inputnewPassword2" placeholder="请二次确认新密码！" 
  class="input3" value="{{newPassword2}}"></input>
+    <view>{{newPassword2Status}}</view>
 </view>
 
 <button 

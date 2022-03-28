@@ -1,63 +1,74 @@
+const app = getApp();
 // pages/PS_L&R/PS_L&R.js
 Page({
 data: {
-userName:"",
-userNickname:"",
-userPassword:"",
-userNameStatus: "fine",
-userNicknameStatus: "fine",
-userPasswordStatus:"fine"
+  userName:"",
+  userNickname:"",
+  userPassword:"",
+  userNameStatus: "",
+  userNicknameStatus: "",
+  userPasswordStatus:"",
+  userNameCheck: false,
+  userNicknameCheck: false,
+  userPasswordCheck: false
 },
 
 inputuserName:function(e){
   //获取用户输入的用户名
   this.setData({
-    userName:e.detail.value
+    userName:e.detail.value,
+    userNameCheck: false
   })
   console.log("userName: " + this.data.userName)
-  //检查用户名中是否含有特殊字符
+  //如果用户没有输入字符，等待输入
   if(this.data.userName.length == 0)
   {
     this.setData({
       userNameStatus: ""
     })
+    
+    //如果用户输入的字符在12个字符以内，执行检验的逻辑
   }else if(this.data.userName.length <= 12)
   {
+    //判断字符串是否只由英文和数字构成
     if(!this.alphanumeric(this.data.userName))
     {
-    //如果有，那么报错
+    //如果不是报错
       this.setData({
         userNameStatus: "Invalid Character Detected"
       })
     }else
     {
-    //如果没有，那么向服务器发起验重请求
+    //如果是，那么向服务器发起验重请求
       this.setData({
-        userNameStatus: "Valid Username"
+        userNameStatus: "Valid UserName,waiting for check",
+        requestUrl :  'http://localhost:8080/userCheck/' + this.data.userName
       })
-
-      var that = this 
+      //发起验重请求
+      var that = this
+  
+      console.log(this.data.requestUrl)
       wx.request({
-        url: 'http://localhost:8080/userCheck',
+        url: this.data.requestUrl,
         method: 'POST',
-        data:
-        { 
-          userName:  this.data.userName
-        },
         success:function(res)
         {
+          console.log(res.data)
           //如果用户名重复
           if(res.data == (-1))
           {
             console.log("Valid UserName, Repeated Name"),
             that.setData({
-              userNameStatus: "Reeated Username"
+              userNameStatus: "Repeated Username"
+              
             })
           }else
           {
+            //如果用户名没有重复，userName检验完成
             console.log("Valid UserName,No repeat")
             that.setData({
-              userNameStatus: "Valid UserName"
+              userNameStatus: "Valid UserName",
+              userNameCheck: true
             })
           }
         }
@@ -69,50 +80,6 @@ inputuserName:function(e){
       userNameStatus: "Only 12 characters is allowed"
     })
   }
-
-  // if(!this.alphanumeric(this.data.userName))
-  // {
-  //   //如果有，那么报错
-  //   this.setData({
-  //     userNameStatus: "Invalid Character Detected"
-  //   })
-  // }else
-  // {
-  //   //如果没有，那么向服务器发起验重请求
-  //   this.setData({
-  //     userNameStatus: "Valid Username"
-  //   })
-
-  //   var that = this 
-  //   wx.request({
-  //     url: 'http://localhost:8080/userCheck',
-  //     method: 'POST',
-  //     data:
-  //     {
-  //       userName:  this.data.userName
-  //     },
-  //     success:function(res)
-  //     {
-  //       //如果用户名重复
-  //       if(res.data == (-1))
-  //       {
-  //         console.log("Valid UserName, Repeated Name"),
-  //         that.setData({
-      
-  //           userNameStatus: "Reeated Username"
-  //         })
-  //       }else
-  //       {
-  //         console.log("Valid UserName,No repeat")
-  //         that.setData({
-  //           userNameStatus: "Valid UserName"
-  //         })
-  //       }
-      
-  //     }
-  //   })
-  // }
-
 },
 
 alphanumeric:function(str)
@@ -128,81 +95,98 @@ else
   }
 },
 
-
-// contain:function(str,charset){undefined
-
-//   var i;
-//   for(i=0; i<charset.length; i++)
-//     if(str.indexOf(charset.charAt(i))>=0)
-//   return true;
-// },
-
-  
-// CheckForm:function(str){undefined
-//   if(this.contain(str," ^[^!@#$%^&*.()-=+]+$ ")){undefined
-//     //非法
-//       console.log("对不起!\n您输入的是非法字符!请重新输入!");
-//     return false;
-//   }else{undefined
-//       //合法
-//       console.log("恭喜您!\n输入的字符合法!");
-//     return true;
-//   }
-// },
-
-
-
 inputuserNickname:function(e){
-this.setData({
-userNickname:e.detail.value
-})
-console.log("userNickname: " + this.data.userNickname)
+  this.setData({
+    userNickname:e.detail.value,
+    userNicknameCheck:false
+  })
+  console.log("userNickname: " + this.data.userNickname)
+
+  if(this.data.userNickname.length == 0)
+  {
+    this.setData({
+      userNicknameStatus:"",
+      userNicknameCheck:false
+    })
+  }else if(0<this.data.userNickname.length && this.data.userNickname.length <=12)
+  {
+    this.setData({
+      userNicknameStatus:"Sound Nickname",
+      userNicknameCheck:true
+    })
+  }else
+  {
+    this.setData({
+      userNicknameStatus:"Only 12 characters is allowed",
+      userNicknameCheck:false
+    })
+  }
 },
     
 inputuserPassword:function(e){
-this.setData({
-userPassword:e.detail.value
-})
-console.log("userPassword: " + this.data.userPassword)
+  this.setData({
+    userPassword:e.detail.value,
+    userPasswordCheck:false
+  })
+  console.log("userPassword: " + this.data.userPassword)
+
+  if(this.data.userPassword.length == 0)
+  {
+    this.setData({
+      userPasswordStatus:"",
+      userPasswordCheck:false
+    })
+  }else if(0<this.data.userPassword.length && this.data.userPassword.length <=12)
+  {
+    this.setData({
+      userPasswordStatus:"Sound Password",
+      userPasswordCheck:true
+    })
+  }else
+  {
+    this.setData({
+      userPasswordStatus:"Only 12 characters is allowed",
+      userPasswordCheck:false
+    })
+  }
 },
 
 submit:function(){
-var a = this.data.userName;
-var b = this.data.userNickname;
-var c = this.data.userPassword;
-if(a == '' || b == '' || c == ''){
-wx.showToast({
-title: '信息不得为空！',
-icon:'error',
-duration:1000
-}) 
-}
-// wx.request({
-// url: 'http://localhost:8080/userRegister',
-// method: 'post',
-// data:{
-// userName:this.data.userName, 
-// userNickname:this.data.userNickname,
-// userPassword:this.data.userPassword
-// },
-// })
-// wx.request({
-// url: 'http://localhost:8080/userRegister',
-// method: 'get',
-// })
-// var a = this.data.request;
-// if(a == true){
-// wx.showToast({
-// title: '注册成功！',
-// icon:'success',
-// duration:1000
-// })
-// }else if( a == false){
-// wx.showToast({
-// title: '该用户名已存在！',
-// icon:'error',
-// duration:1000
-// })
-// } 
+  console.log(this.data.userNameCheck)
+  console.log(this.data.userNicknameCheck)
+  console.log(this.data.userPasswordCheck)
+
+  if(this.data.userNameCheck&&this.data.userNicknameCheck&&this.data.userPasswordCheck)
+  {
+    var that = this
+    wx.request({
+      url: 'http://localhost:8080/userRegister',
+      method:'POST',
+      data:{
+        userName: this.data.userName,
+        userNickname: this.data.userNickname,
+        userPassword: this.data.userPassword
+      },
+      success:function(res)
+      {
+        app.globalData.id = res.data
+        app.globalData.userName = that.data.userName
+        app.globalData.logged = true
+        console.log("Regist success, my id is" +res.data)
+      },
+      fail:function(res)
+      {
+        console.log("Failed to regist")
+      }
+      
+    })
+  }else
+  {
+    wx.showToast({
+       title: '注册信息有误！',
+       icon:'error',
+       duration:1000
+       }) 
+  }
 }
 })
