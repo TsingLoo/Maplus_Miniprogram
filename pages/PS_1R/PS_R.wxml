@@ -1,19 +1,19 @@
 <view class="view-contain-1">
     <text class="text-1">用户名 userName</text>
-    <input bindinput="inputuserName" placeholder="请输入用户名！" class="input1"  value="{{userName}}"
-   ></input>
+    <input bindinput="inputuserName" placeholder="请输入用户名！" class="input1"  value="{{userName}}"></input>
+    <view>{{userNameStatus}}</view>
 </view>
 
 <view class="view-contain-2">
     <text class="text-2">用户昵称 userNickname</text>
-    <input bindinput="inputuserNickname" placeholder="请输入昵称！" 
- class="input2" value="{{userNickname}}"></input>
+    <input bindinput="inputuserNickname" placeholder="请输入昵称！" class="input2" value="{{userNickname}}"></input>
+    <view>{{userNicknameStatus}}</view>
 </view>
 
 <view class="view-contain-3">
     <text class="text-3">密码 userPassword</text>
-    <input bindinput="inputuserPassword" placeholder="请输入密码！" 
- class="input3" value="{{userPassword}}"></input>
+    <input bindinput="inputuserPassword" placeholder="请输入密码！" class="input3" value="{{userPassword}}"></input>
+    <view>{{userPasswordStatus}}</view>
 </view>
    
 
