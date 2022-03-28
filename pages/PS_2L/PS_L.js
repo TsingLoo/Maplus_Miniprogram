@@ -1,3 +1,5 @@
+const app = getApp();
+
 Page({
   data: {
     userName:"",
@@ -26,6 +28,7 @@ inputuserPassword:function(e){
   },
 
 login:function(){
+  var that = this
   wx.request({
     url: 'http://localhost:8080/login',
     method: 'POST',
@@ -45,6 +48,8 @@ login:function(){
       }else
       {
         console.log("Login Correct!")
+        app.globalData.userName = that.data.userName
+
       }
       
     },

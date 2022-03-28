@@ -7,7 +7,8 @@ data: {
   newPassword:"",
   newPassword2:"",
   newPasswordStatus:"",
-  newPassword2Status:""
+  newPassword2Status:"",
+  check:false
 },
 
 inputuserPassword:function(event){
@@ -15,7 +16,7 @@ inputuserPassword:function(event){
     userPassword:event.detail.value
   })
 
-  console.log(app.globalData.id)
+  //console.log(app.globalData.id)
   console.log("userPassword: " + this.data.userPassword)
 },
   
@@ -48,13 +49,15 @@ inputnewPassword:function(event){
 
 inputnewPassword2:function(event){
   this.setData({
-    newPassword2:event.detail.value
+    newPassword2:event.detail.value,
+    check:false
   })
   console.log("newPassword2: " + this.data.newPassword2)
   if(this.data.newPassword == this.data.newPassword2)
   {
     this.setData({
-      newPassword2Status: "Check"      
+      newPassword2Status: "Check",      
+      check: true
     })
   }else
   {
@@ -65,54 +68,46 @@ inputnewPassword2:function(event){
 },
 
 submit:function(event){     
-var old = this.data.userPassword;
-var new1 = this.data.newPassword;
-var new2 = this.data.newPassword2;
-console.log(event)
-if(old == '' || new1 == '' || new2 == ''){
-wx.showToast({
-title: '密码不能为空！',
-icon:'error',
-duration:1000
-})
-}else if(old == new1){
-  wx.showToast({
-  title: '新旧密码一致！',
-  icon:'error',
-  duration:1000
-  })
-}else if(new1 != new2){
-wx.showToast({
-title: '两次密码不一致！',
-icon:'error',
-duration:1000
-})
-}else{
-wx.request({
-url: 'http://localhost:8080/changePsw',
-method: 'post',
-data:{
-userPassword:this.data.newPassword,
+  if(this.data.check == false)
+  {
+    wx.showToast({
+      title: '重复密码错误',
+      icon:'error',
+      duration:1000
+    })
+  }else
+  {
+    this.setData({
+      requestUrl:"http://localhost:8080/changePsw/" + app.globalData.userName +"/" + this.data.userPassword +"/" +this.data.newPassword
+    })
+
+    console.log(this.data.requestUrl)
+    wx.request({
+      url: this.data.requestUrl,
+      method:'POST',
+      success(res)
+      {
+        if(res.data == true)
+        {
+          console.log(res.data)
+          console.log("修改成功")
+        }else
+        {
+          wx.showToast({
+            title: '原密码错误',
+            icon:'error',
+            duration:1000
+          })
+        }
+      },
+      fail:function(res)
+      {
+        console.log("Failed" + res.data)
+      }
+      
+    })
+  }
+
 }
-})
-wx.request({
-url: 'http://localhost:8080/changePsw',
-method: 'get',
-}) 
-var a = this.data.request;
-if(a == true){
-wx.showToast({
-title: '修改成功！',
-icon:'success',
-duration:1000
-})
-}else if(a == false){
-wx.showToast({
-title: '异常请重试！',
-icon:'error',
-duration:1000
-})
-}
-}
-}
+
 })

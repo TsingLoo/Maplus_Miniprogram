@@ -4,6 +4,7 @@
     <text class="text-2">用户昵称 userNickname</text>
     <input bindinput="inputuserNickname" placeholder="请输入新昵称！" 
  class="input2" value="{{userNickname}}"></input>
+ <view>{{userNicknameStatus}}</view>
 </view>
 
 <button 
