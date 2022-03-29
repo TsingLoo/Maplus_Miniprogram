@@ -186,7 +186,7 @@ submit:function(){
        title: '注册信息有误！',
        icon:'error',
        duration:1000
-       }) 
+    }) 
   }
 }
 })

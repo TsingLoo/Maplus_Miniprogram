@@ -68,6 +68,7 @@ inputnewPassword2:function(event){
 },
 
 submit:function(event){     
+
   if(this.data.check == false)
   {
     wx.showToast({

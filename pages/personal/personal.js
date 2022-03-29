@@ -1,3 +1,6 @@
+const app = getApp()
+
+
 Page({
 
   data:{
@@ -17,14 +20,38 @@ go_to_PS_R(){
 },
 
 go_to_change_PW(){
-  wx.navigateTo({
-    url: '/pages/change_PW/change_PW',
-  })
+
+  if(app.globalData.logged == false)
+  {
+    wx.showToast({
+      title: '请先登录！',
+      icon:'error',
+      duration:1000
+   }) 
+  }else
+  {
+    wx.navigateTo({
+      url: '/pages/change_PW/change_PW',
+    })
+  }
+
 },
 
+
 go_to_change_NN(){
+
+  if(app.globalData.logged == false)
+  {
+    wx.showToast({
+      title: '请先登录！',
+      icon:'error',
+      duration:1000
+   }) 
+  }else
+  {
   wx.navigateTo({
     url: '/pages/change_NN/change_NN',
   })
+  }
 }
 })

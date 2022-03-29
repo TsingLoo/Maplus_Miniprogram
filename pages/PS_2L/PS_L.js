@@ -28,17 +28,20 @@ inputuserPassword:function(e){
   },
 
 login:function(){
+  
+
+
+
   var that = this
+  that.setData({
+    requestUrl: "http://localhost:8080/login/" + that.data.userName +"/" + that.data.userPassword
+  })
   wx.request({
-    url: 'http://localhost:8080/login',
+    url: that.data.requestUrl,
     method: 'POST',
-    data:{
-      userName:this.data.userName, 
-      userPassword:this.data.userPassword
-    },
     success:function(res)
     {
-      if(res.data == false)
+      if(res.data == -1)
       {
         wx.showToast({
           title: '昵称密码不匹配',
@@ -47,9 +50,10 @@ login:function(){
         }) 
       }else
       {
-        console.log("Login Correct!")
+        console.log("Login Correct!" + res.data)
         app.globalData.userName = that.data.userName
-
+        app.globalData.id = res.data
+        app.globalData.logged = true
       }
       
     },
