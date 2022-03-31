@@ -94,7 +94,9 @@
             </a>
           </view>
           <view class="answer-body">
+            
             <view bindtap="bindItemTap">
+          
               <text class="answer-txt" aid="{{answer_id}}">{{item.answer_ctnt}}</text>
             </view>
             <view class="answer-actions" bindtap="bindItemTap">

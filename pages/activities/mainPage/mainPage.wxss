@@ -50,10 +50,13 @@
 }
 
 .question{
+  line-height: 80rpx;
+  font-weight: 700;
   font-size: 35rpx;
 }
 
 .answer-txt{
+
   font-size: 28rpx;
 }
 
@@ -77,9 +80,9 @@
 
   width:200%;
   
-  height:10rpx;
+  height:15rpx;
   
-  background:#aaa;
+  background:rgb(221, 221, 221);
   
   }
 /*feed-item part is in app.wxss for multiplexing*/
