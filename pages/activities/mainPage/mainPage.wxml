@@ -48,26 +48,32 @@
         </view>
     </block> -->
 
+<!--heihei,我在这
     <view class="answer-body">
             <view bindtap="bindItemTap">
+-->
+
+
             <!--'aid ='的这段我不是很清楚，不够后面'_ctnt'应该是获取对象文字内容
             原码为  <text class="answer-txt" aid="{{answer_id}}">{{item.answer_ctnt}}</text>
             -->
+
+            <!--heihei,我又在这
               <text class="answer-txt" aid="啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊多西叠，为什么做不出来啊啊啊啊啊啊啊啊啊啊啊">也许，可能，就是那样了吧
-              已经是，没有关系了，做不出来就从这里跳下去吧
-              不要冲突啊啊啊啊啊啊啊啊啊啊求你啦
-              nonono
-              写长一点，应该就可以了吧
-              这次一定要成啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+                    已经是，没有关系了，做不出来就从这里跳下去吧
+                    不要冲突啊啊啊啊啊啊啊啊啊啊求你啦
+                    nonono
+                    写长一点，应该就可以了吧
+                    这次一定要成啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
               </text>
             </view>
             <view class="answer-actions" bindtap="bindItemTap">
               <view class="like_dot">
-                <!--这里有一个获取数据的方法，源码为 <a>{{item.good_num}} 赞同 </a>-->
+
                 <a>111 赞同 </a>
               </view>
               <view class="comments_dot">
-                <!--这里有一个获取数据的方法，源码为<a>{{item.comment_num}} 评论 </a>-->
+   
                 <a>111 评论 </a>
               </view>
               <view class="follow-it">
@@ -75,5 +81,37 @@
               </view>
             </view>
           </view>
+          -->
+
+
+    <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+      
+
+        <view class="feed-content">
+          <view class="question" qid="{{question_id}}" bindtap="bindItemTap">
+            <a class="question-link">
+              <text>{{item.question}}</text>
+            </a>
+          </view>
+          <view class="answer-body">
+            <view bindtap="bindItemTap">
+              <text class="answer-txt" aid="{{answer_id}}">{{item.answer_ctnt}}</text>
+            </view>
+            <view class="answer-actions" bindtap="bindItemTap">
+              <view class="like_dot">
+                <a>111 赞同 </a>
+              </view>
+              <view class="comments_dot">
+                <a>111 评论 </a>
+              </view>
+              <view class="follow-it">
+                <a>关注问题</a>
+              </view>
+            </view>
+          </view>
+        </view>
+      
+    </block>
+
 
 </scroll-view>

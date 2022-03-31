@@ -50,5 +50,15 @@
 }
 
 
+.like_dot{
+  display: inline;
+}
 
+.comments_dot{
+  display: inline;
+}
+
+.follow-it{
+  display: inline;
+}
 /*feed-item part is in app.wxss for multiplexing*/
