@@ -107,7 +107,11 @@
               <view class="follow-it">
                 <a>关注问题</a>
               </view>
+              <view class="line">
+              </view>
             </view>
+
+
           </view>
         </view>
       

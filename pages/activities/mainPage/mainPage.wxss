@@ -45,20 +45,41 @@
   color: #000;
 }
 
+.feed-content{
+  font-size: large;
+}
+
+.question{
+  font-size: 35rpx;
+}
+
 .answer-txt{
   font-size: 28rpx;
 }
 
 
 .like_dot{
+  font-size: 24rpx;
   display: inline;
 }
 
 .comments_dot{
+  font-size: 24rpx;
   display: inline;
 }
 
 .follow-it{
+  font-size: 24rpx;
   display: inline;
 }
+
+.line{
+
+  width:200%;
+  
+  height:10rpx;
+  
+  background:#aaa;
+  
+  }
 /*feed-item part is in app.wxss for multiplexing*/

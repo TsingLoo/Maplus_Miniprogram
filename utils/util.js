@@ -20,10 +20,9 @@ module.exports = {
   formatTime: formatTime
 };
 
-var index = require('../data/data_index.js')
-var index_next = require('../data/data_index_next.js')
-var discovery = require('../data/data_discovery.js')
-var discovery_next = require('../data/data_discovery_next.js')
+
+var mainPage = require('../data/data_mainPage.js')
+var mainPage_next = require('../data/data_mainPage_next.js')
 
 function getData(url){
   return new Promise(function(resolve, reject){
@@ -45,27 +44,18 @@ function getData(url){
   })
 }
 
-function getData2(){
-  return index.index;
-}
-
-function getNext(){
-  return index_next.next;
-}
 
 function getDiscovery(){
-  return discovery.discovery;
+  return mainPage.mainPage;
 }
 
 function discoveryNext(){
-  return discovery_next.next;
+  return mainPage_next.next;
 }
 
 
 
-module.exports.getData = getData;
-module.exports.getData2 = getData2;
-module.exports.getNext = getNext;
+
 module.exports.getDiscovery = getDiscovery;
 module.exports.discoveryNext = discoveryNext;
 
