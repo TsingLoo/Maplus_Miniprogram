@@ -101,7 +101,7 @@
             </view>
             <view class="answer-actions" bindtap="bindItemTap">
               <view class="like_dot">
-                <a>111 赞同 </a>
+                <a>111 热度 </a>
               </view>
               <view class="comments_dot">
                 <a>111 评论 </a>
@@ -109,12 +109,14 @@
               <view class="follow-it">
                 <a>关注问题</a>
               </view>
-              <view class="line">
-              </view>
+             
+              
+             
             </view>
 
-
           </view>
+          <view class="line">
+            </view>
         </view>
       
     </block>

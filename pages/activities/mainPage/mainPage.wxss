@@ -47,33 +47,50 @@
 
 .feed-content{
   font-size: large;
+  
 }
 
 .question{
   line-height: 80rpx;
   font-weight: 700;
   font-size: 35rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+
+}
+
+.answer-body{
+  margin-left: 20rpx;
+  margin-right: 25rpx;
+  margin-bottom: 15rpx;
 }
 
 .answer-txt{
 
   font-size: 28rpx;
+  
+ 
 }
 
 
 .like_dot{
   font-size: 24rpx;
   display: inline;
+  color: orangered;
 }
 
 .comments_dot{
   font-size: 24rpx;
   display: inline;
+  color: rgb(40, 155, 250);
+
 }
 
 .follow-it{
   font-size: 24rpx;
   display: inline;
+  color:blueviolet
+
 }
 
 .line{
