@@ -21,8 +21,10 @@ module.exports = {
 };
 
 
+
 var mainPage = require('../data/data_mainPage.js')
 var mainPage_next = require('../data/data_mainPage_next.js')
+
 
 function getData(url){
   return new Promise(function(resolve, reject){
@@ -52,6 +54,7 @@ function getDiscovery(){
 function discoveryNext(){
   return mainPage_next.next;
 }
+
 
 
 
