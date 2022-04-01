@@ -1,43 +1,61 @@
 /* pages/AC_detail/AC_detail.wxss */
-.view-contain-q1 {
-    display: flex;
-    height: 2000px;
-    margin: 40rpx 0rpx;
-    border: 3rpx solid #faca82;
-    border-radius: 0rpx;
-  }
-  
-  .text-q1 {
-    position: absolute;
-    font-size: 40px;
-    background: white;
-    margin: -10px 0 0 10px;
-    padding: 0px 0px 0px 0px ;
-    color: rgb(144, 147, 167);
-  }
-
-  
-  .inputq1 {
-    margin:  auto 10px;
-
-  }
-  .view-contain-q2 {
-    display: flex;
-    height: 200px;
-    margin: 40rpx 0rpx;
-    border: 3rpx solid #faca82;
-    border-radius: 0rpx;
-  }
-  
-  .text-q2 {
-    position: absolute;
-    font-size: 12px;
-    background: white;
-    margin: -10px 0 0 10px;
-    padding: 0 5px;
-    color: rgb(144, 147, 167);
-  }
-  
-  .inputq2 {
-    margin:  auto 10px;
-  }
+.uploadOut {
+  background-color: #eeece9;
+  position: relative;
+}
+.utilTop {
+  background-color: #fff;
+  width: 100%;
+  height: 115rpx;
+  line-height: 115rpx;
+  border-top: 1px solid #eeece9;
+  border-bottom: 1px solid #eeece9;
+  padding-left: 405rpx;
+  padding-right: 18rpx;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+.van-button.van-button--info.van-button--small {
+  border-radius: 9rpx;
+  margin-left: 37rpx;
+}
+.articleTitle {
+  margin-top: 115rpx;
+}
+.uploadRadio {
+  background-color: #fff;
+  border-bottom: 1px solid #eeece9;
+  padding: 10rpx 10rpx 20rpx 20rpx;
+}
+/* .van-radio__icon {
+  width: 35rpx !important;
+  height: 35rpx !important;
+}
+.van-radio__label.van-radio__label--right {
+  font-size: 30rpx !important;
+} */
+.van-radio.van-radio--horizontal {
+  margin-top: 20rpx;
+}
+.mineBody {
+  background-color: #fff;
+  height: calc(100vh + 5000px);
+}
+.btn{
+  margin: 20rpx 50rpx;
+  background-color: #D20A0A;
+  color: white;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+}
+.van-popup--bottom.van-popup--safe {
+  padding: 10px 10px 6px;
+}
+.van-icon.van-icon-cross {
+  top: -18rpx;
+  left: 21rpx;
+}
+@import "../components/wxParse/wxParse.wxss" 

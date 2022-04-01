@@ -1,12 +1,56 @@
 <!--pages/AC_detail/AC_detail.wxml-->
-<button bindtap="go_to_revise1">revise</button>
-<!--下面是信息1的文本框-->
-<view class="view-contain-q1">
-    <text class="text-q1">{{activityTitle}}</text>
-    <input class="inputq1"></input>
-</view>
-<!--下面是信息abc的文本框-->
-<view class="view-contain-q2">
-    <text class="text-q2">信息 晚上好</text>
-    <input class="inputq2"></input>
-</view>
+<import src="../components/wxParse/wxParse.wxml" />
+ <view class="uploadOut">
+   <!-- 预览/发布 -->
+   <view class="utilTop">
+     <van-button type="info" size="small" bindtap="submit">预览</van-button>
+     <van-button type="info" size="small" bind:click="uploadContent">发布</van-button>
+   </view>
+   <!-- 文章标题 -->
+   <view class="articleTitle">
+     <van-cell-group>
+       <van-field
+         model:value="{{ titValue }}"
+         placeholder="请输入文章标题"
+         border="{{ false }}"
+       />
+     </van-cell-group>
+   </view>
+   <!-- 文章分类 -->
+   <view class="uploadRadio">
+     <van-radio-group
+       value="{{ radio }}" 
+       bind:change="onChange"
+       direction="horizontal">
+       <van-radio
+       disabled="{{item.scMlName == '积分兑换'}}"
+       wx:for="{{mlList}}"
+       wx:key="index"
+       name="{{item.scMlName}}">{{item.scMlName}}</van-radio>
+     </van-radio-group>
+   </view>
+   <view class="mineBody">
+     <!-- 富文本上传组件 -->
+     <hf_editor 
+     width="100%" 
+     height="100%" 
+     insertPicture="{{true}}" 
+     placeholder="编写文章..." 
+     bind:Content="getHtml" 
+     bind:insertImage="insertImage" 
+     id="hf_editor"/>
+     <!-- 预览弹层 -->
+     <van-popup
+       show="{{ ylShow }}"
+       position="bottom"
+       closeable
+       close-icon="cross"
+       close-icon-position="top-right"
+       custom-style="height: 95%;"
+       bind:close="onClose"
+     >
+     <!-- html结构解析组件 -->
+     <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+     </van-popup>
+   </view>
+ </view>
