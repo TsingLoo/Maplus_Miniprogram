@@ -17,3 +17,5 @@ bindtap="go_to_change_NN"
 
 </view>
 
+<button  bindtap="go_to_collection">我的收藏</button>
+

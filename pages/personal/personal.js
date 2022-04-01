@@ -53,5 +53,13 @@ go_to_change_NN(){
     url: '/pages/change_NN/change_NN',
   })
   }
+},
+
+go_to_collection(){
+  wx.navigateTo({
+    url: '/pages/collection/collection',
+  })
+
 }
+
 })
