@@ -24,7 +24,8 @@ module.exports = {
 
 var mainPage = require('../data/data_mainPage.js')
 var mainPage_next = require('../data/data_mainPage_next.js')
-
+var collection = require('../data/data_collection.js')
+var collection_next = require('../data/data_collection_next.js')
 
 function getData(url){
   return new Promise(function(resolve, reject){
@@ -55,12 +56,19 @@ function discoveryNext(){
   return mainPage_next.next;
 }
 
+function getCollection() {
+  return collection.collection
+}
 
-
+function collectionNext() {
+  return collection_next.next
+}
 
 
 module.exports.getDiscovery = getDiscovery;
 module.exports.discoveryNext = discoveryNext;
+module.exports.getCollection = getCollection;
+module.exports.collectionNext = collectionNext;
 
 
 
