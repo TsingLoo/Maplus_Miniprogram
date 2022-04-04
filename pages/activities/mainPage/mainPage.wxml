@@ -88,20 +88,20 @@
       
 
         <view class="feed-content">
-          <view class="question" qid="{{question_id}}" bindtap="bindItemTap">
+          <view class="question" qid="{{id}}" bindtap="bindItemTap">
             <a class="question-link">
-              <text>{{item.question}}</text>
+              <text>{{item.activityTitle}}</text>
             </a>
           </view>
           <view class="answer-body">
             
             <view bindtap="bindItemTap">
           
-              <text class="answer-txt" aid="{{answer_id}}">{{item.answer_ctnt}}</text>
+              <text class="answer-txt" >{{item.activityDesc}}</text>
             </view>
             <view class="answer-actions" bindtap="bindItemTap">
               <view class="like_dot">
-                <a>111 热度 </a>
+                <a>{{item.hot}} hot</a>
               </view>
               <view class="comments_dot">
                 <a>111 评论 </a>
