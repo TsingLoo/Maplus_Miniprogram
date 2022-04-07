@@ -52,9 +52,12 @@ Page({
     this.setData({
       ylShow: true
     })
-   WxParse.wxParse('article', 'html', this.data.element+this.data.html, this, 5);
+    var temp = WxParse.wxParse('article', 'html', this.data.element+this.data.html, this, 5);
 
+    this.setData({
+      article: temp,
 
+    })
   },
   uploadContent(){  // 点击发布
     if(this.data.html == ''){
