@@ -6,6 +6,12 @@ Page({
     ylShow: false, // 预览弹层
     article: '',  // 要解析的html结构数据
     titValue: '',  // 文章标题
+    publisherValue: '', //活动发布者
+    activityDescValue: '', //活动简介
+    timeValue: '', //活动时间
+    roomValue: '', //活动地点
+    targetPeopleValue: '', //目标人群
+    estimateNumValue: '', //报名人数
     url: '',        // 上传图片url
     radioV: '',    // 单选按钮所选
     mlList: '',    // 目录列表/所有单选
@@ -21,7 +27,21 @@ Page({
   getHtml(e) {  // 获取实时富文本
     this.setData({
       // html:e.detail.content.html
-      html: `<p style="text-align: center;"><strong>${this.data.titValue}</strong></p><p style="text-align: center;"><br></p>${e.detail.content.html}`
+      html: `<p style="text-align: center;"><strong>${this.data.titValue}</strong></p>
+      <p style="text-align: center;"><br></p>
+      <p style="text-align: left;"><em>${this.data.publisherValue}</em></p>
+      <p style="text-align: center;"><br></p>
+      <p style="text-align: left;"><em>${this.data.activityDescValue}</em></p> 
+      <p style="text-align: center;"><br></p>
+      <p style="text-align: left;"><em>${this.data.timeValue}</em></p> 
+      <p style="text-align: center;"><br></p>
+      <p style="text-align: left;"><em>${this.data.roomValue}</em></p> 
+      <p style="text-align: center;"><br></p>
+      <p style="text-align: left;"><em>${this.data.targetPeopleValue}</em></p> 
+      <p style="text-align: center;"><br></p>
+      <p style="text-align: left;"><em>${this.data.estimateNumValue}</em></p> 
+      <p style="text-align: center;"><br></p>
+      ${e.detail.content.html}`
     })
     console.log(this.data.html);
   },
@@ -47,6 +67,12 @@ Page({
       .add({
         data: {
           articleTitle: this.data.titValue,
+          publisher: this.data.publisherValue,
+          activityDesc: this.data.activityDescValue,
+          time: this.data.timeValue,
+          buildingRoom: this.data.roomValue,
+          targetPeople: this.data.targetPeopleValue,
+          estimateNum: this.data.estimateNumValue,
           type: this.data.radioV,
           htmlContent: this.data.html,
           url: this.data.url,

@@ -101,7 +101,7 @@
             </view>
             <view class="answer-actions" bindtap="bindItemTap">
               <view class="like_dot">
-                <a>{{item.hot}} hot</a>
+                <a>{{item.hot}} hot  </a>
               </view>
               <view class="comments_dot">
                 <a>111 评论 </a>
