@@ -3,6 +3,7 @@ Page({
   data: {
     radio: '商务合作',
     html: '', // 实时富文本html结构
+    element: '',
     ylShow: false, // 预览弹层
     article: '',  // 要解析的html结构数据
     titValue: '',  // 文章标题
@@ -27,7 +28,7 @@ Page({
   getHtml(e) {  // 获取实时富文本
     this.setData({
       // html:e.detail.content.html
-      html: `<p style="text-align: center;"><strong>${this.data.titValue}</strong></p>
+      element: `<p style="text-align: center;"><strong>${this.data.titValue}</strong></p>
       <p style="text-align: center;"><br></p>
       <p style="text-align: left;"><em>${this.data.publisherValue}</em></p>
       <p style="text-align: center;"><br></p>
@@ -40,19 +41,20 @@ Page({
       <p style="text-align: left;"><em>${this.data.targetPeopleValue}</em></p> 
       <p style="text-align: center;"><br></p>
       <p style="text-align: left;"><em>${this.data.estimateNumValue}</em></p> 
-      <p style="text-align: center;"><br></p>
+      <p style="text-align: center;"><br></p>`,
+      html: `
       ${e.detail.content.html}`
     })
     console.log(this.data.html);
+    console.log(this.data.element);
   },
   submit() {   // 点击预览
     this.setData({
       ylShow: true
     })
-    var temp = WxParse.wxParse('article', 'html', this.data.html, this, 5);
-    this.setData({
-      article: temp
-    })
+   WxParse.wxParse('article', 'html', this.data.element+this.data.html, this, 5);
+
+
   },
   uploadContent(){  // 点击发布
     if(this.data.html == ''){
