@@ -3,7 +3,7 @@ Page({
   data: {
     radio: '商务合作',
     html: '', // 实时富文本html结构
-    element: '',
+    element: '', // 
     ylShow: false, // 预览弹层
     article: '',  // 要解析的html结构数据
     titValue: '',  // 文章标题

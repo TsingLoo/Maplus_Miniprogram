@@ -1,4 +1,14 @@
 /* pages/AC_detail/AC_detail.wxss */
+.line{
+
+  width: 40%;
+  
+  height:15rpx;
+  
+  background:rgb(221, 221, 221);
+  
+  }
+
 .uploadOut {
   background-color: #eeece9;
   position: relative;
