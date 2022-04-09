@@ -16,6 +16,87 @@
        />
      </van-cell-group>
    </view>
+   <view class="line">
+            </view>
+
+   <!--活动发布者 publisher-->
+   <view class="publisher">
+     <van-cell-group>
+       <van-field
+         model:value="{{ publisherValue }}"
+         placeholder="请输入活动发布人"
+         border="{{ false }}"
+       />
+     </van-cell-group>
+   </view>
+   <view class="line">
+            </view>
+
+   <!-- 活动简介（activityDesc） -->
+   <view class="activityDesc">
+     <van-cell-group>
+       <van-field
+         model:value="{{ activityDescValue }}"
+         placeholder="请输入活动简介"
+         border="{{ false }}"
+       />
+     </van-cell-group>
+   </view>
+   <view class="line">
+            </view>
+
+      <!-- 活动时间 Time -->
+      <view class="time">
+     <van-cell-group>
+       <van-field
+         model:value="{{ timeValue }}"
+         placeholder="请输入活动时间"
+         border="{{ false }}"
+       />
+     </van-cell-group>
+   </view>
+   <view class="line">
+            </view>
+
+  <!-- 活动地点 buildingRoom -->
+    <view class="buildingRoom">
+     <van-cell-group>
+       <van-field
+         model:value="{{ roomValue }}"
+         placeholder="请输入活动地点"
+         border="{{ false }}"
+       />
+     </van-cell-group>
+   </view>
+   <view class="line">
+            </view>
+
+    <!-- 目标人群 targetPeople -->
+    <view class="targetPeople">
+     <van-cell-group>
+       <van-field
+         model:value="{{ targetPeopleValue }}"
+         placeholder="请输入目标人群"
+         border="{{ false }}"
+       />
+     </van-cell-group>
+   </view>
+   <view class="line">
+            </view>
+
+       <!-- 报名人数 eatimateNum -->
+       <view class="estimateNumValue">
+     <van-cell-group>
+       <van-field
+         model:value="{{ estimateNumValue }}"
+         placeholder="请输入报名人数"
+         border="{{ false }}"
+       />
+     </van-cell-group>
+   </view>
+   <view class="line">
+            </view>
+
    <!-- 文章分类 -->
    <view class="uploadRadio">
      <van-radio-group
