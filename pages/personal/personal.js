@@ -59,7 +59,11 @@ go_to_collection(){
   wx.navigateTo({
     url: '/pages/collection/collection',
   })
+},
 
+go_to_personal_activity(){
+  wx.navigateTo({
+    url: '/pages/personal_activity/personal_activity',
+  })
 }
-
 })

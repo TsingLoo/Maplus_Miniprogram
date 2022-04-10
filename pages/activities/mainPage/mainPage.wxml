@@ -1,125 +1,29 @@
-<!--index.wxml-->
-<scroll-view scroll-y="true" class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-  <view class="search flex-wrp">
-      <view class="search-left flex-item">
-          <image src="../../../icon/search.png"></image>
-          <input placeholder="搜索你感兴趣的活动" placeholder-class="search-placeholder"/>
-      </view>
-      <view class="search-right flex-item" bindtap="upper">
-          <image src="../../../icon/edit.png"></image>
-      </view>
-  </view>
+<scroll-view scroll-y="true" class="container"
+scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
 
+<view class="search flex-wrp">
+<view class="search-left flex-item">
+<image src="../../../icon/search.png"></image>
+<input placeholder="搜索你感兴趣的活动" placeholder-class="search-placeholder"/>
+</view>
 
-    <!-- <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
-        <view class="feed-item">
-            <view class="feed-source">
-                <a class="">
-                    <view class="avatar">
-                        <image src="{{item.feed_source_img}}"></image>
-                    </view>
-                    <text>{{item.feed_source_name}}{{item.feed_source_txt}}</text>
-                </a>
-                <image class="item-more" mode="aspectFit" src="../../images/more.png"></image>
-            </view>
-            <view class="feed-content">
-                <view class="question" qid="{{question_id}}" bindtap="bindQueTap">
-                    <a class="question-link">
-                        <text>{{item.question}}</text>
-                    </a>
-                </view>
-                <view class="answer-body">
-                    <view bindtap="bindItemTap">
-                        <text class="answer-txt" aid="{{answer_id}}">{{item.answer_ctnt}}</text>
-                    </view>
-                    <view class="answer-actions" bindtap="bindItemTap">
-                        <view class="like dot">
-                            <a>{{item.good_num}} 赞同 </a>
-                        </view>
-                        <view class="comments dot">
-                            <a>{{item.comment_num}} 评论 </a>
-                        </view>
-                        <view class="follow-it">
-                            <a>关注问题</a>
-                        </view>
-                    </view>
-                </view>
-            </view>
-        </view>
-    </block> -->
+<view class="search-right flex-item">
+<image src="../../../icon/edit.png"></image>
+</view>
 
-<!--heihei,我在这
-    <view class="answer-body">
-            <view bindtap="bindItemTap">
--->
+<view class="articleTitle" Tid="{{id}}" bindtap="get">
+<text class="Title-txt"> {{item.articleTitle}}</text>
+</view>
 
+<view class="activityDesc" Did="{{id}}" bindtap="get">
+<text class="Desc-txt"> {{item.activityDescValue}}</text>
+</view>
 
-            <!--'aid ='的这段我不是很清楚，不够后面'_ctnt'应该是获取对象文字内容
-            原码为  <text class="answer-txt" aid="{{answer_id}}">{{item.answer_ctnt}}</text>
-            -->
+<view class="hot" Hid="{{id}}" bindtap="get"></view>
+<text class="hot-txt"> {{item.hot}}</text>
+</view> 
 
-            <!--heihei,我又在这
-              <text class="answer-txt" aid="啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊多西叠，为什么做不出来啊啊啊啊啊啊啊啊啊啊啊">也许，可能，就是那样了吧
-                    已经是，没有关系了，做不出来就从这里跳下去吧
-                    不要冲突啊啊啊啊啊啊啊啊啊啊求你啦
-                    nonono
-                    写长一点，应该就可以了吧
-                    这次一定要成啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊
-              </text>
-            </view>
-            <view class="answer-actions" bindtap="bindItemTap">
-              <view class="like_dot">
-
-                <a>111 赞同 </a>
-              </view>
-              <view class="comments_dot">
-   
-                <a>111 评论 </a>
-              </view>
-              <view class="follow-it">
-                <a>关注问题</a>
-              </view>
-            </view>
-          </view>
-          -->
-
-
-    <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
-      
-
-        <view class="feed-content">
-          <view class="question" qid="{{id}}" bindtap="bindItemTap">
-            <a class="question-link">
-              <text>{{item.activityTitle}}</text>
-            </a>
-          </view>
-          <view class="answer-body">
-            
-            <view bindtap="bindItemTap">
-          
-              <text class="answer-txt" >{{item.activityDesc}}</text>
-            </view>
-            <view class="answer-actions" bindtap="bindItemTap">
-              <view class="like_dot">
-                <a>{{item.hot}} hot  </a>
-              </view>
-              <view class="comments_dot">
-                <a>111 评论 </a>
-              </view>
-              <view class="follow-it">
-                <a>关注问题</a>
-              </view>
-             
-              
-             
-            </view>
-
-          </view>
-          <view class="line">
-            </view>
-        </view>
-      
-    </block>
-
+<view class="line">
+</view>
 
 </scroll-view>

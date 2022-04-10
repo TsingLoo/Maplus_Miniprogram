@@ -12,7 +12,7 @@ Page({
     get: function () {
       var that = this;
       wx.request({
-      url:'//localhost:8080/Staractivity/{username}',
+      url:'//localhost:8080/registerActivity/{username}',
       method:'GET',
       success: function(res) {
       var articleTitle = res.data.titValue;
@@ -23,7 +23,7 @@ Page({
       })
   
      wx.request({
-     url: '//localhost:8080/Staractivity/{username}',
+     url: '//localhost:8080/registerActivity/{username}',
      method:'GET',
      success: function(res){
      var hot = res.data.hot;
