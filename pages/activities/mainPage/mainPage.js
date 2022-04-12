@@ -38,7 +38,7 @@ Page({
 
    //导向活动发布页1
    wx.navigateTo({
-    url: '/pages/AC_upload1/AC_upload1',
+    url: '/pages/AC_detail/AC_detail',
   })
 
 
