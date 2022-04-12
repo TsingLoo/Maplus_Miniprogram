@@ -1,6 +1,10 @@
 /**index.wxss**/
 
 .container{
+  padding: 0;
+  font-size: 14rpx;
+  background: #F0F4F3;
+  color: #000;
   height: 1500rpx;
 }
 .container .search{
@@ -38,68 +42,36 @@
   padding: 10rpx;
 }
 
-.container{
-  padding: 0;
-  font-size: 14rpx;
-  background: #F0F4F3;
-  color: #000;
-}
-
-.feed-content{
-  font-size: large;
-  
-}
-
-.question{
-  line-height: 80rpx;
-  font-weight: 700;
-  font-size: 35rpx;
-  margin-left: 15rpx;
-  margin-right: 15rpx;
-
-}
-
-.answer-body{
-  margin-left: 20rpx;
-  margin-right: 25rpx;
-  margin-bottom: 15rpx;
-}
-
-.answer-txt{
-
-  font-size: 28rpx;
-  
- 
-}
-
-
-.like_dot{
-  font-size: 24rpx;
-  display: inline;
-  color: orangered;
-}
-
-.comments_dot{
-  font-size: 24rpx;
-  display: inline;
-  color: rgb(40, 155, 250);
-
-}
-
-.follow-it{
-  font-size: 24rpx;
-  display: inline;
-  color:blueviolet
-
-}
-
-.line{
-
-  width:200%;
-  
-  height:15rpx;
-  
-  background:rgb(221, 221, 221);
-  
+  .articleTitle{
+    line-height: 80rpx;
+    font-weight: 700;
+    font-size: 35rpx;
+    margin-left: 15rpx;
+    margin-right: 15rpx;
   }
-/*feed-item part is in app.wxss for multiplexing*/
+  
+  .Title-txt{
+    font-size: 33rpx; 
+  }
+  
+  .activityDesc{
+    margin-left: 20rpx;
+    margin-right: 25rpx;
+    margin-bottom: 15rpx;
+  }
+  
+  .Desc-txt{
+    font-size: 28rpx; 
+  }
+  
+  .hot{
+    font-size: 24rpx;
+    display: inline;
+    color: orangered;
+  }
+  
+  .line{
+    width:200%;
+    height:15rpx;
+    background:rgb(221, 221, 221);
+    }
