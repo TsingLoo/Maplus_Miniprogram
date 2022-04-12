@@ -120,7 +120,6 @@
      bind:Content="getHtml" 
      bind:insertImage="insertImage" 
      id="hf_editor"/>
-
      <!-- 预览弹层 -->
      <van-popup
        show="{{ ylShow }}"

@@ -1,18 +1,45 @@
-<scroll-view scroll-y="true" class="container"
-scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+<!--pages/collection/collection.wxml-->
 
-<view class="articleTitle" Tid="{{id}}" bindtap="get">
-<text class="Title-txt"> {{item.articleTitle}}</text>
-</view>
+<scroll-view scroll-y="true" class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
 
-<view class="activityDesc" Did="{{id}}" bindtap="get">
-<text class="Desc-txt"> {{item.activityDescValue}}</text>
-</view>
 
-<view class="hot" Hid="{{id}}" bindtap="get"></view>
-<text class="hot-txt">{{item.hot}}</text>
-</view>
 
-<view class="line">
-</view>
+  <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+      
+
+      <view class="feed-content">
+        <view class="question" qid="{{id}}" bindtap="bindItemTap">
+          <a class="question-link">
+            <text>{{item.activityTitle}}</text>
+          </a>
+        </view>
+        <view class="answer-body">
+          
+          <view bindtap="bindItemTap">
+        
+            <text class="answer-txt" >{{item.activityDesc}}</text>
+          </view>
+          <view class="answer-actions" bindtap="bindItemTap">
+            <view class="like_dot">
+              <a>{{item.hot}} 热度 </a>
+            </view>
+            <view class="comments_dot">
+              <a>111 评论 </a>
+            </view>
+            <view class="follow-it">
+              <a>关注问题</a>
+            </view>
+           
+            
+           
+          </view>
+
+        </view>
+        <view class="line">
+          </view>
+      </view>
+    
+  </block>
+
 </scroll-view>
+
