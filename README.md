@@ -1,2 +1,2 @@
 # Maplus_Miniprogram
-111111111111
+Repo for the front-end development of XJTLU Maplus.
