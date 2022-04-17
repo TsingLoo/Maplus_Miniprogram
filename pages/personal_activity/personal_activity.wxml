@@ -11,7 +11,7 @@ scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
 
 <view class="hot" Hid="{{id}}" bindtap="get"></view>
 <text class="hot-txt"> {{item.hot}}</text>
-</view>
+
 
 <view class="line">
 </view>

@@ -4,6 +4,7 @@
     "pages/logs/logs",
     "pages/activity/activity",
     "pages/personal/personal",
+    "pages/personal_activity/personal_activity",
     "pages/AC_upload1/AC_upload1",
     "pages/AC_upload2/AC_upload2",
     "pages/AC_upload3/AC_upload3",
