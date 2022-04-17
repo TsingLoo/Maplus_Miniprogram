@@ -40,12 +40,6 @@ Page({
    wx.navigateTo({
     url: '/pages/AC_detail/AC_detail',
   })
-
-
-  
-   
-   
-   
     //原用于刷新
     // wx.showNavigationBarLoading()
     // this.refresh();
