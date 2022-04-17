@@ -105,7 +105,7 @@
                 <a>{{item.hot}} hot  </a>
               </view>
               <view class="comments_dot">
-                <a>报名人数：{{item.estimateNum}} / {{item.registryNum}} </a>
+                <a>报名人数：{{item.registryNum}} / {{item.estimateNum}} </a>
               </view>
               <view class="follow-it">
                 <a>关注问题</a>
