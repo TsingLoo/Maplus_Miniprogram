@@ -16,8 +16,21 @@
        />
      </van-cell-group>
    </view>
+   <view class="line"></view>
+
+   <!--活动所属俱乐部 publisher-->
+   <view class="publisher">
+     <van-cell-group>
+       <van-field
+         model:value="{{ clubNameValue }}"
+         placeholder="活动所属俱乐部"
+         border="{{ false }}"
+       />
+     </van-cell-group>
+   </view>
    <view class="line">
             </view>
+
 
    <!--活动发布者 publisher-->
    <view class="publisher">
@@ -63,7 +76,7 @@
      <van-cell-group>
        <van-field
          model:value="{{ roomValue }}"
-         placeholder="请输入活动地点"
+         placeholder="请输入活动地点，此处应该为建筑物（提供选择）+房间"
          border="{{ false }}"
        />
      </van-cell-group>

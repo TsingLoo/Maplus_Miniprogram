@@ -8,9 +8,11 @@ Page({
     article: '',  // 要解析的html结构数据
     titValue: '',  // 文章标题
     publisherValue: '', //活动发布者
+    clubNameValue: '', // 活动所属俱乐部    ？
     activityDescValue: '', //活动简介
     timeValue: '', //活动时间
-    roomValue: '', //活动地点
+    buildingValue: '',//活动建筑物           ？
+    roomValue: '', //活动和房间
     targetPeopleValue: '', //目标人群
     estimateNumValue: '', //报名人数
     url: '',        // 上传图片url
@@ -30,8 +32,13 @@ Page({
       // html:e.detail.content.html
       element: `<p style="text-align: center;"><strong>${this.data.titValue}</strong></p>
       <p style="text-align: center;"><br></p>
+
+      <p style="text-align: left;"><em>${this.data.clubNameValue}</em></p>
+      <p style="text-align: center;"><br></p>
+
       <p style="text-align: left;"><em>${this.data.publisherValue}</em></p>
       <p style="text-align: center;"><br></p>
+      
       <p style="text-align: left;"><em>${this.data.activityDescValue}</em></p> 
       <p style="text-align: center;"><br></p>
       <p style="text-align: left;"><em>${this.data.timeValue}</em></p> 
@@ -46,7 +53,7 @@ Page({
       ${e.detail.content.html}`
     })
     console.log(this.data.html);
-    console.log(this.data.element);
+    //console.log(this.data.element);
   },
   submit() {   // 点击预览
     this.setData({
@@ -68,32 +75,60 @@ Page({
       })
     } else {
       var nowTime = new Date().toJSON().substring(0, 10)
-      wx.cloud.database().collection('uploadContentList')
-      .add({
-        data: {
-          articleTitle: this.data.titValue,
-          publisher: this.data.publisherValue,
+      wx.request({
+        url: "http://localhost:8080/createActivity",
+        method: "POST",
+        data:
+        {
+          activityTitle: this.data.titValue,
           activityDesc: this.data.activityDescValue,
-          time: this.data.timeValue,
-          buildingRoom: this.data.roomValue,
-          targetPeople: this.data.targetPeopleValue,
+          clubName: this.data.clubNameValue,
+          publisher: this.data.publisherValue,
+          activityDetail: this.data.html, 
+          building: this.data.buildingValue,
+          room: this.data.roomValue,
           estimateNum: this.data.estimateNumValue,
-          type: this.data.radioV,
-          htmlContent: this.data.html,
-          url: this.data.url,
-          nowTime: nowTime,
-        }
-      }).then(res => {
-          wx.switchTab({
-            url: '/pages/shop/shop',
-          }) 
+          targetPeople: this.data.targetPeopleValue,
+          beginTime: "2022_03_19 10:00:00",
+          endTime:"2022_03_19 14:00:00",
+          registryNum:0,
+          hot:0
+        },
+
+        success:(res)=>
+        {
+          if(res.data>=0)
+          {
+            wx.showToast({
+              title: "文章发布成功",
+              icon: 'none',
+              duration: 2000
+            })   
+            setTimeout(function () {
+              wx.switchTab({
+                url: '/pages/activities/mainPage/mainPage',
+              })
+            }, 2000)
+  
+       
+          }else
+          {
+            wx.showToast({
+              title: '活动信息有误！',
+              icon:'error',
+              duration:2000
+           }) 
+          }
+
+        },
+        fail:(res)=>
+        {
           wx.showToast({
-            title: "文章发布成功",
-            icon: 'none',
-            duration: 2000
-          })   
-      }).catch(err => {
-        console.log('添加失败',err);
+            title: '活动信息有误！',
+            icon:'error',
+            duration:2000
+         }) 
+        }
       })
     }
   },
