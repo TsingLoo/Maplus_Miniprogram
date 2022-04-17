@@ -24,7 +24,7 @@
               <a>{{item.hot}} 热度 </a>
             </view>
             <view class="comments_dot">
-              <a>111 评论 </a>
+              <a>报名人数：{{item.registryNum}} / {{item.estimateNum}} </a>
             </view>
             <view class="follow-it">
               <a>关注问题</a>

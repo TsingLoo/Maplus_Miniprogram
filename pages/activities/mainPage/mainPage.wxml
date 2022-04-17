@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<scroll-view scroll-y="true" class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+<scroll-view scroll-y="true" class="container" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
   <view class="search flex-wrp">
       <view class="search-left flex-item">
           <image src="../../../icon/search.png"></image>
@@ -9,6 +9,7 @@
           <image src="../../../icon/edit.png"></image>
       </view>
   </view>
+
 
 
     <!-- <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
@@ -104,7 +105,7 @@
                 <a>{{item.hot}} hot  </a>
               </view>
               <view class="comments_dot">
-                <a>111 评论 </a>
+                <a>报名人数：{{item.registryNum}} / {{item.estimateNum}} </a>
               </view>
               <view class="follow-it">
                 <a>关注问题</a>
