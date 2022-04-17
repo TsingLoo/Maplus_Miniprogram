@@ -11,8 +11,18 @@ Page({
       scale: 1,  //缩放倍数
     }
   },
+
+
   //事件处理函数
   touchstartCallback: function(e) {
+
+    wx.getLocation({
+      success: function(res){
+        console.log(res.latitude);
+        console.log(res.longitude);
+      }
+    })
+
     //触摸开始
     console.log('touchstartCallback');
     console.log(e);
