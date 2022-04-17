@@ -53,7 +53,7 @@ Page({
       ${e.detail.content.html}`
     })
     console.log(this.data.html);
-    console.log(this.data.element);
+    //console.log(this.data.element);
   },
   submit() {   // 点击预览
     this.setData({
@@ -84,7 +84,7 @@ Page({
           activityDesc: this.data.activityDescValue,
           clubName: this.data.clubNameValue,
           publisher: this.data.publisherValue,
-          activityDetail: this.data.activityDetailValue, 
+          activityDetail: this.data.html, 
           building: this.data.buildingValue,
           room: this.data.roomValue,
           estimateNum: this.data.estimateNumValue,
@@ -102,12 +102,15 @@ Page({
             wx.showToast({
               title: "文章发布成功",
               icon: 'none',
-              duration: 4000
+              duration: 2000
             })   
+            setTimeout(function () {
+              wx.switchTab({
+                url: '/pages/activities/mainPage/mainPage',
+              })
+            }, 2000)
   
-            wx.switchTab({
-              url: '/pages/activities/mainPage/mainPage',
-            })
+       
           }else
           {
             wx.showToast({
