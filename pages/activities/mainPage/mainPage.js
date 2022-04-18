@@ -127,9 +127,16 @@ Page({
 
 
   bindItemTap:function(e) {
-    console.log(e.currentTarget.dataset),
+    //console.log(e.currentTarget.dataset.activityid),
+    let activityID = {
+      acid: e.currentTarget.dataset.activityid
+    };
     wx.navigateTo({
-      url: '/pages/AC_detail/AC_detail',
+      url: '/pages/DetailPage/DetailPage',
+      success: res =>
+      {
+        res.eventChannel.emit('readActivityID',activityID)
+      }
     }) 
   },
 

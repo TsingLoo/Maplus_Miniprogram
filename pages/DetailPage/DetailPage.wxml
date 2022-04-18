@@ -1,0 +1,5 @@
+<!--pages/DetailPage/DetailPage.wxml-->
+<text>{{acid}}</text>
+<view>
+  <rich-text nodes = "{{richContent}}"> </rich-text>  
+</view>
