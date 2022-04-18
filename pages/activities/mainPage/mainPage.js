@@ -126,7 +126,8 @@ Page({
 
 
 
-  bindItemTap:function() {
+  bindItemTap:function(e) {
+    console.log(e.currentTarget.dataset),
     wx.navigateTo({
       url: '/pages/AC_detail/AC_detail',
     }) 
