@@ -49,7 +49,7 @@ Page({
   lower: function (e) {
     wx.showNavigationBarLoading();
     var that = this;
-    setTimeout(function(){wx.hideNavigationBarLoading();that.nextLoad();}, 1000);
+    //setTimeout(function(){wx.hideNavigationBarLoading();that.nextLoad();}, 1000);
     console.log("lower")
   },
   //scroll: function (e) {
@@ -161,6 +161,7 @@ Page({
       }
     })
 
+
     console.log("hiashdoa ishjdal jsdlak jsldjka lsdkj alkjs")
 
     //console.log("this.data.trueFeed.data is "+  this.data.trueFeed.data)
@@ -176,4 +177,19 @@ Page({
     // });
   }
 
-})
+
+    //console.log("this.data.trueFeed.data is "+  this.data.trueFeed.data)
+
+    // var feed = util.getDiscovery();
+    
+    // var feed_data = feed.data;
+    // console.log("feed_data is " + this.data.feed.data);
+    
+    // this.setData({
+    //   feed:this.data.trueFeed.data,
+    //   feed_length: this.data.trueFeed.data.length
+    // });
+  }
+
+
+)

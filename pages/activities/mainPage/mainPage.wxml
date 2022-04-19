@@ -87,8 +87,11 @@
 
     <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
     
-        <view class="feed-content" >
-        
+
+
+        <view class="feed-content">
+
+
           <view class="question" qid="{{id}}" bindtap="bindItemTap" data-activityId="{{item.activityid}}">
             <a class="question-link">
               <text>{{item.activity_title}}</text>
@@ -106,8 +109,12 @@
                 <a>: {{item.hot}}       </a>
               </view>
               <view class="comments_dot">
+
+
                 <image  src="../../../icon/people.png" class="people"></image>
                 <a>：{{item.registry_num}} / {{item.estimate_num}} </a>
+
+
 
               </view>
 
