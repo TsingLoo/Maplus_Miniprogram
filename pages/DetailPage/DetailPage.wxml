@@ -35,15 +35,35 @@
   <text>地点：SB-111
   </text>
 </view>
+<<<<<<< Updated upstream
 
 
 <view>
   <rich-text nodes = "{{activityDetail}}"> </rich-text>  
 </view>
 
+=======
+<view class ="subtitle">
+<text>简介
+</text>
+</view>
+<view class ="context">
+<text>这里是简介,这里是简介,这里是简介,这里是简介,这里是简介,这里是简介,这里是简介,这里是简介,这里是简介,这里是简介,这里是简介,这里是简介,这里是简介,这里是简介
+</text>
+</view>
+<view class ="subtitle">
+<text>详情
+</text>
+</view>
+<view class ="context">
+<text>这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情
+</text>
+</view>
+>>>>>>> Stashed changes
 <view class="s_view">
-      <button class="saveBtn" >报名/Sign</button>
-      <button class="submitBtn" type="primary">收藏/star</button>
+  <button class="submitBtn" disabled="">收藏/star</button>
+      <button class="saveBtn" >报名/Sign 人数：10/20</button>
+      
 </view>
 
 <!-- <button 
