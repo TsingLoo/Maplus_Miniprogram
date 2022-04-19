@@ -6,7 +6,7 @@ var mainPage= {
     
         "data": [
         {
-            "id": 27,
+            "id": 29,
 
             "activityTitle": "modifytest11",
             "activityDesc": "难道不明白纸质书更贵啊！！！ 若觉得kindle更贵，我觉得要么阅读量太少，那确实没有买kindle的必要。要么买的都是盗版的纸质书？我不清楚不加以评论。。。 另外，用kindle看小说的怎么真心不懂了...",
