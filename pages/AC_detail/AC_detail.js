@@ -146,6 +146,7 @@ Page({
     })
   },
   uploadMage(article){  // 将图片上传到云存储
+    wx.cloud.init();
     let suffix = /\.\w+$/.exec(article)[0]      
     wx.cloud.uploadFile({
       cloudPath: 'articeSrc/' + Date.now() + '-' + Math.random() * 1000000 + suffix,         // 云存储路径

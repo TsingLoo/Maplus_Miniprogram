@@ -1,0 +1,23 @@
+<!--pages/DetailPage/DetailPage.wxml-->
+<text>{{acid}}</text>
+<view>
+  <rich-text nodes = "{{activityDetail}}"> </rich-text>  
+</view>
+
+<view> 
+  <input bindinput="inputComment" placeholder="评价内容" 
+ class="input3" value="{{comment}}"></input>
+</view>
+
+
+<view bindtap="haveSave">
+    <image class="save " src="{{isClick?'/icon/in_jiangjin_Fs.png':'/icon/in_jiangjin.png'}}" ></image>
+    <text class="saveText">{{isClick?'取消':'收藏'}}</text>
+  </view>
+
+<button 
+type="primary"
+size="default"
+bindtap = "confirmComment"
+>Comment</button>
+
