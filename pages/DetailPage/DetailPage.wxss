@@ -1,1 +1,34 @@
 /* pages/DetailPage/DetailPage.wxss */
+
+.classname {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+
+}
+.date{
+    width: 50% !important; 
+    justify-content: center;
+    float:left;
+}
+.location{
+    width: 50% !important; 
+    justify-content: center;
+    float:left;
+}
+.saveBtn { 
+    width: 50% !important; 
+    float:left;
+    font-weight: 100;
+   }
+   .submitBtn { 
+    width: 50% !important;
+    float:left;
+   }
+  .s_view{
+    bottom: 30%; 
+    position: fixed;
+    width: 100%;
+  }

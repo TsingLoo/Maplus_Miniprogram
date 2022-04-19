@@ -1,5 +1,5 @@
 <!--pages/DetailPage/DetailPage.wxml-->
-<text>{{acid}}</text>
+<!-- <text>{{acid}}</text>
 <view>
   <rich-text nodes = "{{activityDetail}}"> </rich-text>  
 </view>
@@ -9,15 +9,42 @@
  class="input3" value="{{comment}}"></input>
 </view>
 
+<mp-dialog title="test" show="{{true}}" bindbuttontap="tapDialogButton" buttons="{{buttons}}">
+    <view>test content</view>
+</mp-dialog> -->
 
-<view bindtap="haveSave">
-    <image class="save " src="{{isClick?'/icon/in_jiangjin_Fs.png':'/icon/in_jiangjin.png'}}" ></image>
-    <text class="saveText">{{isClick?'取消':'收藏'}}</text>
-  </view>
+<view class = "classname"> 
+  <text>activityTitle</text>
+</view>
+
+<view class = "date"> 
+  <text>时间：3.19-4.19
+  </text>
+</view>
+<view class = "location"> 
+  <text>地点：SB-111
+  </text>
+</view>
+<view class="s_view">
+      <button class="saveBtn" >报名/Sign</button>
+      <button class="submitBtn" type="primary">收藏/star</button>
+</view>
+
+<!-- <button 
+type="primary"
+size="default"
+bindtap = "confirmComment"
+>评论/Comment</button>
 
 <button 
 type="primary"
 size="default"
-bindtap = "confirmComment"
->Comment</button>
+bindtap="haveSave"
+>收藏/star</button> -->
+
+<!-- <view bindtap="haveSave">
+    <image class="save " src="{{isClick?'/icon/in_jiangjin_Fs.png':'/icon/in_jiangjin.png'}}" ></image>
+    <text class="saveText">{{isClick?'取消':'收藏'}}</text>
+  </view> -->
+
 

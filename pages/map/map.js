@@ -27,6 +27,7 @@ Page({
     console.log('touchstartCallback');
     console.log(e);
 
+
     if (e.touches.length === 1) {
       let {clientX, clientY} = e.touches[0];
       this.startX = clientX;
@@ -44,16 +45,22 @@ Page({
 
   },
   touchmoveCallback: function(e) {
-    //触摸移动中
-    //console.log('touchmoveCallback');
-    //console.log(e);
+    // //触摸移动中
+    // console.log('touchmoveCallback');
+    // console.log(e);
+    var windowHeight = wx.getSystemInfoSync().windowHeight;
+    var windowWidth = wx.getSystemInfoSync().windowWidth;
 
+ 
     if (e.touches.length === 1) {
       //单指移动
       if (this.data.stv.zoom) {
         //缩放状态，不处理单指
         return ;
       }
+      
+
+
       let {clientX, clientY} = e.touches[0];
       let offsetX = clientX - this.startX;
       let offsetY = clientY- this.startY;

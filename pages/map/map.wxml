@@ -1,8 +1,8 @@
 <!--pages/map/map.wxml-->
 <view class="container">
   <view class="tip">
-    <text>view子元素缩放、移动 </text>
-    <text>说明：双指缩放开发工具上并不支持，需要在真机上进行。 </text>
+    <text> </text>
+    <text> </text>
   </view>
   <view class="img" catchtouchstart="touchstartCallback"  catchtouchmove="touchmoveCallback" catchtouchend="touchendCallback"  >
     <image style="transform:translate({{stv.offsetX}}px, {{stv.offsetY}}px) scale({{stv.scale}});" src="https://cdn.jsdelivr.net/gh/hututu-tech/IMG-gongfeng@main/2022/04/09/6250ec6c39947.png"></image>
