@@ -6,29 +6,62 @@
     display: flex;
     justify-content: center;
     font-size: 30px;
+    /*background-color: aqua;*/
 
+}
+.subtitle{
+  width: 100%;
+  height: 150rpx;
+  display: flex;
+  justify-content: left;
+  font-size: 25px;
+  /*background-color:brown;*/
+  line-height: 150rpx;
+}
+.context{
+  width: 100%;
+  height:100%;
+  /*background-color: chocolate;*/
+  
 }
 .date{
     width: 50% !important; 
     justify-content: center;
     float:left;
+    text-align: center;
+    /*background-color: aquamarine;*/
 }
 .location{
     width: 50% !important; 
     justify-content: center;
     float:left;
+    text-align: center;
+    /*background-color: beige;*/
+}
+.text{
+  width:100%;
+  height:100%;
+  text-align: left;
+  /*background-color: blue;*/
+  
 }
 .saveBtn { 
-    width: 50% !important; 
+    width: 70% !important; 
     float:left;
     font-weight: 100;
+    background-color: rgba(8, 131, 245, 0.815);
    }
    .submitBtn { 
-    width: 50% !important;
+    width: 30% !important;
     float:left;
+    height:100%;
+    background-color: rgba(250, 233, 0, 0.774);
+    
+    
    }
   .s_view{
-    bottom: 30%; 
+    bottom: 0%; 
     position: fixed;
     width: 100%;
   }
+
