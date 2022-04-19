@@ -88,37 +88,32 @@
     <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
     
         <view class="feed-content">
-          <view class="question" qid="{{id}}" bindtap="bindItemTap" data-activityId="{{item.id}}">
+          <view class="question" qid="{{id}}" bindtap="bindItemTap" data-activityId="{{item.activityid}}">
             <a class="question-link">
-              <text>{{item.activityTitle}}</text>
+              <text>{{item.activity_title}}</text>
             </a>
           </view>
           <view class="answer-body">
             
-            <view bindtap="bindItemTap" data-activityId="{{item.id}}">
+            <view bindtap="bindItemTap" data-activityId="{{item.activityid}}">
           
-              <text class="answer-txt" >{{item.activityDesc}}</text>
+              <text class="answer-txt" >{{item.activity_desc}}</text>
             </view>
-            <view class="answer-actions" bindtap="bindItemTap" data-activityId="{{item.id}}">
+            <view class="answer-actions" bindtap="bindItemTap" data-activityId="{{item.activityid}}">
               <view class="like_dot">
                 <a>{{item.hot}} hot  </a>
               </view>
               <view class="comments_dot">
-                <a>报名人数：{{item.registryNum}} / {{item.estimateNum}} </a>
+                <a>报名人数：{{item.registry_num}} / {{item.estimate_num}} </a>
               </view>
               <view class="follow-it">
                 <a>关注问题</a>
               </view>
-             
-              
-             
             </view>
-
           </view>
           <view class="line">
             </view>
         </view>
-      
     </block>
 
 

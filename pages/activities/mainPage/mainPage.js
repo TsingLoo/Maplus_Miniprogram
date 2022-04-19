@@ -142,13 +142,38 @@ Page({
 
   //使用本地 fake 数据实现刷新效果
   refresh: function(){
-    var feed = util.getDiscovery();
-    console.log("loaddata");
-    var feed_data = feed.data;
-    this.setData({
-      feed:feed_data,
-      feed_length: feed_data.length
-    });
+    let that = this
+    //var feed = {}
+    
+    wx.request({
+      url: 'http://localhost:8080/activity',
+      method: 'GET',
+      success:function(res)
+      {
+        console.log(res.data)
+        that.setData(
+          {
+            feed: res.data,
+            feed_length: res.data.length
+          }
+        )
+        //console.log("that.data.trueFeed.data is " + that.data.trueFeed.data)
+      }
+    })
+
+    console.log("hiashdoa ishjdal jsdlak jsldjka lsdkj alkjs")
+
+    //console.log("this.data.trueFeed.data is "+  this.data.trueFeed.data)
+
+    // var feed = util.getDiscovery();
+    
+    // var feed_data = feed.data;
+    // console.log("feed_data is " + this.data.feed.data);
+    
+    // this.setData({
+    //   feed:this.data.trueFeed.data,
+    //   feed_length: this.data.trueFeed.data.length
+    // });
   },
 
   //使用本地 fake 数据实现继续加载效果

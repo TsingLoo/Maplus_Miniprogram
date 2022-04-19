@@ -1,5 +1,9 @@
 <!--pages/DetailPage/DetailPage.wxml-->
+
 <!-- <text>{{acid}}</text>
+=======
+<view>{{acid}}</view>
+
 <view>
   <rich-text nodes = "{{activityDetail}}"> </rich-text>  
 </view>
@@ -13,8 +17,14 @@
     <view>test content</view>
 </mp-dialog> -->
 
+<text>{{acid}}</text>
 <view class = "classname"> 
   <text>activityTitle</text>
+
+<!-- <view bindtap="haveSave">
+    <image class="save " src="{{isClick?'/icon/in_jiangjin_Fs.png':'/icon/in_jiangjin.png'}}" ></image>
+    <text class="saveText">{{isClick?'取消':'收藏'}}</text> -->
+
 </view>
 
 <view class = "date"> 
@@ -25,6 +35,12 @@
   <text>地点：SB-111
   </text>
 </view>
+
+
+<view>
+  <rich-text nodes = "{{activityDetail}}"> </rich-text>  
+</view>
+
 <view class="s_view">
       <button class="saveBtn" >报名/Sign</button>
       <button class="submitBtn" type="primary">收藏/star</button>
