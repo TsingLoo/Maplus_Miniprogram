@@ -1,37 +1,49 @@
-var util = require('../../utils/util.js')
 var app = getApp()
 
 Page({
+
   data: {
-    activityId:'',
-    articleTitle:'',
-    activityDesc:'',
-    hot:'',
-    },
+    feed: [],
+    feed_length: 0
+  },
 
-    get: function () {
-      var that = this;
-      wx.request({
-      url:'//localhost:8080/registerActivity/{username}',
-      method:'GET',
-      success: function(res) {
-      var articleTitle = res.data.titValue;
-      var activityDesc = res.data.activityDescValue;
-      this.data.titValue = articleTitle;
-      this.data.activityDescValue = activityDesc;
+  onLoad: function () {
+    console.log('onLoad')
+    var that = this
+    //调用应用实例的方法获取全局数据
+    this.refresh();
+  },
+
+  bindItemTap:function() {
+    wx.navigateTo({
+      url: '/pages/AC_detail/AC_detail',
+    }) 
+  },
+
+  //使用本地 fake 数据实现刷新效果
+  refresh: function(){
+    let that = this
+    
+    wx.request({
+      url: 'http://localhost:8080/registerActivity/' + app.globalData.userName,
+      method: 'GET',
+      success:function(res)
+      {
+        console.log(res.data)
+        that.setData(
+          {
+            feed: res.data,
+            feed_length: res.data.length
+          }
+        )
       }
-      })
-  
-     wx.request({
-     url: '//localhost:8080/registerActivity/{username}',
-     method:'GET',
-     success: function(res){
-     var hot = res.data.hot;
-     this.data.hot = hot;
-     }
-     })
-  
-    }
+    })
 
+    console.log("success")
 
+  },
 })
+
+
+
+

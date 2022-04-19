@@ -46,8 +46,13 @@
 }
 
 .feed-content{
+  margin-top: 20rpx;
+  margin-left: 20rpx;
+  margin-right: 35rpx;
   font-size: large;
-  
+  border:5rpx solid gray;
+  border-radius: 15rpx;
+  box-shadow:5rpx 5rpx 5rpx 5rpx gray;
 }
 
 .question{
@@ -74,13 +79,13 @@
 
 
 .like_dot{
-  font-size: 24rpx;
+  font-size: 26rpx;
   display: inline;
   color: orangered;
 }
 
 .comments_dot{
-  font-size: 24rpx;
+  font-size: 26rpx;
   display: inline;
   color: rgb(40, 155, 250);
 
@@ -102,4 +107,28 @@
   background:rgb(221, 221, 221);
   
   }
+
+.people{
+
+  margin-left: 15rpx;
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.hot{
+
+  margin-left: 5rpx;
+  width: 35rpx;
+  height: 35rpx;
+
+}
+
+
+.place{
+
+
+  margin-left: 10rpx;
+  width: 35rpx;
+  height: 35rpx;
+}
 /*feed-item part is in app.wxss for multiplexing*/
