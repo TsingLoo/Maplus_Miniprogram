@@ -46,7 +46,7 @@ submit:function(){
   }
 
   this.setData({
-    requestUrl: "http://localhost:8080/changeNickname/" + app.globalData.userName + "/" + this.data.userNickname
+    requestUrl: "http://www.tsingloo.com:4433/changeNickname/" + app.globalData.userName + "/" + this.data.userNickname
   })
 
 

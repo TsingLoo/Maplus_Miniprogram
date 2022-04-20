@@ -6,8 +6,24 @@
 <view>{{acid}}</view>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
+>>>>>>> MyDev
+=======
+<<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> MyDev
+>>>>>>> dev
+=======
+=======
+
+>>>>>>> MyDev
+>>>>>>> dev
 >>>>>>> MyDev
 <view>
   <rich-text nodes = "{{activityDetail}}"> </rich-text>  
@@ -47,6 +63,7 @@
   <text>地点：SB-111
   </text>
 </view>
+
 <view class ="subtitle">
 <text>简介
 </text>
@@ -67,7 +84,7 @@
 <view class="s_view">
   <button class="submitBtn" disabled="">收藏/star</button>
       <button class="saveBtn" >报名/Sign 人数：10/20</button>
-      
+
 </view>
 
 <!-- <button 

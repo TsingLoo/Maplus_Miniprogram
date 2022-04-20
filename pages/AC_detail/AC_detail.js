@@ -76,7 +76,7 @@ Page({
     } else {
       var nowTime = new Date().toJSON().substring(0, 10)
       wx.request({
-        url: "http://localhost:8080/createActivity",
+        url: "http://www.tsingloo.com:4433/createActivity",
         method: "POST",
         data:
         {

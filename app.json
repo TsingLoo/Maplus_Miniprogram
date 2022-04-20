@@ -19,8 +19,8 @@
         "pages/PS_1R/PS_R",
         "pages/change_PW/change_PW",
         "pages/change_NN/change_NN",
-        "pages/collection/collection",
-        "pages/page"
+        "pages/collection/collection"
+  
     ],
     "permission": {
         "scope.userLocation": {

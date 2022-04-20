@@ -79,7 +79,7 @@ submit:function(event){
   }else
   {
     this.setData({
-      requestUrl:"http://localhost:8080/changePsw/" + app.globalData.userName +"/" + this.data.userPassword +"/" +this.data.newPassword
+      requestUrl:"http://www.tsingloo.com:4433/changePsw/" + app.globalData.userName +"/" + this.data.userPassword +"/" +this.data.newPassword
     })
 
     console.log(this.data.requestUrl)

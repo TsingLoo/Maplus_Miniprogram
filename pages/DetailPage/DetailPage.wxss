@@ -6,9 +6,11 @@
     display: flex;
     justify-content: center;
     font-size: 30px;
+
     /*background-color: aqua;*/
 
 }
+
 .subtitle{
   width: 100%;
   height: 150rpx;
@@ -24,10 +26,13 @@
   /*background-color: chocolate;*/
   
 }
+
 .date{
     width: 50% !important; 
     justify-content: center;
     float:left;
+
+
     text-align: center;
     /*background-color: aquamarine;*/
 }
@@ -35,6 +40,8 @@
     width: 50% !important; 
     justify-content: center;
     float:left;
+
+
     text-align: center;
     /*background-color: beige;*/
 }

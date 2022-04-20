@@ -34,7 +34,7 @@ login:function(){
 
   var that = this
   that.setData({
-    requestUrl: "http://localhost:8080/login/" + that.data.userName +"/" + that.data.userPassword
+    requestUrl: "http://www.tsingloo.com:4433/login/" + that.data.userName +"/" + that.data.userPassword
   })
   wx.request({
     url: that.data.requestUrl,

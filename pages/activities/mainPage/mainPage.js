@@ -146,7 +146,9 @@ Page({
     //var feed = {}
     
     wx.request({
-      url: 'http://localhost:8080/activity',
+
+      url: 'http://www.tsingloo.com:4433/activity',
+
       method: 'GET',
       success:function(res)
       {
@@ -162,7 +164,10 @@ Page({
     })
 
 
+
+
     console.log("hiashdoa ishjdal jsdlak jsldjka lsdkj alkjs")
+
 
     //console.log("this.data.trueFeed.data is "+  this.data.trueFeed.data)
 
@@ -178,7 +183,9 @@ Page({
   }
 
 
+
     //console.log("this.data.trueFeed.data is "+  this.data.trueFeed.data)
+
 
     // var feed = util.getDiscovery();
     
@@ -193,3 +200,4 @@ Page({
 
 
 )
+

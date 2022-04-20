@@ -45,7 +45,7 @@ Page({
         wx.setStorageSync('jobData', jobData);
     
   
-        let requestUrl = "http://localhost:8080/addStar/" + app.globalData.userName+"/" + this.data.acid
+        let requestUrl = "http://www.tsingloo.com:4433/addStar/" + app.globalData.userName+"/" + this.data.acid
   
         let that = this
   
@@ -98,7 +98,7 @@ Page({
     
 
     wx.request({
-      url: 'http://localhost:8080/addComment',
+      url: 'http://www.tsingloo.com:4433/addComment',
       method:'POST',
       data:{
         activityID: this.data.acid,
@@ -134,7 +134,7 @@ Page({
     });
 
     let that = this
-    let requestUrl = "http://localhost:8080/preModifyActivity/" + this.data.acid
+    let requestUrl = "http://www.tsingloo.com:4433/preModifyActivity/" + this.data.acid
     console.log(requestUrl);
     wx.request({
       url: requestUrl,
