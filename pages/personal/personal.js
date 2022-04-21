@@ -56,14 +56,34 @@ go_to_change_NN(){
 },
 
 go_to_collection(){
+  if(app.globalData.logged == false)
+  {
+    wx.showToast({
+      title: '请先登录！',
+      icon:'error',
+      duration:1000
+   }) 
+  }else
+  {
   wx.navigateTo({
     url: '/pages/collection/collection',
   })
+}
 },
 
 go_to_personal_activity(){
+  if(app.globalData.logged == false)
+  {
+    wx.showToast({
+      title: '请先登录！',
+      icon:'error',
+      duration:1000
+   }) 
+  }else
+  {
   wx.navigateTo({
     url: '/pages/personal_activity/personal_activity',
   })
+}
 }
 })

@@ -120,7 +120,8 @@
 
               <view class="follow-it">
               <image  src="../../../icon/place.png" class="place"></image>
-              <a>: 啊啊啊</a>
+            
+                <a>:{{item.room || "Online By Default"}}</a>
               </view>
             </view>
           </view>
