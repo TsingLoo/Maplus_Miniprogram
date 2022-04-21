@@ -8,10 +8,17 @@ Page({
     feed_length: 0
   },
 
-  onLoad: function () {
-    console.log('onLoad')
+  // onLoad: function () {
+  //   console.log('onLoad')
+  //   var that = this
+  //   //调用应用实例的方法获取全局数据
+  //   this.refresh();
+  // },
+
+  onShow: function () {
+    console.log('onShow')
     var that = this
-    //调用应用实例的方法获取全局数据
+
     this.refresh();
   },
 
