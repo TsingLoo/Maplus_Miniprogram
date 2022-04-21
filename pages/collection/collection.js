@@ -27,7 +27,7 @@ Page({
     
     wx.request({
 
-      url: 'http://www.tsingloo.com:4433/Staractivity/' + app.globalData.userName,
+      url: 'http://'+ app.globalData.domainPort +'/Staractivity/' + app.globalData.userName,
 
       method: 'GET',
       success:function(res)

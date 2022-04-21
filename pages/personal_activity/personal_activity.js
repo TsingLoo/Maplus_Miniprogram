@@ -25,7 +25,7 @@ Page({
     let that = this
     
     wx.request({
-      url: 'http://www.tsingloo.com:4433/registerActivity/' + app.globalData.userName,
+      url: 'http://'+ app.globalData.domainPort +'/registerActivity/' + app.globalData.userName,
       method: 'GET',
       success:function(res)
       {

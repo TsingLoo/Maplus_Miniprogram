@@ -154,7 +154,7 @@ Page({
     
     wx.request({
 
-      url: 'http://www.tsingloo.com:4433/activity',
+      url: 'http://' + app.globalData.domainPort + '/activity',
 
       method: 'GET',
       success:function(res)
@@ -173,7 +173,7 @@ Page({
 
 
 
-    console.log("hiashdoa ishjdal jsdlak jsldjka lsdkj alkjs")
+    //console.log("hiashdoa ishjdal jsdlak jsldjka lsdkj alkjs")
 
 
     //console.log("this.data.trueFeed.data is "+  this.data.trueFeed.data)

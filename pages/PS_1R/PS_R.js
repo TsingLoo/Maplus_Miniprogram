@@ -42,7 +42,7 @@ inputuserName:function(e){
     //如果是，那么向服务器发起验重请求
       this.setData({
         userNameStatus: "Valid UserName,waiting for check",
-        requestUrl :  'http://www.tsingloo.com:4433/userCheck/' + this.data.userName
+        requestUrl :  'http://'+ app.globalData.domainPort +'/userCheck/' + this.data.userName
       })
       //发起验重请求
       var that = this
@@ -160,7 +160,7 @@ submit:function(){
   {
     var that = this
     wx.request({
-      url: 'http://www.tsingloo.com:4433/userRegister',
+      url: 'http://'+ app.globalData.domainPort +'/userRegister',
       method:'POST',
       data:{
         userName: this.data.userName,
