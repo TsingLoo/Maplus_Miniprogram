@@ -39,7 +39,7 @@
 <text>{{acid}}</text>
 
 <view class = "classname"> 
-  <text>activityTitle</text>
+  <text>{{activityTitle}}</text>
 
 <!-- <view bindtap="haveSave">
     <image class="save " src="{{isClick?'/icon/in_jiangjin_Fs.png':'/icon/in_jiangjin.png'}}" ></image>
@@ -48,16 +48,16 @@
 
 
 
-    <text class="saveText">{{isClick?'取消':'收藏'}}</text>
+    
 </view>
 
 
 <view class = "date"> 
-  <text>时间：3.19-4.19
+  <text>时间：{{beginTime}}
   </text>
 </view>
 <view class = "location"> 
-  <text>地点：SB-111
+  <text>地点：{{building}} {{room}}
   </text>
 </view>
 
@@ -66,7 +66,7 @@
 </text>
 </view>
 <view class ="context">
-<text>这里是简介,这里是简介,这里是简介,这里是简介,这里是简介,这里是简介,这里是简介,这里是简介,这里是简介,这里是简介,这里是简介,这里是简介,这里是简介,这里是简介
+<text>{{activityDesc}}
 </text>
 </view>
 <view class ="subtitle">
@@ -74,13 +74,13 @@
 </text>
 </view>
 <view class ="context">
-<text>这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情，这里是详情
+<text>{{activityDetail}}
 </text>
 </view>
 
 <view class="s_view">
   <button class="submitBtn" disabled="">收藏/star</button>
-      <button class="saveBtn" >报名/Sign 人数：10/20</button>
+      <button class="saveBtn" >报名/Sign 人数：{{registryNum}}/{{estimateNum}}</button>
 
 </view>
 
