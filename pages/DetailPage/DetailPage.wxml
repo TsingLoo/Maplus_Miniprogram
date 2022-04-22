@@ -76,7 +76,23 @@
 <view class ="context">
     <rich-text nodes = "{{activityDetail}}"> </rich-text>  
 </view>
+<view class ="comment">
+  <text>评论</text>
+</view>
+<view class ="commentDesc">
+  <text>1</text>
+</view>
+<view class="DoComment">
+ <button class="DoCommentBtn" bindtap="clickDoComment">评论/comment</button>
+</view>
 
+<view class="view-contain-ti1">
+    
+
+
+    <text class="text-ti1"></text>
+    <input class="input1"></input>
+</view>
 <view class="s_view">
   <button class="submitBtn" disabled="" bindtap="clickStar">收藏/star</button>
       <button class="saveBtn" bindtap="clickSign" >报名/Sign 人数：{{registryNum}}/{{estimateNum}}</button>
