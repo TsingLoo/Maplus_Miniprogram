@@ -1,4 +1,5 @@
 const app = getApp();
+var util = require('../../utils/util.js')
 Page({
 
   /**
@@ -25,7 +26,9 @@ Page({
     isClick:false,
     isSigned:false,
     jobStorage:[],
-    jobId:''
+    jobId:'',
+
+    fakeComment:'',
   },
 
   refresh:function()
@@ -318,7 +321,13 @@ Page({
       method: 'GET'
     })
 
+    var fake = util.getComment();
 
+    var fake_data = fake.data;
+    this.setData({
+      fake:fake_data,
+      fake_length: fake_data.length
+    });
 
   },
 
