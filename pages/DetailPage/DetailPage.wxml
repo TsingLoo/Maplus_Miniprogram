@@ -82,7 +82,18 @@
 <view class ="commentDesc">
   <text>1</text>
 </view>
+   <!--发表评论---->
+   <view class="DoComment">
+     <van-cell-group>
+       <van-field
+         model:value="{{ DoCommentValue }}"
+         placeholder="输入你的评论……"
+         border="{{ false }}"
+       />
+     </van-cell-group>
+   </view>
 <view class="DoComment">
+<!--text>发表评论</text---->
  <button class="DoCommentBtn" bindtap="clickDoComment">评论/comment</button>
 </view>
 
