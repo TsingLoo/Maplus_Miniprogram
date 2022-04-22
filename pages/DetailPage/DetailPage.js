@@ -28,6 +28,36 @@ Page({
     jobId:''
   },
 
+  refresh:function()
+  {
+
+    let that = this
+    let requestUrl = "http://"+ app.globalData.domainPort +"/preModifyActivity/" + this.data.acid
+    console.log(requestUrl);
+    wx.request({
+      url: requestUrl,
+      method: 'GET',
+      success:function(res)
+      {
+        that.setData({
+          clubName: res.data.clubName,
+          beginTime: res.data.beginTime,
+          endTime: res.data.endTime,
+          activityTitle:res.data.activityTitle,
+          activityDesc:res.data.activityDesc,
+          activityDetail:res.data.activityDetail,
+          building:res.data.building,
+          room:res.data.room,
+          estimateNum: res.data.estimateNum,
+          targetPeople:res.data.targetPeople,
+          registryNum: res.data.registryNum,
+        })
+        console.log(res);
+      }
+      
+    })
+  },
+
   clickSign(e){
     let that = this
     if(app.globalData.logged == false)
@@ -60,6 +90,7 @@ Page({
               wx.showToast({
                 title: '已报名',
               });
+              that.refresh()
             }else
             {
               console.log("Register 请求成功发起， 但是返回值是false")
@@ -91,6 +122,7 @@ Page({
         wx.showToast({
           title: '已取消报名',
         })
+        that.refresh()
       }
       that.setData({
         isSigned:!that.data.isSigned
@@ -132,6 +164,7 @@ Page({
               wx.showToast({
                 title: '已收藏',
               });
+              that.refresh()
             }else
             {
               wx.showToast({
@@ -164,6 +197,7 @@ Page({
         wx.showToast({
           title: '已取消收藏',
         })
+        that.refresh()
       }
       that.setData({
         isClick:!that.data.isClick
@@ -226,7 +260,7 @@ Page({
 
     let that = this
     let checkStarUrl = "http://" + app.globalData.domainPort + "/checkStar/"  + app.globalData.userName + "/" + this.data.acid
-
+    let checkRegisterUrl = "http://" + app.globalData.domainPort + "/checkStar/"  + app.globalData.userName + "/" + this.data.acid
     console.log("acid from show" + this.data.acid)
 
     console.log(checkStarUrl)
@@ -248,9 +282,26 @@ Page({
           console.log("fail to check star")
         }
       })
+
+      wx.request({
+        url: checkRegisterUrl,
+        method: 'GET',
+        success:function(res)
+        {
+          console.log("checkRegisterUrl: " + res.data)
+          that.setData({
+            isSigned:res.data
+          })
+          console.log("isClick in checkRegisterUrl: " + that.data.isSigned)
+        },
+        fail:function(res)
+        {
+          console.log("fail to check register")
+        }
+      })      
     }
 
-    console.log("isClick after checkStar: " + that.data.isClick)
+    console.log("isSigned after checkStar: " + that.data.isSigned)
 
 
   
@@ -259,34 +310,11 @@ Page({
     //真机调试无法通过，此处this.data.acid值在真机调试中为-1,猜测是 eventChannel所致，未验证。
     console.log("acid is " + this.data.acid)
 
-    let requestUrl = "http://"+ app.globalData.domainPort +"/preModifyActivity/" + this.data.acid
-    console.log(requestUrl);
-    wx.request({
-      url: requestUrl,
-      method: 'GET',
-      success:function(res)
-      {
-        that.setData({
-          clubName: res.data.clubName,
-          beginTime: res.data.beginTime,
-          endTime: res.data.endTime,
-          activityTitle:res.data.activityTitle,
-          activityDesc:res.data.activityDesc,
-          activityDetail:res.data.activityDetail,
-          building:res.data.building,
-          room:res.data.room,
-          estimateNum: res.data.estimateNum,
-          targetPeople:res.data.targetPeople,
-          registryNum: res.data.registryNum,
-        })
-        console.log(res);
-      }
-      
-    })
+   this.refresh()    
 
-    requestUrl = 'http://' + app.globalData.domainPort + '/addHot/' + this.data.acid
+    let addHotUrl = 'http://' + app.globalData.domainPort + '/addHot/' + this.data.acid
     wx.request({
-      url: requestUrl,
+      url: addHotUrl,
       method: 'GET'
     })
 
