@@ -17,7 +17,7 @@
             
             <view bindtap="bindItemTap" data-activityId="{{item.activityId}}">
           
-              <text class="answer-txt" >{{item.activityDesc}}</text>
+              <text class="answer-txt" >{{item.activityTitle}}</text>
             </view>
             <view class="answer-actions" bindtap="bindItemTap" data-activityId="{{item.activityId}}">
               <view class="like_dot">

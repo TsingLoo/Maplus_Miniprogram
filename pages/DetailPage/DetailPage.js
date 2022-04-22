@@ -29,6 +29,7 @@ Page({
   },
 
   clickSign(e){
+    let that = this
     if(app.globalData.logged == false)
     {
       wx.showToast({
@@ -37,7 +38,7 @@ Page({
       });
     }else
     {
-      if(!this.data.isClick == true){
+      if(!this.data.isSigned == true){
         let jobData = this.data.jobStorage;
         jobData.push({
           jobid:jobData.length,
@@ -45,52 +46,62 @@ Page({
         })
         wx.setStorageSync('jobData', jobData);
     
-  
-        let requestUrl = "http://" + app.globalData.domainPort + "/addStar/" + app.globalData.userName+"/" + this.data.acid
-  
-        let that = this
-  
-        wx.request({
-          url: requestUrl,
-          method: 'GET',
-          success:function(res)
-          {
-            if(res.data == true)
+        let requestUrl = "http://" + app.globalData.domainPort + "/addRegister/" + app.globalData.userName+"/" + this.data.acid
+        console.log("request register url is" + requestUrl)
+        
+              wx.request({
+                url: requestUrl,
+                method: 'GET',
+                success:function(res)
+                {
+                  if(res.data == true)
             {
               console.log(res.data)
               wx.showToast({
-                title: '已收藏',
+                title: '已报名',
               });
             }else
             {
+              console.log("Register 请求成功发起， 但是返回值是false")
               wx.showToast({
-                title: '收藏失败',
+                title: '报名失败，请重试',
               });
             }    
-          },
-          fail:function(res)
+                },
+                fail:function(res)
           {
+            console.log("Register 请求发起失败")
             wx.showToast({
-              title: '收藏失败',
+              title: '报名失败，请重试',
             });
           }
-        })
-  
-  
-  
+              })
       }else{
+        
+        let deleteRegisterUrl = app.globalData.UrlHead + app.globalData.domainPort + "/deleteRegister/" + app.globalData.userName + "/" + this.data.acid
+        
+        wx.request({
+          url: deleteRegisterUrl,
+          method: 'GET',
+          success:function(res)
+          {
+       
+          }
+        })
         wx.showToast({
-          title: '已取消收藏',
+          title: '已取消报名',
         })
       }
-      this.setData({
-        isClick:!this.data.isClick
+      that.setData({
+        isSigned:!that.data.isSigned
       })
+     
     }
 
   },
 
   clickStar(e){
+    let that = this
     if(app.globalData.logged == false)
     {
       wx.showToast({
@@ -107,17 +118,15 @@ Page({
         })
         wx.setStorageSync('jobData', jobData);
     
-  
         let requestUrl = "http://" + app.globalData.domainPort + "/addStar/" + app.globalData.userName+"/" + this.data.acid
-  
-        let that = this
-  
-        wx.request({
-          url: requestUrl,
-          method: 'GET',
-          success:function(res)
-          {
-            if(res.data == true)
+        console.log("request star url is" + requestUrl)
+        
+              wx.request({
+                url: requestUrl,
+                method: 'GET',
+                success:function(res)
+                {
+                  if(res.data == true)
             {
               console.log(res.data)
               wx.showToast({
@@ -129,25 +138,37 @@ Page({
                 title: '收藏失败',
               });
             }    
-          },
-          fail:function(res)
+                },
+                fail:function(res)
           {
             wx.showToast({
               title: '收藏失败',
             });
           }
-        })
-  
-  
-  
+              })
+            
+          
+        
       }else{
+        
+        let deleteStarUrl = app.globalData.UrlHead + app.globalData.domainPort + "/deleteStar/" + app.globalData.userName + "/" + this.data.acid
+        
+        wx.request({
+          url: deleteStarUrl,
+          method: 'GET',
+          success:function(res)
+          {
+       
+          }
+        })
         wx.showToast({
           title: '已取消收藏',
         })
       }
-      this.setData({
-        isClick:!this.data.isClick
+      that.setData({
+        isClick:!that.data.isClick
       })
+     
     }
 
   },
@@ -184,25 +205,60 @@ Page({
     })
   },
 
+  onLoad:function()
+  {
+    let eventChannel = this.getOpenerEventChannel()
+    eventChannel.on('readActivityID',(activityID)=>
+    {
+      this.setData({
+        acid: activityID.acid || {},
+        
+      })
+    });
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    let eventChannel = this.getOpenerEventChannel()
-    eventChannel.once('readActivityID',(activityID)=>
-    {
- 
-      this.setData({
-        acid: activityID.acid || {},
-      })
-    });
+  onShow: function (options) {
+    
+  
 
+    let that = this
+    let checkStarUrl = "http://" + app.globalData.domainPort + "/checkStar/"  + app.globalData.userName + "/" + this.data.acid
+
+    console.log("acid from show" + this.data.acid)
+
+    console.log(checkStarUrl)
+    if(app.globalData.logged)
+    {
+      wx.request({
+        url: checkStarUrl,
+        method: 'GET',
+        success:function(res)
+        {
+          console.log("checkStarUrl: " + res.data)
+          that.setData({
+            isClick:res.data
+          })
+          console.log("isClick in checkStarUrl: " + that.data.isClick)
+        },
+        fail:function(res)
+        {
+          console.log("fail to check star")
+        }
+      })
+    }
+
+    console.log("isClick after checkStar: " + that.data.isClick)
+
+
+  
 
 
     //真机调试无法通过，此处this.data.acid值在真机调试中为-1,猜测是 eventChannel所致，未验证。
     console.log("acid is " + this.data.acid)
-    let that = this
+
     let requestUrl = "http://"+ app.globalData.domainPort +"/preModifyActivity/" + this.data.acid
     console.log(requestUrl);
     wx.request({
