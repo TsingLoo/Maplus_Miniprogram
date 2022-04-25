@@ -6,3 +6,12 @@
   color: var(--weui-LINK);
   display: inline-block;
 }
+.map{
+  width: 100vw;
+  height:100vh;
+}
+.s_view{
+  bottom: 0%; 
+  position: fixed;
+  width: 100%;
+}

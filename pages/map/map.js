@@ -32,7 +32,8 @@ Page({
     enableRotate: false,
     drawPolygon: false,
     enableSatellite: false,
-    enableTraffic: false
+    enableTraffic: false,
+    enablePoi:false
   },
   toggle3d() {
     this.setData({
@@ -99,21 +100,19 @@ Page({
     )
     this.mapCtx.addGroundOverlay({
       id:0,
-      src:"/icon/activity.png",
+      src:"/icon/map.jpg",
       bounds:{
         southwest:{
-          longitude:113,
-          latitude:23,
+          longitude:120.736773,
+          latitude:31.267817,
         },
         northeast:{
-          longitude:113.002,
-          latitude:23.002,
+          longitude:120.743739,
+          latitude:31.277354,
         }
       },
       complete: function(e){},
-    })
-
-
+    }) 
     
 
   }
