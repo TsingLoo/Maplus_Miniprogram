@@ -1,17 +1,40 @@
-<!--pages/map/map.wxml-->
-<view class="container">
-  <view class="tip">
-    <text> </text>
-    <text> </text>
-  </view>
-  <view class="img" catchtouchstart="touchstartCallback"  catchtouchmove="touchmoveCallback" catchtouchend="touchendCallback"  >
-    <image style="transform:translate({{stv.offsetX}}px, {{stv.offsetY}}px) scale({{stv.scale}});" src="https://cdn.jsdelivr.net/gh/hututu-tech/IMG-gongfeng@main/2022/04/09/6250ec6c39947.png"></image>
+<import src="../../../common/head.wxml" />
+<import src="../../../common/foot.wxml" />
+
+<view class="container page" data-weui-theme="{{theme}}">
+  <template is="head" data="{{title: 'map'}}"/>
+
+  <view class="page-body">
+    <view class="page-section-title">当前组件使用了墨渊底图样式，查看<navigator class="navigator" url="/packageComponent/pages/map-styles/map-styles">查看更多</navigator>。</view>
+    <view class="page-section page-section-gap">
+      <map
+        id="map"
+        subkey="{{subKey}}"
+        style="width: 100%; height: 900rpx;"
+        latitude="{{latitude}}"
+        longitude="{{longitude}}"
+        scale="{{18}}"
+        markers="{{markers}}"
+        enable-3D="{{enable3d}}"
+        show-compass="{{showCompass}}"
+        enable-zoom="{{enableZoom}}"
+        enable-rotate="{{enableRotate}}"
+        enable-satellite="{{enableSatellite}}"
+        enable-traffic="{{enableTraffic}}"
+        enable-overlooking="{{enableOverlooking}}"
+        enable-scroll="{{enableScroll}}"
+        polygons="{{drawPolygon ? polygons : []}}"
+      >
+      </map>
+    </view>
   </view>
 
-  <view>
-    <text>x: {{stv.offsetX}}</text>, 
-    <text>y: {{stv.offsetY}}</text>, 
-    <text>d: {{stv.distance}}</text>, 
-    <text>s: {{stv.scale}}</text>, 
+  <view class="page-section">
+    <view class="btn-area">
+      
+      <button type="primary" bindtap="setBoundary">获取位置</button>
+    </view>
   </view>
+
+  <template is="foot" />
 </view>
