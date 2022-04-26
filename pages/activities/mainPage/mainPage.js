@@ -39,10 +39,20 @@ Page({
         })}
       }
     })}, 1050)
-  }else{
+  }
+  if(app.globalData.userGroup == 1){
+    wx.showToast({
+      title: '此账号没有发布权限',
+      icon:'error',
+      duration:1000
+   })
+  }
+  if(app.globalData.userGroup == 2 || app.globalData.userGroup == 3){
    wx.navigateTo({
     url: '/pages/AC_detail/AC_detail',
-  })}},
+  })
+}
+},
 
   lower: function (e) {
     wx.showNavigationBarLoading();
