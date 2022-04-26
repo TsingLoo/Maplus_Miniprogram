@@ -66,6 +66,7 @@ bindItemTap:function(e) {
     }) 
   },
 
+  
   //使用本地 fake 数据实现刷新效果
   refresh: function(){
     let that = this
