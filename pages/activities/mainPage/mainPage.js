@@ -51,8 +51,9 @@ Page({
     console.log("lower")
   },
   
-  bindItemTap:function(e) {
+bindItemTap:function(e) {
     //console.log(e.currentTarget.dataset.activityid),
+    console.log("aaaaa");
     let activityID = {
       acid: e.currentTarget.dataset.activityid
     };
