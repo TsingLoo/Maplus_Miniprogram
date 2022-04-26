@@ -53,7 +53,6 @@ Page({
   
 bindItemTap:function(e) {
     //console.log(e.currentTarget.dataset.activityid),
-    console.log("aaaaa");
     let activityID = {
       acid: e.currentTarget.dataset.activityid
     };
@@ -92,4 +91,3 @@ bindItemTap:function(e) {
   }
   }
 )
-

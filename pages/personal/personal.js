@@ -154,5 +154,3 @@ go_to_personal_activity(){
 }
 }
 })
-
-

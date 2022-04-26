@@ -295,8 +295,6 @@ Page({
    */
   onShow: function (options) {
     
-  
-
     let that = this
     let checkStarUrl = "http://" + app.globalData.domainPort + "/checkStar/"  + app.globalData.userName + "/" + this.data.acid
     let checkRegisterUrl = "http://" + app.globalData.domainPort + "/checkStar/"  + app.globalData.userName + "/" + this.data.acid
@@ -341,10 +339,6 @@ Page({
     }
 
     console.log("isSigned after checkStar: " + that.data.isSigned)
-
-
-  
-
 
     //真机调试无法通过，此处this.data.acid值在真机调试中为-1,猜测是 eventChannel所致，未验证。
     console.log("acid is " + this.data.acid)
