@@ -133,13 +133,12 @@
 }
 
 .feed-content{
-  margin-top: 20rpx;
-  margin-left: 20rpx;
-  margin-right: 35rpx;
+
+  background-color: white;
   font-size: large;
-  border:5rpx solid gray;
-  border-radius: 15rpx;
-  box-shadow:5rpx 5rpx 5rpx 5rpx gray;
+  border:1rpx solid gray;
+
+
 }
 
 .question{
@@ -219,16 +218,20 @@
   height: 35rpx;
 }
 .saveBtn { 
+
     width: 70% !important; 
     float:left;
     font-weight: 100;
     background-color: rgba(8, 131, 245, 0.815);
+    display: inline;
    }
    .submitBtn { 
+
     width: 30% !important;
     float:left;
     height:100%;
     background-color: rgba(250, 233, 0, 0.774);
+    display: inline;
     
     
    }
@@ -237,4 +240,9 @@
     position: fixed;
     width: 100%;
   }
-
+  .collection{
+    font-size: 32rpx;
+  }
+  .regist{
+    font-size: 32rpx;
+  }
