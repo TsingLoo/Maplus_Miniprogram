@@ -280,14 +280,31 @@ Page({
 
   onLoad:function()
   {
-    let eventChannel = this.getOpenerEventChannel()
-    eventChannel.on('readActivityID',(activityID)=>
-    {
-      this.setData({
-        acid: activityID.acid || {},
-        
-      })
-    });
+    this.setData({
+      acid: app.globalData.PageNum      
+    })
+  //   let that = this
+  //   let tmp
+  //   let eventChannel = this.getOpenerEventChannel()
+  //   new Promise((resolve, reject) => {
+      
+  //     //let eventChannel = this.getOpenerEventChannel()
+  //     eventChannel.on('readActivityID', function (data) {
+  //        tmp = data
+  //       resolve(tmp)
+  //     })
+  //     that.setData({ acid: tmp.acid })
+  //     console.log("tmp activityId" + tmp.acid)
+  //     //this.setData({acid:tmp.acid || {}})
+  //   }).then((res) => {
+  //     //that.setData({ acid: that.tmp.acid })
+
+  //   });
+  //   //console.log(this.acid)
+  //   //let eventChannel = this.getOpenerEventChannel()
+  
+
+  //  console.log(this.acid)
   },
 
   /**
