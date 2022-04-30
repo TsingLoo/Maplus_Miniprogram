@@ -93,8 +93,9 @@
 
 
 <view class="s_view">
-  <button class="submitBtn" disabled="" bindtap="clickStar">收藏/star</button>
-      <button class="saveBtn" bindtap="clickSign" >报名/Sign 人数：{{registryNum}}/{{estimateNum}}</button>
+  <button  class="submitBtn" disabled="" bindtap="clickStar"><text class="collection">收藏/star</text></button>
+      <button class="saveBtn" bindtap="clickSign" >
+      <text class="regist">报名/Sign 人数：{{registryNum}}/{{estimateNum}}</text></button>
 </view>
 
 
