@@ -156,6 +156,7 @@ Page({
 
   
   submit() {   // 点击预览
+    this.refresh();
     this.setData({
       ylShow: true
     })
