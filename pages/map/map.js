@@ -171,6 +171,27 @@ var temp = this
       ylShow: false
     })
   },
+  lower: function (e) {
+    wx.showNavigationBarLoading();
+    var that = this;
+    //setTimeout(function(){wx.hideNavigationBarLoading();that.nextLoad();}, 1000);
+    console.log("lower")
+  },
+  
+bindItemTap:function(e) {
+    //console.log(e.currentTarget.dataset.activityid),
+    let activityID = {
+      acid: e.currentTarget.dataset.activityid
+    };
+    app.globalData.PageNum = e.currentTarget.dataset.activityid
+    wx.navigateTo({
+      url: '/pages/DetailPage/DetailPage',
+      success: res =>
+      {
+        res.eventChannel.emit('readActivityID',activityID)
+      }
+    }) 
+  },
   refresh: function(){
     let that = this
     //var feed = {}

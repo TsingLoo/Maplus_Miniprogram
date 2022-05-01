@@ -42,7 +42,9 @@
        close-icon-position="top-right"
        custom-style="height: 70%;"
        bind:close="onClose"
-     > <view class="feed-content">
+     > 
+     <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+    <view class="feed-content">
 
 
 <view class="question" qid="{{id}}" bindtap="bindItemTap" data-activityId="{{item.activityId}}">
@@ -81,4 +83,5 @@
 
 
 </view>
+     </block>
      </van-popup>
