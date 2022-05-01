@@ -43,7 +43,7 @@
 </view>
 
 <view class ="context_desc">
-  <text>啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</text>
+  <text>{{activityDesc}}</text>
 </view>
 </view>
 <!--分隔点1-->
