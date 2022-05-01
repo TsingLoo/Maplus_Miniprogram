@@ -5,6 +5,7 @@ Page({
       path: 'packageComponent/pages/map/map/map'
     }
   },
+  
   getScale:function(){
     this.mapCtx.getScale({
       success:function(res){
@@ -32,7 +33,7 @@ Page({
     )
     this.mapCtx.addGroundOverlay({
       id:0,
-      src:"/icon/map.jpg",
+      src:"https://6465-developtest-8gz91yrw88cb744c-1306661972.tcb.qcloud.la/articeSrc/map.jpg?sign=0c93002db71ceae54134c7174b16e723&t=1651416228",
       bounds:{
         southwest:{
           longitude:120.734742,
@@ -62,7 +63,7 @@ Page({
     theme: 'light',
     latitude: 31.274659,
     longitude: 120.738168,
-    minScale:16.135946271878986,
+    minScale:16.5,
     maxScale:18,
     showLocation:false,
 

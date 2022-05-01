@@ -29,7 +29,7 @@
 
     <view class="s_view">
       
-      <button type="primary" bindtap="showLocation">showLocation</button>
+      <button type="primary" bindtap="getScale">showLocation</button>
     </view>
 
 
