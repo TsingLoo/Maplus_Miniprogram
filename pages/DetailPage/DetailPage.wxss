@@ -18,6 +18,7 @@
   display: flex;
   font-weight: bold;
   margin-left: 10rpx;
+  margin-top: 30rpx;
   /*background-color:brown;*/
 }
 .subtitle2{
@@ -29,11 +30,22 @@
   font-weight: bold;
   font-size: 20px;
 }
-.context{
-  width: 100%;
+.context_desc{
+  width: 97%;
   height:100%;
   margin-left: 8rpx;
-  margin-right: 15rpx;
+
+  margin-bottom: 15rpx;
+  word-break: break-all;
+  /*background-color: chocolate;*/
+  
+}
+
+.context_detail{
+  width: 97%;
+  height:100%;
+  margin-left: 8rpx;
+
   /*background-color: chocolate;*/
   
 }
@@ -89,6 +101,7 @@
   float:left;
   height:100%;
   background-color: rgba(25, 218, 57, 0.774);
+
   
   
  }
@@ -296,7 +309,7 @@ font-size: 26rpx;
 
   border-radius: 15rpx;
 
-  height: 960rpx;
+
   background-color: white;
 }
 
@@ -307,6 +320,34 @@ font-size: 26rpx;
 .background{
 
   margin-top: 50rpx;
-  margin-bottom: 200rpx;
+
 }
 
+.time{
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.location_icon{
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.club_icon{
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.targetpeople{
+  text-align: left;
+  margin-left: 8rpx;
+}
+
+.target{
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.distance{
+  margin-bottom: 300rpx;
+}

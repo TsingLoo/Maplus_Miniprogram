@@ -1,5 +1,5 @@
 
-
+<view class="distance">
 <view class="background">
 <!--分隔点1-->
 
@@ -16,23 +16,34 @@
 
 
 <view class = "date"> 
+  <image src="../../icon/time.png" class="time"></image>
   <text>时间：{{beginTime}}
   </text>
 </view>
+
 <view class = "location"> 
+  <image src="../../icon/LC.png" class="location_icon"></image>
   <text>地点：{{building}} {{room}}
   </text>
 </view>
+
+<view class="targetpeople">
+  <image src="../../icon/target.png" class="target"></image>
+  <text>目标人群：{{targetPeople}}</text>
+</view>
+
 <view class = "club"> 
-  <text>社团：{{clubName}}
+  <image src="../../icon/club.png" class="club_icon"></image>
+  <text>发布单位：{{clubName}}
   </text>
 </view>
+
 <view class ="subtitle">
   <text>简介</text>
 </view>
 
-<view class ="context">
-  <text>{{activityDesc}}</text>
+<view class ="context_desc">
+  <text>啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊</text>
 </view>
 </view>
 <!--分隔点1-->
@@ -47,8 +58,8 @@
 
 
 
-<view class ="context">
-    <rich-text nodes = "{{activityDetail}}"> </rich-text>  
+<view class ="context_detail">
+    <rich-text  nodes = "{{activityDetail}}"> </rich-text>  
 </view>
 </view>
 <!--分隔点2-->
@@ -88,6 +99,7 @@
 
 
   </scroll-view>
+  </view>
 
 
     <!--发表评论---->
@@ -108,10 +120,10 @@
   </view>
 
 
-</view>
+
 <!--分隔点3-->
 </view>
-
+</view>
 
 <view class="s_view">
   <button  class="submitBtn" disabled="" bindtap="clickStar"><text class="collection">收藏/star</text></button>
