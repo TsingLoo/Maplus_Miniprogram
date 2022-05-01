@@ -68,7 +68,25 @@ Page({
       wx.showToast({
         title: '请先登录',
         icon:'error',
-      });
+        duration:1000
+      })
+      setTimeout(function () { 
+        wx.showModal({
+          title: '请先登录',
+          content: '是否立即登录？',
+          showCancel: true,
+          cancelText:"否",
+          cancelColor:'skyblue',
+          confirmText:"是",
+          confirmColor: 'skyblue',
+          success: function (res) {
+           if (res.cancel) {
+           } else {
+            wx.navigateTo({
+            url: '/pages/PS_2L/PS_L',
+            })}
+          }
+        })}, 1050)
     }else
     {
       if(!this.data.isSigned == true){
@@ -142,7 +160,25 @@ Page({
       wx.showToast({
         title: '请先登录',
         icon:'error',
-      });
+        duration:1000
+      })
+      setTimeout(function () { 
+        wx.showModal({
+          title: '请先登录',
+          content: '是否立即登录？',
+          showCancel: true,
+          cancelText:"否",
+          cancelColor:'skyblue',
+          confirmText:"是",
+          confirmColor: 'skyblue',
+          success: function (res) {
+           if (res.cancel) {
+           } else {
+            wx.navigateTo({
+            url: '/pages/PS_2L/PS_L',
+            })}
+          }
+        })}, 1050)
     }else
     {
       if(!this.data.isClick == true){
@@ -244,14 +280,31 @@ Page({
 
   onLoad:function()
   {
-    let eventChannel = this.getOpenerEventChannel()
-    eventChannel.on('readActivityID',(activityID)=>
-    {
-      this.setData({
-        acid: activityID.acid || {},
-        
-      })
-    });
+    this.setData({
+      acid: app.globalData.PageNum      
+    })
+  //   let that = this
+  //   let tmp
+  //   let eventChannel = this.getOpenerEventChannel()
+  //   new Promise((resolve, reject) => {
+      
+  //     //let eventChannel = this.getOpenerEventChannel()
+  //     eventChannel.on('readActivityID', function (data) {
+  //        tmp = data
+  //       resolve(tmp)
+  //     })
+  //     that.setData({ acid: tmp.acid })
+  //     console.log("tmp activityId" + tmp.acid)
+  //     //this.setData({acid:tmp.acid || {}})
+  //   }).then((res) => {
+  //     //that.setData({ acid: that.tmp.acid })
+
+  //   });
+  //   //console.log(this.acid)
+  //   //let eventChannel = this.getOpenerEventChannel()
+  
+
+  //  console.log(this.acid)
   },
 
   /**
@@ -259,8 +312,6 @@ Page({
    */
   onShow: function (options) {
     
-  
-
     let that = this
     let checkStarUrl = "http://" + app.globalData.domainPort + "/checkStar/"  + app.globalData.userName + "/" + this.data.acid
     let checkRegisterUrl = "http://" + app.globalData.domainPort + "/checkStar/"  + app.globalData.userName + "/" + this.data.acid
@@ -306,10 +357,6 @@ Page({
 
     console.log("isSigned after checkStar: " + that.data.isSigned)
 
-
-  
-
-
     //真机调试无法通过，此处this.data.acid值在真机调试中为-1,猜测是 eventChannel所致，未验证。
     console.log("acid is " + this.data.acid)
 
@@ -340,3 +387,9 @@ Page({
     })
   }
 })
+
+
+
+
+
+

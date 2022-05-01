@@ -14,6 +14,7 @@ App({
     })
   },
   globalData: {
+    PageNum: -1,
     UrlHead: "http://",
     domainPort: "124.223.214.143:4433",
     id: -1, 

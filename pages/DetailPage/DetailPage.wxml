@@ -1,5 +1,9 @@
 
+<view class="distance">
+<view class="background">
+<!--分隔点1-->
 
+<view class="devide1">
 <view class = "classname"> 
   <text>{{activityTitle}}</text>
 
@@ -12,11 +16,25 @@
 
 
 <view class = "date"> 
+  <image src="../../icon/time.png" class="time"></image>
   <text>时间：{{beginTime}}
   </text>
 </view>
+
 <view class = "location"> 
+  <image src="../../icon/LC.png" class="location_icon"></image>
   <text>地点：{{building}} {{room}}
+  </text>
+</view>
+
+<view class="targetpeople">
+  <image src="../../icon/target.png" class="target"></image>
+  <text>目标人群：{{targetPeople}}</text>
+</view>
+
+<view class = "club"> 
+  <image src="../../icon/club.png" class="club_icon"></image>
+  <text>发布单位：{{clubName}}
   </text>
 </view>
 
@@ -24,77 +42,93 @@
   <text>简介</text>
 </view>
 
-<view class ="context">
+<view class ="context_desc">
   <text>{{activityDesc}}</text>
 </view>
+</view>
+<!--分隔点1-->
 
-<view class ="subtitle">
+<!--分隔点2-->
+<view class="devide2">
+<view class ="subtitle2">
   <text>详情</text>
 </view>
 
-<view class ="context">
-    <rich-text nodes = "{{activityDetail}}"> </rich-text>  
+
+
+
+
+<view class ="context_detail">
+    <rich-text  nodes = "{{activityDetail}}"> </rich-text>  
 </view>
-<view class ="comment">
-  <text>评论</text>
 </view>
+<!--分隔点2-->
 
-<scroll-view scroll-y="true" class="container" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+<!--分隔点3-->
+<view class="devide3">
+  <view class ="comment">
+    <text>评论</text>
+  </view>
 
-<block wx:for="{{fake}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+  <scroll-view scroll-y="true" class="container" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
 
-    <view class="feed-content">
+  <block wx:for="{{fake}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+
+      <view class="feed-content">
 
 
-      <view class="question" qid="{{id}}" bindtap="bindItemTap" data-activityId="{{item.userName}}">
-        <a class="question-link">
-          <text>{{item.comText}}</text>
-        </a>
-      </view>
-      <view class="answer-body">
+        <view class="question" qid="{{id}}" bindtap="bindItemTap" data-activityId="{{item.userName}}">
+          <a class="question-link">
+            <text>{{item.comText}}</text>
+          </a>
+        </view>
+        <view class="answer-body">
+          
+          <view bindtap="bindItemTap" data-activityId="{{item.comText}}">
         
-        <view bindtap="bindItemTap" data-activityId="{{item.comText}}">
-      
-          <text class="answer-txt" >{{item.userName}}</text>
+            <text class="answer-txt" >{{item.userName}}</text>
+          </view>
+          <view class="answer-actions" bindtap="bindItemTap" data-activityId="{{item.userName}}">
+
+          </view>
         </view>
-        <view class="answer-actions" bindtap="bindItemTap" data-activityId="{{item.userName}}">
 
-        </view>
-      </view>
-
-   
-    </view>
-</block>
-
-
-</scroll-view>
-
-   <!--发表评论---->
-   <view class="DoComment">
-     <van-cell-group>
-       <van-field
-         model:value="{{ DoCommentValue }}"
-         placeholder="输入你的评论……"
-         border="{{ false }}"
-       />
-     </van-cell-group>
-   </view>
-   
-<view class="DoComment">
-<!--text>发表评论</text---->
- <button class="DoCommentBtn" bindtap="clickDoComment">评论/comment</button>
-</view>
-
-<view class="view-contain-ti1">
     
-    <text class="text-ti1"></text>
-    <input class="input1"></input>
-</view>
+      </view>
+  </block>
 
+
+  </scroll-view>
+  </view>
+
+
+    <!--发表评论---->
+    <view class="DoComment">
+      <van-cell-group>
+        <van-field
+          model:value="{{ DoCommentValue }}"
+          placeholder="输入你的评论……"
+          border="{{ false }}"
+        />
+      </van-cell-group>
+    </view>
+    
+
+  <view class="Do_Comment">
+  <!--text>发表评论</text---->
+  <button class="DoCommentBtn" bindtap="clickDoComment">评论/comment</button>
+  </view>
+
+
+
+<!--分隔点3-->
+</view>
+</view>
 
 <view class="s_view">
-  <button class="submitBtn" disabled="" bindtap="clickStar">收藏/star</button>
-      <button class="saveBtn" bindtap="clickSign" >报名/Sign 人数：{{registryNum}}/{{estimateNum}}</button>
+  <button  class="submitBtn" disabled="" bindtap="clickStar"><text class="collection">收藏/star</text></button>
+      <button class="saveBtn" bindtap="clickSign" >
+      <text class="regist">报名/Sign 人数：{{registryNum}}/{{estimateNum}}</text></button>
 </view>
 
 

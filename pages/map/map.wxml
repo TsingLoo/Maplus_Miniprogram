@@ -1,19 +1,15 @@
-<import src="../../../common/head.wxml" />
-<import src="../../../common/foot.wxml" />
 
-<view class="container page" data-weui-theme="{{theme}}">
-  <template is="head" data="{{title: 'map'}}"/>
-
-  <view class="page-body">
-    <view class="page-section-title">当前组件使用了墨渊底图样式，查看<navigator class="navigator" url="/packageComponent/pages/map-styles/map-styles">查看更多</navigator>。</view>
-    <view class="page-section page-section-gap">
+  <view class="map">
       <map
         id="map"
         subkey="{{subKey}}"
-        style="width: 100%; height: 900rpx;"
+        style="width: 100%; height: 95%;"
         latitude="{{latitude}}"
+        minScale="{{minScale}}"
+        maxScale="{{maxScale}}"
         longitude="{{longitude}}"
-        scale="{{18}}"
+        scale="{{scale}}"
+        showLocation="{{showLocation}}"
         markers="{{markers}}"
         enable-3D="{{enable3d}}"
         show-compass="{{showCompass}}"
@@ -24,17 +20,68 @@
         enable-overlooking="{{enableOverlooking}}"
         enable-scroll="{{enableScroll}}"
         polygons="{{drawPolygon ? polygons : []}}"
+        enable-poi="{{enablePoi}}"
+        bindmarkertap="submit"
       >
       </map>
-    </view>
+    
   </view>
 
-  <view class="page-section">
-    <view class="btn-area">
+
+    <view class="s_view">
       
-      <button type="primary" bindtap="setBoundary">获取位置</button>
+      <button type="primary" bindtap="getScale">showLocation</button>
+    </view>
+
+
+    <van-popup
+       show="{{ ylShow }}"
+       position="bottom"
+       closeable
+       close-icon="cross"
+       close-icon-position="top-right"
+       custom-style="height: 70%;"
+       bind:close="onClose"
+     > 
+     <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+    <view class="feed-content">
+
+
+<view class="question" qid="{{id}}" bindtap="bindItemTap" data-activityId="{{item.activityId}}">
+  <a class="question-link">
+    <text>{{item.activityTitle}}</text>
+  </a>
+</view>
+<view class="answer-body">
+  
+  <view bindtap="bindItemTap" data-activityId="{{item.activityId}}">
+
+    <text class="answer-txt" >{{item.activityDesc}}</text>
+  </view>
+  <view class="answer-actions" bindtap="bindItemTap" data-activityId="{{item.activityId}}">
+    <view class="like_dot">
+      <image  src="../../icon/hot.png" class="hot"></image>
+      <a>: {{item.hot}}       </a>
+    </view>
+    <view class="comments_dot">
+
+
+      <image  src="../../icon/people.png" class="people"></image>
+       <a>：{{item.registryNum}} / {{item.estimateNum}} </a> 
+
+
+
+    </view>
+
+    <view class="follow-it">
+    <image  src="../../icon/place.png" class="place"></image>
+  
+      <a>:{{item.room || "Online By Default"}}</a>
     </view>
   </view>
-
-  <template is="foot" />
 </view>
+
+
+</view>
+     </block>
+     </van-popup>
