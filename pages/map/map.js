@@ -154,8 +154,7 @@ Page({
 
 
 
-<<<<<<< HEAD
-  },
+  
   submit() {   // 点击预览
     this.setData({
       ylShow: true
@@ -193,7 +192,5 @@ var temp = this
         //console.log("that.data.trueFeed.data is " + that.data.trueFeed.data)
       }
     })}
-=======
   
->>>>>>> dev
 })

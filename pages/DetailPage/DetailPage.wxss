@@ -44,13 +44,13 @@
 .context_detail{
   width: 97%;
   height:100%;
-<<<<<<< HEAD
+
   margin-left: 10rpx;
   margin-right: 10rpx;
-=======
+
   margin-left: 8rpx;
 
->>>>>>> dev
+
   /*background-color: chocolate;*/
   
 }
