@@ -23,7 +23,10 @@
   <text>地点：{{building}} {{room}}
   </text>
 </view>
-
+<view class = "club"> 
+  <text>社团：{{clubName}}
+  </text>
+</view>
 <view class ="subtitle">
   <text>简介</text>
 </view>
@@ -36,7 +39,7 @@
 
 <!--分隔点2-->
 <view class="devide2">
-<view class ="subtitle">
+<view class ="subtitle2">
   <text>详情</text>
 </view>
 

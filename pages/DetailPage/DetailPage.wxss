@@ -5,7 +5,8 @@
     height: 100%;
     display: flex;
     justify-content: center;
-    font-size: 30px;
+    font-weight: bold;
+    font-size: 25px;
 
     /*background-color: aqua;*/
 
@@ -13,60 +14,76 @@
 
 .subtitle{
   width: 100%;
-  height: 150rpx;
+  height: 100%;
+  display: flex;
+  font-weight: bold;
+  margin-left: 10rpx;
+  /*background-color:brown;*/
+}
+.subtitle2{
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: left;
-  font-size: 25px;
-  /*background-color:brown;*/
-  line-height: 150rpx;
+  margin-left: 10rpx;
+  font-weight: bold;
+  font-size: 20px;
 }
 .context{
   width: 100%;
   height:100%;
+  margin-left: 8rpx;
+  margin-right: 15rpx;
   /*background-color: chocolate;*/
   
 }
+
 .commentDesc{
   width: 100%;
   height:100%;
+  margin-left: 8rpx;
+  margin-right: 8rpx;
   /*background-color: chocolate;*/
   
 }
 
 .date{
-    width: 50% !important; 
-    justify-content: center;
-    float:left;
-
-
-    text-align: center;
+    text-align: left;
+    margin-left: 8rpx;
     /*background-color: aquamarine;*/
 }
 .location{
-    width: 50% !important; 
-    justify-content: center;
-    float:left;
-
-
-    text-align: center;
+    text-align: left;
+    margin-left: 8rpx;
     /*background-color: beige;*/
+}
+.club{
+  text-align: left;
+  margin-left: 8rpx;
+  /*background-color: aquamarine;*/
 }
 .text{
   width:100%;
   height:100%;
   text-align: left;
+  margin-left: 8rpx;
+  margin-right: 10rpx;
   /*background-color: blue;*/
   
 }
+
 .comment{
   width: 100%;
   height: 150rpx;
   display: flex;
   justify-content: left;
   font-size: 25px;
+  font-weight: bold;
   /*background-color:brown;*/
   line-height: 150rpx;
+  margin-left: 10rpx;
 }
+
 .DoCommentBtn { 
   width: 100% ;
   float:left;
@@ -85,7 +102,6 @@
   border: 1rpx solid #ffffff;
   border-radius: 0rpx;
   
-
 
 }
 /**index.wxss**/
@@ -148,7 +164,7 @@
 .question{
   line-height: 80rpx;
   font-weight: 700;
-  font-size: 35rpx;
+  font-size: 28rpx;
   margin-left: 15rpx;
   margin-right: 15rpx;
 
@@ -162,7 +178,7 @@
 
 .answer-txt{
 
-  font-size: 28rpx;
+font-size: 26rpx;
   
  
 }
