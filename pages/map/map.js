@@ -14,6 +14,53 @@ Page({
       }
     })
   },
+<<<<<<< HEAD
+=======
+
+  onLoad:function() {
+    this.mapCtx=wx.createMapContext('map')
+    
+    this.mapCtx.setBoundary({
+      southwest:{
+        longitude:120.734742,
+        latitude:31.268347,
+      },
+      northeast:{
+        longitude:120.746592,
+        latitude:31.279598,
+      },
+      
+      complete: function(e){},
+    },
+    
+    )
+    this.mapCtx.addGroundOverlay({
+      id:0,
+      src:"https://6465-developtest-8gz91yrw88cb744c-1306661972.tcb.qcloud.la/articeSrc/map.jpg?sign=0c93002db71ceae54134c7174b16e723&t=1651416228",
+      bounds:{
+        southwest:{
+          longitude:120.734742,
+          latitude:31.268347,
+        },
+        northeast:{
+          longitude:120.746592,
+          latitude:31.279598,
+        }
+      },
+      complete: function(e){},
+    }) 
+
+    this.mapCtx.moveToLocation({
+      latitude: 31.274659,
+      longitude: 120.738168,
+      complete: function(e){},
+
+    })
+    
+
+    
+},
+>>>>>>> Debug
 
   onLoad:function() {
     this.mapCtx=wx.createMapContext('map')
@@ -153,6 +200,7 @@ Page({
   },
 
 
+<<<<<<< HEAD
 
   
   submit() {   // 点击预览
@@ -214,6 +262,8 @@ bindItemTap:function(e) {
         //console.log("that.data.trueFeed.data is " + that.data.trueFeed.data)
       }
     })}
+=======
+>>>>>>> Debug
 
   
 })
