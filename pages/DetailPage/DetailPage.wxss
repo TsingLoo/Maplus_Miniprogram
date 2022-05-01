@@ -75,6 +75,9 @@
   
   
  }
+
+
+
  .view-contain-ti1 {
   display: flex;
   height: 100px;
@@ -136,7 +139,8 @@
 
   background-color: white;
   font-size: large;
-  border:1rpx solid gray;
+  border-top:1rpx solid gray;
+  border-bottom:1rpx solid gray;
 
 
 }
@@ -246,3 +250,47 @@
   .regist{
     font-size: 32rpx;
   }
+
+  .devide1{
+    margin-top: 20rpx;
+    margin-left: 15rpx;
+    margin-right: 15rpx;
+
+    border:7rpx solid gray;
+    border-radius: 15rpx;
+    background-color: white;
+}
+
+  .devide2{
+    margin-top: 20rpx;
+    margin-left: 15rpx;
+    margin-right: 15rpx;
+
+    border:7rpx solid gray;
+    border-radius: 15rpx;
+    background-color: white;
+}
+
+.devide3{
+  margin-top: 20rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+
+  border: 7rpx solid gray;
+
+  border-radius: 15rpx;
+
+  height: 960rpx;
+  background-color: white;
+}
+
+.DoComment{
+  margin-bottom: 30rpx;
+}
+
+.background{
+
+  margin-top: 50rpx;
+  margin-bottom: 200rpx;
+}
+
