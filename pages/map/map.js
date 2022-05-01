@@ -214,5 +214,6 @@ bindItemTap:function(e) {
         //console.log("that.data.trueFeed.data is " + that.data.trueFeed.data)
       }
     })}
+
   
 })

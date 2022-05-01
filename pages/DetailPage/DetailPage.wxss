@@ -44,12 +44,7 @@
 .context_detail{
   width: 97%;
   height:100%;
-
-  margin-left: 10rpx;
-  margin-right: 10rpx;
-
   margin-left: 8rpx;
-
 
   /*background-color: chocolate;*/
   
