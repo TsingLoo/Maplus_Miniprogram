@@ -1,9 +1,7 @@
 var app = getApp()
 Page({
-  data: {
-    feed: [],
-    feed_length: 0
-  },
+  feed: [],
+  feed_length: 0,
 
   onShow: function () {
     console.log('onShow')

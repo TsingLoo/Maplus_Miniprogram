@@ -1,3 +1,4 @@
+var app = getApp()
 Page({
   onShareAppMessage() {
     return {
@@ -7,7 +8,8 @@ Page({
   },
 
   data: {
-    
+    feed: [],
+    feed_length: 0,
     theme: 'light',
     latitude: 31.275,
     longitude: 120.74,
@@ -115,5 +117,42 @@ Page({
     }) 
     
 
-  }
+  },
+  submit() {   // 点击预览
+    this.setData({
+      ylShow: true
+    })
+var temp = this
+
+    this.setData({
+      article: temp,
+
+    })
+  },
+  onClose(){  // 关闭预览
+    this.setData({
+      ylShow: false
+    })
+  },
+  refresh: function(){
+    let that = this
+    //var feed = {}
+    
+    wx.request({
+
+      url: 'http://' + app.globalData.domainPort + '/activity',
+
+      method: 'GET',
+      success:function(res)
+      {
+        console.log(res.data)
+        that.setData(
+          {
+            feed: res.data,
+            feed_length: res.data.length
+          }
+        )
+        //console.log("that.data.trueFeed.data is " + that.data.trueFeed.data)
+      }
+    })}
 })

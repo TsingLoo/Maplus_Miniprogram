@@ -15,3 +15,27 @@
   position: fixed;
   width: 100%;
 }
+.people{
+
+  margin-left: 15rpx;
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.hot{
+
+  margin-left: 5rpx;
+  width: 35rpx;
+  height: 35rpx;
+
+}
+
+
+.place{
+
+
+  margin-left: 10rpx;
+  width: 35rpx;
+  height: 35rpx;
+}
+/*feed-item part is in app.wxss for multiplexing*/
