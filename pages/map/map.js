@@ -14,8 +14,7 @@ Page({
       }
     })
   },
-<<<<<<< HEAD
-=======
+
 
   onLoad:function() {
     this.mapCtx=wx.createMapContext('map')
@@ -60,7 +59,7 @@ Page({
 
     
 },
->>>>>>> Debug
+
 
   onLoad:function() {
     this.mapCtx=wx.createMapContext('map')
@@ -200,8 +199,6 @@ Page({
   },
 
 
-<<<<<<< HEAD
-
   
   submit() {   // 点击预览
     this.refresh();
@@ -262,8 +259,6 @@ bindItemTap:function(e) {
         //console.log("that.data.trueFeed.data is " + that.data.trueFeed.data)
       }
     })}
-=======
->>>>>>> Debug
 
   
 })
