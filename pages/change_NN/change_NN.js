@@ -46,7 +46,7 @@ submit:function(){
   }
 
   this.setData({
-    requestUrl: 'http://' + app.globalData.domainPort + '/changeNickname/' + app.globalData.userName + '/' + this.data.userNickname
+    requestUrl: app.globalData.UrlHead + app.globalData.domainPort + '/changeNickname/' + app.globalData.userName + '/' + this.data.userNickname
   })
 
 

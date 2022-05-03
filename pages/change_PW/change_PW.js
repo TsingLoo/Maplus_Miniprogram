@@ -79,7 +79,7 @@ submit:function(event){
   }else
   {
     this.setData({
-      requestUrl:"http://" + app.globalData.domainPort + "/changePsw/" + app.globalData.userName +"/" + this.data.userPassword +"/" +this.data.newPassword
+      requestUrl:app.globalData.UrlHead + app.globalData.domainPort + "/changePsw/" + app.globalData.userName +"/" + this.data.userPassword +"/" +this.data.newPassword
     })
 
     console.log(this.data.requestUrl)

@@ -35,7 +35,7 @@ Page({
   {
 
     let that = this
-    let requestUrl = "http://"+ app.globalData.domainPort +"/preModifyActivity/" + this.data.acid
+    let requestUrl = app.globalData.UrlHead+ app.globalData.domainPort +"/preModifyActivity/" + this.data.acid
     console.log(requestUrl);
     wx.request({
       url: requestUrl,
@@ -97,7 +97,7 @@ Page({
         })
         wx.setStorageSync('jobData', jobData);
     
-        let requestUrl = "http://" + app.globalData.domainPort + "/addRegister/" + app.globalData.userName+"/" + this.data.acid
+        let requestUrl = app.globalData.UrlHead + app.globalData.domainPort + "/addRegister/" + app.globalData.userName+"/" + this.data.acid
         console.log("request register url is" + requestUrl)
         
               wx.request({
@@ -189,7 +189,7 @@ Page({
         })
         wx.setStorageSync('jobData', jobData);
     
-        let requestUrl = "http://" + app.globalData.domainPort + "/addStar/" + app.globalData.userName+"/" + this.data.acid
+        let requestUrl = app.globalData.UrlHead + app.globalData.domainPort + "/addStar/" + app.globalData.userName+"/" + this.data.acid
         console.log("request star url is" + requestUrl)
         
               wx.request({
@@ -246,7 +246,35 @@ Page({
 
   },
 
+  clickDoComment:function(event)
+  {
 
+    
+    this.setData()
+    {
+      activityID: this.acid
+      userName: app.globalData.userName
+      comtext: this.comment
+    }
+    let that =this
+    let addCommentUrl = app.globalData.UrlHead + app.globalData.domainPort + '/addComment'
+    wx.request({
+      url: addCommentUrl,
+      method: "POST",
+      data:{
+        activityID: that.activityID,
+        userName: that.userName,
+        comtext: that.comment
+      },
+      success: function(res)
+      {
+        console.log("提交了评价")
+      }
+
+
+    })
+
+  },
 
   confirmComment:function(event)
   {
@@ -256,7 +284,7 @@ Page({
     
 
     wx.request({
-      url: 'http://'+ app.globalData.domainPort +'/addComment',
+      url: app.globalData.UrlHead+ app.globalData.domainPort +'/addComment',
       method:'POST',
       data:{
         activityID: this.data.acid,
@@ -313,8 +341,8 @@ Page({
   onShow: function (options) {
     
     let that = this
-    let checkStarUrl = "http://" + app.globalData.domainPort + "/checkStar/"  + app.globalData.userName + "/" + this.data.acid
-    let checkRegisterUrl = "http://" + app.globalData.domainPort + "/checkStar/"  + app.globalData.userName + "/" + this.data.acid
+    let checkStarUrl = app.globalData.UrlHead + app.globalData.domainPort + "/checkStar/"  + app.globalData.userName + "/" + this.data.acid
+    let checkRegisterUrl = app.globalData.UrlHead + app.globalData.domainPort + "/checkStar/"  + app.globalData.userName + "/" + this.data.acid
     console.log("acid from show" + this.data.acid)
 
     console.log(checkStarUrl)
@@ -362,19 +390,36 @@ Page({
 
    this.refresh()    
 
-    let addHotUrl = 'http://' + app.globalData.domainPort + '/addHot/' + this.data.acid
+    let addHotUrl = app.globalData.UrlHead + app.globalData.domainPort + '/addHot/' + this.data.acid
     wx.request({
       url: addHotUrl,
       method: 'GET'
     })
 
-    var fake = util.getComment();
+    let getCommentUrl = app.globalData.UrlHead + app.globalData.domainPort + '/getComments/' + this.data.acid
+    wx.request({
+      url: getCommentUrl,
+      method: 'GET',
+      success:function(res)
+        {
+          that.setData({
+            fake:res.data,
+            fake_length: res.data.length
+          })
+        },
+        fail:function(res)
+        {
+         
+        }
+    })
+    
+    // var fake = util.getComment();
 
-    var fake_data = fake.data;
-    this.setData({
-      fake:fake_data,
-      fake_length: fake_data.length
-    });
+    // var fake_data = fake.data;
+    // this.setData({
+    //   fake:fake_data,
+    //   fake_length: fake_data.length
+    // });
 
   },
 

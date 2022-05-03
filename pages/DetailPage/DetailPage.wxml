@@ -116,7 +116,7 @@
 
   <view class="Do_Comment">
   <!--text>发表评论</text---->
-  <button class="DoCommentBtn" bindtap="clickDoComment">评论/comment</button>
+  <button class="DoCommentBtn" bindtap="confirmComment">评论/comment</button>
   </view>
 
 

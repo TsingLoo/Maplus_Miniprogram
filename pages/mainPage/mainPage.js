@@ -38,6 +38,7 @@ Page({
       }
     })}, 1050)
   }
+  console.log(app.globalData.userGroup);
   if(app.globalData.userGroup == 1){
     wx.showToast({
       title: '此账号没有发布权限',
@@ -82,7 +83,7 @@ bindItemTap:function(e) {
     
     wx.request({
 
-      url: 'http://' + app.globalData.domainPort + '/activity',
+      url: app.globalData.UrlHead + app.globalData.domainPort + '/activity',
 
       method: 'GET',
       success:function(res)

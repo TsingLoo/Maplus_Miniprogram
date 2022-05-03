@@ -42,7 +42,7 @@ inputuserName:function(e){
     //如果是，那么向服务器发起验重请求
       this.setData({
         userNameStatus: "Valid UserName,waiting for check",
-        requestUrl :  'http://'+ app.globalData.domainPort +'/userCheck/' + this.data.userName
+        requestUrl :  app.globalData.UrlHead+ app.globalData.domainPort +'/userCheck/' + this.data.userName
       })
       //发起验重请求
       var that = this
@@ -160,7 +160,7 @@ submit:function(){
   {
     var that = this
     wx.request({
-      url: 'http://'+ app.globalData.domainPort +'/userRegister',
+      url: app.globalData.UrlHead+ app.globalData.domainPort +'/userRegister',
       method:'POST',
       data:{
         userName: this.data.userName,

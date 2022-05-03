@@ -77,7 +77,7 @@ Page({
       var nowTime = new Date().toJSON().substring(0, 10)
       wx.request({
         
-        url: 'http://' + app.globalData.domainPort + '/createActivity',
+        url: app.globalData.UrlHead + app.globalData.domainPort + '/createActivity',
         method: "POST",
         data:
         {

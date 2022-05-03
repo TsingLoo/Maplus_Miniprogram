@@ -25,7 +25,7 @@ Page({
     let that = this
     
     wx.request({
-      url: 'http://'+ app.globalData.domainPort +'/registerActivity/' + app.globalData.userName,
+      url: app.globalData.UrlHead+ app.globalData.domainPort +'/registerActivity/' + app.globalData.userName,
       method: 'GET',
       success:function(res)
       {

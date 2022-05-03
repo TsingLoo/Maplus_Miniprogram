@@ -34,7 +34,7 @@ login:function(){
 
   var that = this
   that.setData({
-    requestUrl: "http://"+ app.globalData.domainPort +"/login/" + that.data.userName +"/" + that.data.userPassword
+    requestUrl: app.globalData.UrlHead+ app.globalData.domainPort +"/login/" + that.data.userName +"/" + that.data.userPassword
   })
   wx.request({
     url: that.data.requestUrl,
@@ -53,6 +53,7 @@ login:function(){
         console.log("Login Correct!" + res.data)
         app.globalData.userName = that.data.userName
         app.globalData.id = res.data
+        app.globalData.userGroup = res.data[1]
         app.globalData.logged = true
       }
       

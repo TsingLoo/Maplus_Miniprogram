@@ -34,7 +34,7 @@ Page({
     
     wx.request({
 
-      url: 'http://'+ app.globalData.domainPort +'/Staractivity/' + app.globalData.userName,
+      url: app.globalData.UrlHead+ app.globalData.domainPort +'/Staractivity/' + app.globalData.userName,
 
       method: 'GET',
       success:function(res)
