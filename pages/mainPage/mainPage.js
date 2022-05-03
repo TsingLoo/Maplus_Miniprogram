@@ -97,6 +97,11 @@ bindItemTap:function(e) {
         //console.log("that.data.trueFeed.data is " + that.data.trueFeed.data)
       }
     })
+  },
+
+  go_to_search:function(){
+    wx.navigateTo({
+      url: '/pages/search_history/search_history',
+    })
   }
-  }
-)
+  })
