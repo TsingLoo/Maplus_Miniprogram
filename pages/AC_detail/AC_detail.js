@@ -11,7 +11,9 @@ Page({
     clubNameValue: '', // 活动所属俱乐部    ？
     activityDescValue: '', //活动简介
     timeValue: '', //活动时间
-    buildingValue: '',//活动建筑物           ？
+    array: ['CB','FB','PB','MA','MB','IBSS','GYM'],
+    index: 0,
+    buildingValue: 'CB',//活动建筑物
     roomValue: '', //活动和房间
     targetPeopleValue: '', //目标人群
     estimateNumValue: '', //报名人数
@@ -19,14 +21,28 @@ Page({
     radioV: '',    // 单选按钮所选
     mlList: '',    // 目录列表/所有单选
   },
-  onLoad: function(options) {
-    
-  },
+
   onChange(val){  // 单选按钮发生变化
     this.setData({
       radioV: val.detail
     })
   },
+
+  getbuilding: function(e) {
+    this.setData({
+      index: e.detail.value,   
+      building: this.data.array[e.detail.value]
+    })
+    console.log(this.data.index + '选择改变，携带值为' + this.data.building)
+  },
+
+  inputroom:function(event){
+  this.setData({
+  room: event.detail.value
+  })
+  console.log("room: " + this.data.room)
+},
+
   getHtml(e) {  // 获取实时富文本
     this.setData({
       // html:e.detail.content.html

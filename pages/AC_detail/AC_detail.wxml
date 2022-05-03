@@ -72,15 +72,13 @@
             </view>
 
   <!-- 活动地点 buildingRoom -->
-    <view class="buildingRoom">
-     <van-cell-group>
-       <van-field
-         model:value="{{ roomValue }}"
-         placeholder="请输入活动地点，此处应该为建筑物（提供选择）+房间"
-         border="{{ false }}"
-       />
-     </van-cell-group>
-   </view>
+<view class="Building">
+  <picker bindchange="getbuilding" value="{{index}}" range="{{array}}">
+<view class="picker">当前选择：{{array[index]}}</view>
+</picker>
+  <input class="Room" bindinput = "inputroom"
+  placeholder="请输入房间号" placeholder-class='placeholder'  value = "{{room}}"></input>
+</view>
    <view class="line">
             </view>
 
