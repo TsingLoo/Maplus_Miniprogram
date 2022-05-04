@@ -70,6 +70,7 @@ Page({
     enableTraffic: false,
     enablePoi:false,
     
+    
   },
 
  
@@ -117,6 +118,15 @@ Page({
     this.setData({
       enableTraffic: !this.data.enableTraffic
     })
+  },
+  bindupdated:function(e){
+    this.setData({
+      minScale:16.2,
+      scale:16.2, /*这个setdata改变了手机地图里data的值，但是手机地图的实际生效值没有改变 */
+      complete:function(e){} /* 存在这个setdata的时候，button绑定的getScale的setdata不生效。*/
+                           /* button触发的setdata是可以改变手机地图的生效值 */
+  })
+  
   },
   /*getScale:function(){
     
@@ -192,13 +202,7 @@ Page({
 
     
 },
-onReady:function(){
-  this.setData({
-    minScale:16.16, /*这个setdata改变了手机地图里data的值，但是手机地图的实际生效值没有改变 */
-    complete:function(e){} /* 存在这个setdata的时候，button绑定的getScale的setdata不生效。*/
-                         /* button触发的setdata是可以改变手机地图的生效值 */
-})
-},
+
 
 
   
