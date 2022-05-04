@@ -5,7 +5,8 @@
     height: 100%;
     display: flex;
     justify-content: center;
-    font-size: 30px;
+    font-weight: bold;
+    font-size: 25px;
 
     /*background-color: aqua;*/
 
@@ -13,68 +14,100 @@
 
 .subtitle{
   width: 100%;
-  height: 150rpx;
+  height: 100%;
+  display: flex;
+  font-weight: bold;
+  margin-left: 10rpx;
+  margin-top: 30rpx;
+  /*background-color:brown;*/
+}
+.subtitle2{
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: left;
-  font-size: 25px;
-  /*background-color:brown;*/
-  line-height: 150rpx;
+  margin-left: 10rpx;
+  font-weight: bold;
+  font-size: 20px;
 }
-.context{
-  width: 100%;
+.context_desc{
+  width: 97%;
   height:100%;
+  margin-left: 8rpx;
+
+  margin-bottom: 15rpx;
+  word-break: break-all;
   /*background-color: chocolate;*/
   
 }
+
+.context_detail{
+  width: 97%;
+  height:100%;
+  margin-left: 8rpx;
+
+  /*background-color: chocolate;*/
+  
+}
+
 .commentDesc{
   width: 100%;
   height:100%;
+  margin-left: 8rpx;
+  margin-right: 8rpx;
   /*background-color: chocolate;*/
   
 }
 
 .date{
-    width: 50% !important; 
-    justify-content: center;
-    float:left;
-
-
-    text-align: center;
+    text-align: left;
+    margin-left: 8rpx;
     /*background-color: aquamarine;*/
 }
 .location{
-    width: 50% !important; 
-    justify-content: center;
-    float:left;
-
-
-    text-align: center;
+    text-align: left;
+    margin-left: 8rpx;
     /*background-color: beige;*/
+}
+.club{
+  text-align: left;
+  margin-left: 8rpx;
+  /*background-color: aquamarine;*/
 }
 .text{
   width:100%;
   height:100%;
   text-align: left;
+  margin-left: 8rpx;
+  margin-right: 10rpx;
   /*background-color: blue;*/
   
 }
+
 .comment{
   width: 100%;
   height: 150rpx;
   display: flex;
   justify-content: left;
   font-size: 25px;
+  font-weight: bold;
   /*background-color:brown;*/
   line-height: 150rpx;
+  margin-left: 10rpx;
 }
+
 .DoCommentBtn { 
   width: 100% ;
   float:left;
   height:100%;
   background-color: rgba(25, 218, 57, 0.774);
+
   
   
  }
+
+
+
  .view-contain-ti1 {
   display: flex;
   height: 100px;
@@ -83,12 +116,11 @@
   border-radius: 0rpx;
   
 
-
 }
 /**index.wxss**/
 
 .container{
-  height: 1500rpx;
+  height: 600rpx;
 }
 .container .search{
   width: 735rpx;
@@ -133,19 +165,19 @@
 }
 
 .feed-content{
-  margin-top: 20rpx;
-  margin-left: 20rpx;
-  margin-right: 35rpx;
+
+  background-color: white;
   font-size: large;
-  border:5rpx solid gray;
-  border-radius: 15rpx;
-  box-shadow:5rpx 5rpx 5rpx 5rpx gray;
+  border-top:1rpx solid gray;
+  border-bottom:1rpx solid gray;
+
+
 }
 
 .question{
   line-height: 80rpx;
   font-weight: 700;
-  font-size: 35rpx;
+  font-size: 28rpx;
   margin-left: 15rpx;
   margin-right: 15rpx;
 
@@ -159,7 +191,7 @@
 
 .answer-txt{
 
-  font-size: 28rpx;
+font-size: 26rpx;
   
  
 }
@@ -219,16 +251,20 @@
   height: 35rpx;
 }
 .saveBtn { 
+
     width: 70% !important; 
     float:left;
     font-weight: 100;
     background-color: rgba(8, 131, 245, 0.815);
+    display: inline;
    }
    .submitBtn { 
+
     width: 30% !important;
     float:left;
     height:100%;
     background-color: rgba(250, 233, 0, 0.774);
+    display: inline;
     
     
    }
@@ -237,4 +273,81 @@
     position: fixed;
     width: 100%;
   }
+  .collection{
+    font-size: 32rpx;
+  }
+  .regist{
+    font-size: 32rpx;
+  }
 
+  .devide1{
+    margin-top: 20rpx;
+    margin-left: 15rpx;
+    margin-right: 15rpx;
+
+    border:7rpx solid gray;
+    border-radius: 15rpx;
+    background-color: white;
+}
+
+  .devide2{
+    margin-top: 20rpx;
+    margin-left: 15rpx;
+    margin-right: 15rpx;
+
+    border:7rpx solid gray;
+    border-radius: 15rpx;
+    background-color: white;
+}
+
+.devide3{
+  margin-top: 20rpx;
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+
+  border: 7rpx solid gray;
+
+  border-radius: 15rpx;
+
+
+  background-color: white;
+}
+
+.DoComment{
+  margin-bottom: 30rpx;
+}
+
+.background{
+
+  margin-top: 50rpx;
+
+}
+
+.time{
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.location_icon{
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.club_icon{
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.targetpeople{
+  text-align: left;
+  margin-left: 8rpx;
+}
+
+.target{
+  width: 35rpx;
+  height: 35rpx;
+}
+
+.distance{
+  margin-bottom: 300rpx;
+}

@@ -21,7 +21,7 @@ module.exports = {
 };
 
 
-
+var fake = require('../data/FakeComText.js')
 var mainPage = require('../data/data_mainPage.js')
 var mainPage_next = require('../data/data_mainPage_next.js')
 var collection = require('../data/data_collection.js')
@@ -47,6 +47,10 @@ function getData(url){
   })
 }
 
+function getComment()
+{
+  return fake.fakeText;
+}
 
 function getDiscovery(){
   return mainPage.mainPage;
@@ -64,7 +68,7 @@ function collectionNext() {
   return collection_next.next
 }
 
-
+module.exports.getComment = getComment;
 module.exports.getDiscovery = getDiscovery;
 module.exports.discoveryNext = discoveryNext;
 module.exports.getCollection = getCollection;

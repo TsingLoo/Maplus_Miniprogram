@@ -1,44 +1,5 @@
-/**index.wxss**/
-
 .container{
   height: 1500rpx;
-}
-.container .search{
-  width: 735rpx;
-  height: 65rpx;
-  padding: 12.5rpx 0 12.5rpx 15rpx;
-  background: #2A8CE5;
-}
-.container .search-left{
-  flex: 8;
-  background: #4EA3E7;
-  text-align: left;
-}
-.container .search-left input{
-  display: inline-block;
-  height: 65rpx;
-  font-size: 26rpx;
-}
-.search-placeholder{
-  color: #8CCEFD;
-  line-height: 20rpx;
-}
-.container .search .search-left image{
-  display: inline-block;
-  width: 35rpx;
-  height: 35rpx;
-  padding: 15rpx 15rpx 15rpx 20rpx;
-}
-.container .search .search-right{
-  flex: 1;
-}
-.container .search .search-right image{
-  width: 45rpx;
-  height: 45rpx;
-  padding: 10rpx;
-}
-
-.container{
   padding: 0;
   font-size: 14rpx;
   background: #F0F4F3;
@@ -61,7 +22,6 @@
   font-size: 35rpx;
   margin-left: 15rpx;
   margin-right: 15rpx;
-
 }
 
 .answer-body{
@@ -71,10 +31,7 @@
 }
 
 .answer-txt{
-
   font-size: 28rpx;
-  
- 
 }
 
 
@@ -99,13 +56,9 @@
 }
 
 .line{
-
   width:200%;
-  
   height:15rpx;
-  
   background:rgb(221, 221, 221);
-  
   }
 
 .people{
@@ -116,19 +69,15 @@
 }
 
 .hot{
-
   margin-left: 5rpx;
   width: 35rpx;
   height: 35rpx;
-
 }
 
 
 .place{
 
-
   margin-left: 10rpx;
   width: 35rpx;
   height: 35rpx;
 }
-/*feed-item part is in app.wxss for multiplexing*/

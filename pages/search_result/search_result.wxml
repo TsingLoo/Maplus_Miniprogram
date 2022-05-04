@@ -1,0 +1,40 @@
+<scroll-view scroll-y="true" class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower"  scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+
+<block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+
+    <view class="feed-content" >
+    
+      <view class="question" qid="{{id}}" bindtap="bindItemTap" data-activityId="{{item.activityId}}">
+        <a class="question-link">
+          <text>{{item.activity_title}}</text>
+        </a>
+      </view>
+      <view class="answer-body">
+        
+        <view bindtap="bindItemTap" data-activityId="{{item.activityId}}">
+      
+          <text class="answer-txt" >{{item.activityTitle}}</text>
+        </view>
+        <view class="answer-actions" bindtap="bindItemTap" data-activityId="{{item.activityId}}">
+          <view class="like_dot">
+            <image  src="../../icon/hot.png" class="hot"></image>
+            <a>: {{item.hot}}       </a>
+          </view>
+          <view class="comments_dot">
+            <image  src="../../icon/people.png" class="people"></image>
+            <a>：{{item.registryNum}} / {{item.estimateNum}} </a>
+
+          </view>
+
+          <view class="follow-it">
+          <image  src="../../icon/place.png" class="place"></image>
+            <a>:{{item.room || "Online By Default"}}</a>
+          </view>
+        </view>
+      </view>
+
+   
+    </view>
+</block>
+
+</scroll-view>

@@ -1,89 +1,89 @@
 {
-    "useExtendedLib": {
-        "kbone": true,
-        "weui": true
-    },
-    "pages": [
-        "pages/map/map",
-        "pages/logs/logs",
-        "pages/activity/activity",
-        "pages/personal/personal",
-        "pages/personal_activity/personal_activity",
-        "pages/AC_detail/AC_detail",
-        "pages/DetailPage/DetailPage",
-        "pages/activities/mainPage/mainPage",
-        "pages/PS_2L/PS_L",
-        "pages/PS_1R/PS_R",
-        "pages/change_PW/change_PW",
-        "pages/change_NN/change_NN",
-        "pages/collection/collection"
-  
-    ],
-    "permission": {
-        "scope.userLocation": {
-            "desc": "你的位置信息将用于小程序位置接口的效果展示"
-        }
-    },
-    "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "Maplus",
-        "navigationBarTextStyle": "black"
-    },
-    "usingComponents": {
-        "van-button": "@vant/weapp/button/index",
-        "van-grid": "@vant/weapp/grid/index",
-        "van-grid-item": "@vant/weapp/grid-item/index",
-        "van-tab": "@vant/weapp/tab/index",
-        "van-tabs": "@vant/weapp/tabs/index",
-        "van-row": "@vant/weapp/row/index",
-        "van-col": "@vant/weapp/col/index",
-        "van-notice-bar": "@vant/weapp/notice-bar/index",
-        "van-card": "@vant/weapp/card/index",
-        "van-icon": "@vant/weapp/icon/index",
-        "van-cell": "@vant/weapp/cell/index",
-        "van-cell-group": "@vant/weapp/cell-group/index",
-        "van-image": "@vant/weapp/image/index",
-        "van-panel": "@vant/weapp/panel/index",
-        "van-uploader": "@vant/weapp/uploader/index",
-        "van-field": "@vant/weapp/field/index",
-        "van-goods-action": "@vant/weapp/goods-action/index",
-        "van-goods-action-icon": "@vant/weapp/goods-action-icon/index",
-        "van-goods-action-button": "@vant/weapp/goods-action-button/index",
-        "van-divider": "@vant/weapp/divider/index",
-        "van-checkbox": "@vant/weapp/checkbox/index",
-        "van-checkbox-group": "@vant/weapp/checkbox-group/index",
-        "van-popup": "@vant/weapp/popup/index",
-        "van-count-down": "@vant/weapp/count-down/index",
-        "van-radio": "@vant/weapp/radio/index",
-        "van-radio-group": "@vant/weapp/radio-group/index",
-        "van-toast": "@vant/weapp/toast/index",
-        "van-action-sheet": "@vant/weapp/action-sheet/index",
-        "van-swipe-cell": "@vant/weapp/swipe-cell/index",
-        "van-dialog": "@vant/weapp/dialog/index",
-        "van-tag": "@vant/weapp/tag/index"
-    },
-    "tabBar": {
-        "list": [
-            {
-                "pagePath": "pages/map/map",
-                "text": "map",
-                "iconPath": "icon/map.png",
-                "selectedIconPath": "icon/map1.png"
-            },
-            {
-                "pagePath": "pages/activities/mainPage/mainPage",
-                "text": "acticity",
-                "iconPath": "icon/activity.png",
-                "selectedIconPath": "icon/activity1.png"
-            },
-            {
-                "pagePath": "pages/personal/personal",
-                "text": "personal",
-                "iconPath": "icon/personal.png",
-                "selectedIconPath": "icon/personal1.png"
-            }
-        ]
-    },
-    "sitemapLocation": "sitemap.json"
+  "useExtendedLib": {
+    "kbone": true,
+    "weui": true
+  },
+  "pages": [
+    "pages/map/map",
+    "pages/logs/logs",
+    "pages/personal/personal",
+    "pages/personal_activity/personal_activity",
+    "pages/AC_detail/AC_detail",
+    "pages/DetailPage/DetailPage",
+    "pages/mainPage/mainPage",
+    "pages/PS_2L/PS_L",
+    "pages/PS_1R/PS_R",
+    "pages/change_PW/change_PW",
+    "pages/change_NN/change_NN",
+    "pages/collection/collection",
+    "pages/search_history/search_history",
+    "pages/search_result/search_result"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Maplus",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-row": "@vant/weapp/row/index",
+    "van-col": "@vant/weapp/col/index",
+    "van-notice-bar": "@vant/weapp/notice-bar/index",
+    "van-card": "@vant/weapp/card/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-panel": "@vant/weapp/panel/index",
+    "van-uploader": "@vant/weapp/uploader/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-goods-action": "@vant/weapp/goods-action/index",
+    "van-goods-action-icon": "@vant/weapp/goods-action-icon/index",
+    "van-goods-action-button": "@vant/weapp/goods-action-button/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-count-down": "@vant/weapp/count-down/index",
+    "van-radio": "@vant/weapp/radio/index",
+    "van-radio-group": "@vant/weapp/radio-group/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-action-sheet": "@vant/weapp/action-sheet/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-tag": "@vant/weapp/tag/index"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/map/map",
+        "text": "map",
+        "iconPath": "icon/map.png",
+        "selectedIconPath": "icon/map1.png"
+      },
+      {
+        "pagePath": "pages/mainPage/mainPage",
+        "text": "acticity",
+        "iconPath": "icon/activity.png",
+        "selectedIconPath": "icon/activity1.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "personal",
+        "iconPath": "icon/personal.png",
+        "selectedIconPath": "icon/personal1.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
 }

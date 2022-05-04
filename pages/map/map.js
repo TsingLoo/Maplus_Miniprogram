@@ -1,108 +1,271 @@
-// pages/map/map.js
+var app = getApp()
 Page({
+  onShareAppMessage() {
+    return {
+      title: 'map',
+      path: 'packageComponent/pages/map/map/map'
+    }
+  },
+  
+  getScale:function(){
+    
+    this.mapCtx.getScale({
+      success:function(res){
+      console.log(res.scale)
+      }
+    })
+    /*this.setData({
+      minScale:16.16,
+      complete:function(e){}
+  })*/
+    console.log(this.data.minScale)
+
+  },   
 
 
   data: {
-    stv: {
-      offsetX: 0,
-      offsetY: 0,
-      zoom: false, //是否缩放状态
-      distance: 0,  //两指距离
-      scale: 1,  //缩放倍数
-    }
-  },
+    feed: [],
+    feed_length: 0,
+    theme: 'light',
+    latitude: 31.274659,
+    longitude: 120.738168,
 
+    maxScale:18,
+    showLocation:false,
 
-  //事件处理函数
-  touchstartCallback: function(e) {
-
-    wx.getLocation({
-      success: function(res){
-        console.log(res.latitude);
-        console.log(res.longitude);
+    
+    
+    markers: [{
+      id:1,
+      latitude: 31.274659,
+      longitude: 120.738168,
+      width:30,
+      height:30,
+      callout:{
+        content:"list of activities in FB"
       }
-    })
 
-    //触摸开始
-    console.log('touchstartCallback');
-    console.log(e);
+    },{
+      id:2,
+      latitude:31.268947,
+      longitude:120.738650,
+      width:30,
+      height:30,
+      callout:{
+        content:"test marker"
+      }
 
-
-    if (e.touches.length === 1) {
-      let {clientX, clientY} = e.touches[0];
-      this.startX = clientX;
-      this.startY = clientY;
-      this.touchStartEvent = e.touches;
-    } else {
-      let xMove = e.touches[1].clientX - e.touches[0].clientX;
-      let yMove = e.touches[1].clientY - e.touches[0].clientY;
-      let distance = Math.sqrt(xMove * xMove + yMove * yMove);
-      this.setData({
-        'stv.distance': distance,
-        'stv.zoom': true, //缩放状态
-      })
-    }
-
+    }],
+    
+    subKey: '4EYBZ-7Y7Y5-EQRIG-QUCXB-GDWCE-3IFDN',
+    enable3d: false,
+    showCompass: false,
+    
+    enableOverlooking: false,
+    enableZoom: true,
+    enableScroll: true,
+    enableRotate: false,
+    drawPolygon: false,
+    enableSatellite: false,
+    enableTraffic: false,
+    enablePoi:false,
+    
   },
-  touchmoveCallback: function(e) {
-    // //触摸移动中
-    // console.log('touchmoveCallback');
-    // console.log(e);
-    var windowHeight = wx.getSystemInfoSync().windowHeight;
-    var windowWidth = wx.getSystemInfoSync().windowWidth;
 
  
-    if (e.touches.length === 1) {
-      //单指移动
-      if (this.data.stv.zoom) {
-        //缩放状态，不处理单指
-        return ;
-      }
+  toggle3d() {
+    this.setData({
+      enable3d: !this.data.enable3d
+    })
+  },
+  toggleShowCompass() {
+    this.setData({
+      showCompass: !this.data.showCompass
+    })
+  },
+  toggleOverlooking() {
+    this.setData({
+      enableOverlooking: !this.data.enableOverlooking
+    })
+  },
+  toggleZoom() {
+    this.setData({
+      enableZoom: !this.data.enableZoom
+    })
+  },
+  toggleScroll() {
+    this.setData({
+      enableScroll: !this.data.enableScroll
+    })
+  },
+  toggleRotate() {
+    this.setData({
+      enableRotate: !this.data.enableRotate
+    })
+  },
+  togglePolygon() {
+    this.setData({
+      drawPolygon: !this.data.drawPolygon
+    })
+  },
+  toggleSatellite() {
+    this.setData({
+      enableSatellite: !this.data.enableSatellite
+    })
+  },
+  toggleTraffic() {
+    this.setData({
+      enableTraffic: !this.data.enableTraffic
+    })
+  },
+  /*getScale:function(){
+    
+    this.setData({
+      minScale:16,
+      complete:function(e){}
+  })
+    this.mapCtx.getScale({
+      success:function(res){
+      console.log(res.scale)
+      } 
+    }) 
+    console.log(this.data.minScale) 
+  }, */
+ 
+  onLoad:function() {
+    var that=this
+    this.mapCtx=wx.createMapContext('map')
+    
+    this.mapCtx.setBoundary({
+      southwest:{
+        longitude:120.734742,
+        latitude:31.268347,
+      },
+      northeast:{
+        longitude:120.746592,
+        latitude:31.279598,
+      },
       
+      
+      complete: function(e){},
+    },
+    
+    
+    
+    
+    ),
 
 
-      let {clientX, clientY} = e.touches[0];
-      let offsetX = clientX - this.startX;
-      let offsetY = clientY- this.startY;
-      this.startX = clientX;
-      this.startY = clientY;
-      let {stv} = this.data;
-      stv.offsetX += offsetX;
-      stv.offsetY += offsetY;
-      stv.offsetLeftX = -stv.offsetX;
-      stv.offsetLeftY = -stv.offsetLeftY;
-      this.setData({
-        stv: stv
-      });
 
-    } else {
-      //双指缩放
-      let xMove = e.touches[1].clientX - e.touches[0].clientX;
-      let yMove = e.touches[1].clientY - e.touches[0].clientY;
-      let distance = Math.sqrt(xMove * xMove + yMove * yMove);
+    this.mapCtx.addGroundOverlay({
+      id:0,
+      src:"https://6465-developtest-8gz91yrw88cb744c-1306661972.tcb.qcloud.la/articeSrc/map.jpg?sign=0c93002db71ceae54134c7174b16e723&t=1651416228",
+      bounds:{
+        southwest:{
+          longitude:120.734742,
+          latitude:31.268347,
+        },
+        northeast:{
+          longitude:120.746592,
+          latitude:31.279598,
+        }
+      },
+      complete: function(e){},
+    }) 
 
-      let distanceDiff = distance - this.data.stv.distance;
-      let newScale = this.data.stv.scale + 0.005 * distanceDiff;
+    this.mapCtx.moveToLocation({
+      latitude: 31.274659,
+      longitude: 120.738168,
+      complete: function(e){},
 
-      this.setData({
-        'stv.distance': distance,
-        'stv.scale': newScale,
-      })
-    }
+    }),
 
+  
+  console.log(this.data.minScale)
+  console.log("1")
+    
+    /*this.mapCtx.includePoints({
+      points:[{longitude:120.734742,latitude:31.268347},{longitude:120.746592,latitude:31.279598,}],
+      padding:[0,0,0,0]
+    }) */
+    
+
+    
+},
+onReady:function(){
+  this.setData({
+    minScale:16.16, /*这个setdata改变了手机地图里data的值，但是手机地图的实际生效值没有改变 */
+    complete:function(e){} /* 存在这个setdata的时候，button绑定的getScale的setdata不生效。*/
+                         /* button触发的setdata是可以改变手机地图的生效值 */
+})
+},
+
+
+  
+
+
+
+
+  
+  submit() {   // 点击预览
+    this.refresh();
+    this.setData({
+      ylShow: true
+    })
+var temp = this
+
+    this.setData({
+      article: temp,
+
+    })
   },
-  touchendCallback: function(e) {
-    //触摸结束
-    console.log('touchendCallback');
-    console.log(e);
-
-    if (e.touches.length === 0) {
-      this.setData({
-        'stv.zoom': false, //重置缩放状态
-      })
-    }
+  onClose(){  // 关闭预览
+    this.setData({
+      ylShow: false
+    })
   },
-  onLoad: function () {
-    console.log('onLoad');
-  }
+  lower: function (e) {
+    wx.showNavigationBarLoading();
+    var that = this;
+    //setTimeout(function(){wx.hideNavigationBarLoading();that.nextLoad();}, 1000);
+    console.log("lower")
+  },
+  
+bindItemTap:function(e) {
+    //console.log(e.currentTarget.dataset.activityid),
+    let activityID = {
+      acid: e.currentTarget.dataset.activityid
+    };
+    app.globalData.PageNum = e.currentTarget.dataset.activityid
+    wx.navigateTo({
+      url: '/pages/DetailPage/DetailPage',
+      success: res =>
+      {
+        res.eventChannel.emit('readActivityID',activityID)
+      }
+    }) 
+  },
+  refresh: function(){
+    let that = this
+    //var feed = {}
+    
+    wx.request({
+
+      url: 'http://' + app.globalData.domainPort + '/activity',
+
+      method: 'GET',
+      success:function(res)
+      {
+        console.log(res.data)
+        that.setData(
+          {
+            feed: res.data,
+            feed_length: res.data.length
+          }
+        )
+        //console.log("that.data.trueFeed.data is " + that.data.trueFeed.data)
+      }
+    })}
+
+  
 })

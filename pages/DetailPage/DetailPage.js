@@ -1,4 +1,5 @@
 const app = getApp();
+var util = require('../../utils/util.js')
 Page({
 
   /**
@@ -25,7 +26,39 @@ Page({
     isClick:false,
     isSigned:false,
     jobStorage:[],
-    jobId:''
+    jobId:'',
+
+    fakeComment:'',
+  },
+
+  refresh:function()
+  {
+
+    let that = this
+    let requestUrl = "http://"+ app.globalData.domainPort +"/preModifyActivity/" + this.data.acid
+    console.log(requestUrl);
+    wx.request({
+      url: requestUrl,
+      method: 'GET',
+      success:function(res)
+      {
+        that.setData({
+          clubName: res.data.clubName,
+          beginTime: res.data.beginTime,
+          endTime: res.data.endTime,
+          activityTitle:res.data.activityTitle,
+          activityDesc:res.data.activityDesc,
+          activityDetail:res.data.activityDetail,
+          building:res.data.building,
+          room:res.data.room,
+          estimateNum: res.data.estimateNum,
+          targetPeople:res.data.targetPeople,
+          registryNum: res.data.registryNum,
+        })
+        console.log(res);
+      }
+      
+    })
   },
 
   clickSign(e){
@@ -35,7 +68,25 @@ Page({
       wx.showToast({
         title: '请先登录',
         icon:'error',
-      });
+        duration:1000
+      })
+      setTimeout(function () { 
+        wx.showModal({
+          title: '请先登录',
+          content: '是否立即登录？',
+          showCancel: true,
+          cancelText:"否",
+          cancelColor:'skyblue',
+          confirmText:"是",
+          confirmColor: 'skyblue',
+          success: function (res) {
+           if (res.cancel) {
+           } else {
+            wx.navigateTo({
+            url: '/pages/PS_2L/PS_L',
+            })}
+          }
+        })}, 1050)
     }else
     {
       if(!this.data.isSigned == true){
@@ -60,6 +111,7 @@ Page({
               wx.showToast({
                 title: '已报名',
               });
+              that.refresh()
             }else
             {
               console.log("Register 请求成功发起， 但是返回值是false")
@@ -91,6 +143,7 @@ Page({
         wx.showToast({
           title: '已取消报名',
         })
+        that.refresh()
       }
       that.setData({
         isSigned:!that.data.isSigned
@@ -107,7 +160,25 @@ Page({
       wx.showToast({
         title: '请先登录',
         icon:'error',
-      });
+        duration:1000
+      })
+      setTimeout(function () { 
+        wx.showModal({
+          title: '请先登录',
+          content: '是否立即登录？',
+          showCancel: true,
+          cancelText:"否",
+          cancelColor:'skyblue',
+          confirmText:"是",
+          confirmColor: 'skyblue',
+          success: function (res) {
+           if (res.cancel) {
+           } else {
+            wx.navigateTo({
+            url: '/pages/PS_2L/PS_L',
+            })}
+          }
+        })}, 1050)
     }else
     {
       if(!this.data.isClick == true){
@@ -132,6 +203,7 @@ Page({
               wx.showToast({
                 title: '已收藏',
               });
+              that.refresh()
             }else
             {
               wx.showToast({
@@ -164,6 +236,7 @@ Page({
         wx.showToast({
           title: '已取消收藏',
         })
+        that.refresh()
       }
       that.setData({
         isClick:!that.data.isClick
@@ -207,14 +280,31 @@ Page({
 
   onLoad:function()
   {
-    let eventChannel = this.getOpenerEventChannel()
-    eventChannel.on('readActivityID',(activityID)=>
-    {
-      this.setData({
-        acid: activityID.acid || {},
-        
-      })
-    });
+    this.setData({
+      acid: app.globalData.PageNum      
+    })
+  //   let that = this
+  //   let tmp
+  //   let eventChannel = this.getOpenerEventChannel()
+  //   new Promise((resolve, reject) => {
+      
+  //     //let eventChannel = this.getOpenerEventChannel()
+  //     eventChannel.on('readActivityID', function (data) {
+  //        tmp = data
+  //       resolve(tmp)
+  //     })
+  //     that.setData({ acid: tmp.acid })
+  //     console.log("tmp activityId" + tmp.acid)
+  //     //this.setData({acid:tmp.acid || {}})
+  //   }).then((res) => {
+  //     //that.setData({ acid: that.tmp.acid })
+
+  //   });
+  //   //console.log(this.acid)
+  //   //let eventChannel = this.getOpenerEventChannel()
+  
+
+  //  console.log(this.acid)
   },
 
   /**
@@ -222,11 +312,9 @@ Page({
    */
   onShow: function (options) {
     
-  
-
     let that = this
     let checkStarUrl = "http://" + app.globalData.domainPort + "/checkStar/"  + app.globalData.userName + "/" + this.data.acid
-
+    let checkRegisterUrl = "http://" + app.globalData.domainPort + "/checkStar/"  + app.globalData.userName + "/" + this.data.acid
     console.log("acid from show" + this.data.acid)
 
     console.log(checkStarUrl)
@@ -248,49 +336,45 @@ Page({
           console.log("fail to check star")
         }
       })
+
+      wx.request({
+        url: checkRegisterUrl,
+        method: 'GET',
+        success:function(res)
+        {
+          console.log("checkRegisterUrl: " + res.data)
+          that.setData({
+            isSigned:res.data
+          })
+          console.log("isClick in checkRegisterUrl: " + that.data.isSigned)
+        },
+        fail:function(res)
+        {
+          console.log("fail to check register")
+        }
+      })      
     }
 
-    console.log("isClick after checkStar: " + that.data.isClick)
-
-
-  
-
+    console.log("isSigned after checkStar: " + that.data.isSigned)
 
     //真机调试无法通过，此处this.data.acid值在真机调试中为-1,猜测是 eventChannel所致，未验证。
     console.log("acid is " + this.data.acid)
 
-    let requestUrl = "http://"+ app.globalData.domainPort +"/preModifyActivity/" + this.data.acid
-    console.log(requestUrl);
-    wx.request({
-      url: requestUrl,
-      method: 'GET',
-      success:function(res)
-      {
-        that.setData({
-          clubName: res.data.clubName,
-          beginTime: res.data.beginTime,
-          endTime: res.data.endTime,
-          activityTitle:res.data.activityTitle,
-          activityDesc:res.data.activityDesc,
-          activityDetail:res.data.activityDetail,
-          building:res.data.building,
-          room:res.data.room,
-          estimateNum: res.data.estimateNum,
-          targetPeople:res.data.targetPeople,
-          registryNum: res.data.registryNum,
-        })
-        console.log(res);
-      }
-      
-    })
+   this.refresh()    
 
-    requestUrl = 'http://' + app.globalData.domainPort + '/addHot/' + this.data.acid
+    let addHotUrl = 'http://' + app.globalData.domainPort + '/addHot/' + this.data.acid
     wx.request({
-      url: requestUrl,
+      url: addHotUrl,
       method: 'GET'
     })
 
+    var fake = util.getComment();
 
+    var fake_data = fake.data;
+    this.setData({
+      fake:fake_data,
+      fake_length: fake_data.length
+    });
 
   },
 
@@ -303,3 +387,9 @@ Page({
     })
   }
 })
+
+
+
+
+
+

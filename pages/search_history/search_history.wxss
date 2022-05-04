@@ -1,0 +1,27 @@
+.search{
+  width: 735rpx;
+  height: 65rpx;
+  padding: 12.5rpx 0 12.5rpx 15rpx;
+  background:  #06ae56;
+}
+.search-left{
+  background: #ffffff;
+  text-align: left;
+}
+.search-left input{
+  width: 550rpx;
+  padding: 10rpx 10rpx 0rpx;
+  font-size: 29rpx;
+  color:  #06ae56;
+}
+.search-right image{
+width: 40rpx;
+height: 40rpx;
+padding: 15rpx 15rpx 15rpx 15rpx;
+}
+.history{
+  width: 735rpx;
+  padding:15rpx 15rpx 15rpx 15rpx;
+  font-size: 35rpx;
+  color: #00070c;
+}
