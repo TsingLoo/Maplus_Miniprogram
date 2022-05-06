@@ -8,58 +8,19 @@ Page({
   },
   
   getScale:function(){
+    
     this.mapCtx.getScale({
       success:function(res){
       console.log(res.scale)
       }
     })
-  },
+    /*this.setData({
+      minScale:16.16,
+      complete:function(e){}
+  })*/
+    console.log(this.data.minScale)
 
-
-  onLoad:function() {
-    this.mapCtx=wx.createMapContext('map')
-    
-    this.mapCtx.setBoundary({
-      southwest:{
-        longitude:120.734742,
-        latitude:31.268347,
-      },
-      northeast:{
-        longitude:120.746592,
-        latitude:31.279598,
-      },
-      
-      complete: function(e){},
-    },
-    
-    )
-    this.mapCtx.addGroundOverlay({
-      id:0,
-      src:"https://6465-developtest-8gz91yrw88cb744c-1306661972.tcb.qcloud.la/articeSrc/map.jpg?sign=0c93002db71ceae54134c7174b16e723&t=1651416228",
-      bounds:{
-        southwest:{
-          longitude:120.734742,
-          latitude:31.268347,
-        },
-        northeast:{
-          longitude:120.746592,
-          latitude:31.279598,
-        }
-      },
-      complete: function(e){},
-    }) 
-
-    this.mapCtx.moveToLocation({
-      latitude: 31.274659,
-      longitude: 120.738168,
-      complete: function(e){},
-
-    })
-    
-
-    
-},
-
+  },   
 
   onLoad:function() {
     this.mapCtx=wx.createMapContext('map')
@@ -92,17 +53,13 @@ Page({
         }
       },
       complete: function(e){},
-    }) 
-
+    }),
     this.mapCtx.moveToLocation({
       latitude: 31.274659,
       longitude: 120.738168,
       complete: function(e){},
 
     })
-    
-
-    
 },
 
   data: {
@@ -111,11 +68,11 @@ Page({
     theme: 'light',
     latitude: 31.274659,
     longitude: 120.738168,
-    minScale:16.5,
+
     maxScale:18,
     showLocation:false,
 
-    scale:17,
+    
     
     markers: [{
       id:1,
@@ -150,8 +107,12 @@ Page({
     drawPolygon: false,
     enableSatellite: false,
     enableTraffic: false,
-    enablePoi:false
+    enablePoi:false,
+    
+    
   },
+
+ 
   toggle3d() {
     this.setData({
       enable3d: !this.data.enable3d
@@ -197,6 +158,37 @@ Page({
       enableTraffic: !this.data.enableTraffic
     })
   },
+  bindupdated:function(e){
+    this.setData({
+      minScale:17,
+      scale:17, 
+      complete:function(e){} 
+                           
+  })
+  
+  },
+  /*getScale:function(){
+    
+    this.setData({
+      minScale:16,
+      complete:function(e){}
+  })
+    this.mapCtx.getScale({
+      success:function(res){
+      console.log(res.scale)
+      } 
+    }) 
+    console.log(this.data.minScale) 
+  }, */
+ 
+  
+
+
+
+
+  
+
+
 
 
   
