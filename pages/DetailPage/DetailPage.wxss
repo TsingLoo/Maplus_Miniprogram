@@ -97,11 +97,11 @@
 }
 
 .DoCommentBtn { 
-  width: 100% ;
-  float:left;
+  width: 96% ;
+
   height:100%;
   background-color: rgba(25, 218, 57, 0.774);
-
+  text-align: center;
   
   
  }
@@ -119,9 +119,7 @@
 }
 /**index.wxss**/
 
-.container{
-  height: 600rpx;
-}
+
 .container .search{
   width: 735rpx;
   height: 65rpx;
