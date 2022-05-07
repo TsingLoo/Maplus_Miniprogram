@@ -65,30 +65,9 @@ Page({
     let that = this
     if(app.globalData.logged == false)
     {
-      wx.showToast({
-        title: '请先登录',
-        icon:'error',
-        duration:1000
-      })
-      setTimeout(function () { 
-        wx.showModal({
-          title: '请先登录',
-          content: '是否立即登录？',
-          showCancel: true,
-          cancelText:"否",
-          cancelColor:'skyblue',
-          confirmText:"是",
-          confirmColor: 'skyblue',
-          success: function (res) {
-           if (res.cancel) {
-           } else {
-            wx.navigateTo({
-            url: '/pages/PS_2L/PS_L',
-            })}
-          }
-        })}, 1050)
-    }else
-    {
+      this.popNotLogin();
+      return;
+    }
       if(!this.data.isSigned == true){
         let jobData = this.data.jobStorage;
         jobData.push({
@@ -149,14 +128,13 @@ Page({
         isSigned:!that.data.isSigned
       })
      
-    }
+    
 
   },
 
-  clickStar(e){
-    let that = this
-    if(app.globalData.logged == false)
-    {
+  popNotLogin()
+  {
+   
       wx.showToast({
         title: '请先登录',
         icon:'error',
@@ -179,8 +157,18 @@ Page({
             })}
           }
         })}, 1050)
-    }else
+        return;
+    
+  },
+
+  clickStar(e){
+    let that = this
+    if(app.globalData.logged == false)
     {
+      this.popNotLogin();
+      return;
+    }
+    
       if(!this.data.isClick == true){
         let jobData = this.data.jobStorage;
         jobData.push({
@@ -242,47 +230,61 @@ Page({
         isClick:!that.data.isClick
       })
      
-    }
+    
 
   },
 
-  clickDoComment:function(event)
-  {
+  // clickDoComment:function(event)
+  // {
 
     
-    this.setData()
-    {
-      activityID: this.acid
-      userName: app.globalData.userName
-      comtext: this.comment
-    }
-    let that =this
-    let addCommentUrl = app.globalData.UrlHead + app.globalData.domainPort + '/addComment'
-    wx.request({
-      url: addCommentUrl,
-      method: "POST",
-      data:{
-        activityID: that.activityID,
-        userName: that.userName,
-        comtext: that.comment
-      },
-      success: function(res)
-      {
-        console.log("提交了评价")
-      }
+  //   this.setData()
+  //   {
+  //     activityID: this.acid
+  //     userName: app.globalData.userName
+  //     comtext: this.comment
+  //   }
+  //   let that =this
+  //   let addCommentUrl = app.globalData.UrlHead + app.globalData.domainPort + '/addComment'
+  //   wx.request({
+  //     url: addCommentUrl,
+  //     method: "POST",
+  //     data:{
+  //       activityID: that.activityID,
+  //       userName: that.userName,
+  //       comtext: that.comment
+  //     },
+  //     success: function(res)
+  //     {
+  //       console.log("提交了评价")
+  //     }
 
 
-    })
+  //   })
 
-  },
+  // },
 
   confirmComment:function(event)
   {
+    if(app.globalData.logged == false)
+    {
+      this.popNotLogin();
+      return;
+    }
+
+    if(this.data.comment == "" )
+    {
+      wx.showToast({
+        title: '评论不可为空',
+        icon:'error',
+        duration:1000
+      })
+
+      return;
+    }
     console.log("activityID: " + this.data.acid),
     console.log("comtext: " + this.data.comment),
     console.log("userName: " + app.globalData.userName)
-    
-
     wx.request({
       url: app.globalData.UrlHead+ app.globalData.domainPort +'/addComment',
       method:'POST',
@@ -292,14 +294,20 @@ Page({
         comtext: this.data.comment
       },
       success:function(res)
-    {
+      {
 
-    },
-    fail:function(res)
-    {
+      },
+      fail:function(res)
+      {
 
-    }
+     }
     })
+
+    wx.showToast({
+      title: '发布成功',
+      icon:'success',
+      duration:1000
+   })
 
     this.setData({
       comment:""      
@@ -402,6 +410,8 @@ Page({
       method: 'GET',
       success:function(res)
         {
+          console.log(res.data)
+
           that.setData({
             fake:res.data,
             fake_length: res.data.length
@@ -425,11 +435,13 @@ Page({
 
 
 
-  inputComment:function(event)
+  GetInputComment:function(event)
   {
     this.setData({
-      comment:event.detail.value
-    })
+      comment:event.detail
+    })    
+    
+    console.log(this.data.comment);
   }
 })
 

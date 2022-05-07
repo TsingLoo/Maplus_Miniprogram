@@ -106,9 +106,9 @@
     <view class="DoComment">
       <van-cell-group>
         <van-field
-          model:value="{{ DoCommentValue }}"
+          model:value="{{ comment }}"
           placeholder="输入你的评论……"
-          border="{{ false }}"
+          bind:change = "GetInputComment"
         />
       </van-cell-group>
     </view>
