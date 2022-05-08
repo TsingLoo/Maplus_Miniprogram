@@ -20,6 +20,7 @@ Page({
     let activityID = {
       acid: e.currentTarget.dataset.activityid
     };
+    app.globalData.PageNum = e.currentTarget.dataset.activityid
     wx.navigateTo({
       url: '/pages/DetailPage/DetailPage',
       success: res =>

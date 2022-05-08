@@ -103,6 +103,8 @@ Page({
         })
         wx.setStorageSync('jobData', jobData);
     
+        
+
         let requestUrl = app.globalData.UrlHead + app.globalData.domainPort + "/addRegister/" + app.globalData.userName+"/" + this.data.acid
         console.log("request register url is" + requestUrl)
         

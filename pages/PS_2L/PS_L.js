@@ -50,9 +50,22 @@ login:function(){
         }) 
       }else
       {
+        console.log("My userid is " + res.data[0]);
+
+        wx.setStorageSync('bufferUserName', that.data.userName)
+        wx.setStorageSync('bufferId', res.data[0])
+        wx.setStorageSync('bufferUserGroup', res.data[1])
+        wx.setStorageSync('bufferLogged', true)
+
+        // wx.setStorage({
+        //   bufferUserName: that.data.userName,
+        //   bufferId: res.data[0],
+        //   bufferUserGroup: res.data[1],
+        //   bufferLogged : true
+        // })
         console.log("Login Correct!" + res.data)
         app.globalData.userName = that.data.userName
-        app.globalData.id = res.data
+        app.globalData.id = res.data[0]
         app.globalData.userGroup = res.data[1]
         app.globalData.logged = true
       }

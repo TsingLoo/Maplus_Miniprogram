@@ -6,6 +6,12 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
+    this.globalData.id = wx.getStorageSync('bufferId')
+    this.globalData.userName = wx.getStorageSync('bufferUserName')
+    this.globalData.userGroup = wx.getStorageSync('bufferUserGroup')
+    this.globalData.logged = wx.getStorageSync('bufferLogged')
+
+    console.log("current id is " + this.globalData.id)
     // 登录
     wx.login({
       success: res => {
