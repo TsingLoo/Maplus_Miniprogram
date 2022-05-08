@@ -31,6 +31,33 @@ Page({
     fakeComment:'',
   },
 
+  refreshComment()
+  {
+
+    let that = this
+    let getCommentUrl = app.globalData.UrlHead + app.globalData.domainPort + '/getComments/' + this.data.acid
+    wx.request({
+      url: getCommentUrl,
+      method: 'GET',
+      success:function(res)
+        {
+          console.log(res.data)
+
+          that.setData({
+            fake:res.data,
+            fake_length: res.data.length
+          })
+        },
+        fail:function(res)
+        {
+         
+        }
+    })
+
+    this.refresh();
+  },
+
+
   refresh:function()
   {
 
@@ -116,7 +143,7 @@ Page({
           method: 'GET',
           success:function(res)
           {
-       
+            
           }
         })
         wx.showToast({
@@ -309,6 +336,8 @@ Page({
       duration:1000
    })
 
+   this.refreshComment();
+
     this.setData({
       comment:""      
     })
@@ -396,7 +425,7 @@ Page({
     //真机调试无法通过，此处this.data.acid值在真机调试中为-1,猜测是 eventChannel所致，未验证。
     console.log("acid is " + this.data.acid)
 
-   this.refresh()    
+    this.refresh()    
 
     let addHotUrl = app.globalData.UrlHead + app.globalData.domainPort + '/addHot/' + this.data.acid
     wx.request({
