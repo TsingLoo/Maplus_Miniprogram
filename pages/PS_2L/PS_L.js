@@ -41,7 +41,8 @@ login:function(){
     method: 'POST',
     success:function(res)
     {
-      if(res.data == -1)
+      console.log(res.data);
+      if(res.data[0] == -1)
       {
         wx.showToast({
           title: '昵称密码不匹配',
@@ -50,7 +51,20 @@ login:function(){
         }) 
       }else
       {
-        console.log("My userid is " + res.data[0]);
+        wx.showToast({
+          title: '登录成功',
+          icon:'success',
+          duration:1000,
+          success: function()
+          {
+            setTimeout(() => {
+              wx.navigateBack()
+            }, 1000);
+          }
+          
+        }) 
+
+      
 
         wx.setStorageSync('bufferUserName', that.data.userName)
         wx.setStorageSync('bufferId', res.data[0])
