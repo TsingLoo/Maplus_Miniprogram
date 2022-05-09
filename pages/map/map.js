@@ -183,13 +183,19 @@ Page({
 						}
           });
           console.log(latitude)
-     
+          if(latitude>31.279598||latitude<31.268347||longitude>120.746592||longitude<120.734742){
+            wx.showToast({
+              title: '您在地图显示范围外',
+              icon: 'none',    //如果要纯文本，不要icon，将值设为'none'
+              duration: 2000     
+            })  
+          }else{      
             this.mapCtx.moveToLocation({
             latitude: latitude,
             longitude: longitude,
             complete: function(e){},
       
-          })
+          })}
 
         },
        
