@@ -9,7 +9,7 @@
         maxScale="{{maxScale}}"
         longitude="{{longitude}}"
         scale="{{scale}}"
-        showLocation="{{showLocation}}"
+        show-location="{{showPosition}}"
         markers="{{markers}}"
         enable-3D="{{enable3d}}"
         show-compass="{{showCompass}}"
@@ -31,7 +31,7 @@
 
     <view class="s_view">
       
-      <button type="primary" bindtap="getScale">showLocation</button>
+      <button type="primary" bindtap="onChangeShowPosition">showLocation</button>
     </view>
 
 

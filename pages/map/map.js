@@ -25,7 +25,7 @@ Page({
   onLoad:function() {
     this.mapCtx=wx.createMapContext('map')
     
-    this.mapCtx.setBoundary({
+   /* this.mapCtx.setBoundary({
       southwest:{
         longitude:120.734742,
         latitude:31.268347,
@@ -38,7 +38,7 @@ Page({
       complete: function(e){},
     },
     
-    )
+    ) */
     this.mapCtx.addGroundOverlay({
       id:0,
       src:"https://6465-developtest-8gz91yrw88cb744c-1306661972.tcb.qcloud.la/articeSrc/map.jpg?sign=0c93002db71ceae54134c7174b16e723&t=1651416228",
@@ -70,7 +70,7 @@ Page({
     longitude: 120.738168,
 
     maxScale:18,
-    showLocation:false,
+    isShowPosition: false,
 
     
     
@@ -167,6 +167,39 @@ Page({
   })
   
   },
+  	// 激活定位控件
+	onChangeShowPosition:function (event) {
+    var that=this
+		const {value} = event.detail
+		if (true) {
+			wx.getLocation({
+				type: 'gcj02',
+				success: (res) => {
+					const {latitude, longitude} = res;
+					this.setData({
+						location: {
+							latitude,
+							longitude
+						}
+          });
+          console.log(latitude)
+     
+            this.mapCtx.moveToLocation({
+            latitude: latitude,
+            longitude: longitude,
+            complete: function(e){},
+      
+          })
+
+        },
+       
+			});
+    }
+
+		this.setData({
+			showPosition: true
+		});
+	},
   /*getScale:function(){
     
     this.setData({
