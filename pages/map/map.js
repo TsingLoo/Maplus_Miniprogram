@@ -60,6 +60,16 @@ Page({
       complete: function(e){},
 
     })
+    //若无活动，移除marker
+    for(var i=0;i<16;i++){
+      if(this.data.list[i]==0){
+        this.mapCtx.removeMarkers({
+          markerIds:[i],
+          complete:function(e){},
+        })
+      }
+    }
+
 },
 
   data: {
@@ -76,22 +86,178 @@ Page({
     
     markers: [{
       id:1,
+      iconPath:'place.png',
       latitude: 31.274659,
       longitude: 120.738168,
       width:30,
       height:30,
       callout:{
-        content:"list of activities in FB"
+        content:"FB"
       }
 
     },{
       id:2,
-      latitude:31.268947,
-      longitude:120.738650,
+      iconPath:'place.png',
+      latitude:31.272885,
+      longitude:120.739997,
       width:30,
       height:30,
       callout:{
-        content:"test marker"
+        content:"SA-SD"
+      }
+
+    },{
+      id:3,
+      iconPath:'place.png',
+      latitude:31.273212,
+      longitude:120.738176,
+      width:30,
+      height:30,
+      callout:{
+        content:"CB"
+      }
+
+    },{
+      id:4,
+      iconPath:'place.png',
+      latitude:31.273525,
+      longitude:120.740925,
+      width:30,
+      height:30,
+      callout:{
+        content:"PB"
+      }
+
+    },{
+      id:5,
+      iconPath:'place.png',
+      latitude:31.272183,
+      longitude:120.740925,
+      width:30,
+      height:30,
+      callout:{
+        content:"EE"
+      }
+
+    },{
+      id:6,
+      iconPath:'place.png',
+      latitude:31.272481,
+      longitude:120.742313,
+      width:30,
+      height:30,
+      callout:{
+        content:"EB"
+      }
+
+    },{
+      id:7,
+      iconPath:'place.png',
+      latitude:31.270958,
+      longitude:120.739936,
+      width:30,
+      height:30,
+      callout:{
+        content:"IR"
+      }
+
+    },{
+      id:8,
+      iconPath:'place.png',
+      latitude:31.270967,
+      longitude:120.741374,
+      width:30,
+      height:30,
+      callout:{
+        content:"IA"
+      }
+
+    },{
+      id:9,
+      iconPath:'place.png',
+      latitude:31.269911,
+      longitude:120.741374,
+      width:30,
+      height:30,
+      callout:{
+        content:"HS"
+      }
+
+    },{
+      id:10,
+      iconPath:'place.png',
+      latitude:31.269978,
+      longitude:120.73943,
+      width:30,
+      height:30,
+      callout:{
+        content:"BS"
+      }
+
+    },{
+      id:11,
+      iconPath:'place.png',
+      latitude:31.268904,
+      longitude:120.741374,
+      width:30,
+      height:30,
+      callout:{
+        content:"DB"
+      }
+
+    },{
+      id:12,
+      iconPath:'place.png',
+      latitude:31.268805,
+      longitude:120.740046,
+      width:30,
+      height:30,
+      callout:{
+        content:"ES"
+      }
+
+    },{
+      id:13,
+      iconPath:'place.png',
+      latitude:31.271222,
+      longitude:120.73896,
+      width:30,
+      height:30,
+      callout:{
+        content:"AS"
+      }
+
+    },{
+      id:14,
+      iconPath:'place.png',
+      latitude:31.27366,
+      longitude:120.74194,
+      width:30,
+      height:30,
+      callout:{
+        content:"MA"
+      }
+
+    },{
+      id:15,
+      iconPath:'place.png',
+      latitude:31.273149,
+      longitude:120.74194,
+      width:30,
+      height:30,
+      callout:{
+        content:"MB"
+      }
+
+    },{
+      id:16,
+      iconPath:'place.png',
+      latitude:31.270917,
+      longitude:120.742919,
+      width:30,
+      height:30,
+      callout:{
+        content:"GYM"
       }
 
     }],
@@ -108,7 +274,7 @@ Page({
     enableSatellite: false,
     enableTraffic: false,
     enablePoi:false,
-    
+    list:[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
     
   },
 
@@ -169,42 +335,45 @@ Page({
   },
   	// 激活定位控件
 	onChangeShowPosition:function (event) {
-    var that=this
-		const {value} = event.detail
-		if (true) {
-			wx.getLocation({
-				type: 'gcj02',
-				success: (res) => {
-					const {latitude, longitude} = res;
-					this.setData({
-						location: {
-							latitude,
-							longitude
-						}
-          });
-          console.log(latitude)
-          if(latitude>31.279598||latitude<31.268347||longitude>120.746592||longitude<120.734742){
-            wx.showToast({
-              title: '您在地图显示范围外',
-              icon: 'none',    //如果要纯文本，不要icon，将值设为'none'
-              duration: 2000     
-            })  
-          }else{      
-            this.mapCtx.moveToLocation({
-            latitude: latitude,
-            longitude: longitude,
-            complete: function(e){},
+    wx.startLocationUpdate({
+      success: (res) => {
+        wx.onLocationChange((event) => {
+
+          const {latitude} =event.latitude;
+          const {longitude} =event.longitude;
+
+          }
+        );
+      },
+      fail: (err) => {
+    consoler.log(err);
+      }
+    })
+    
+    if(latitude>31.279598||latitude<31.268347||longitude>120.746592||longitude<120.734742){
+      wx.showToast({
+        title: '您在地图显示范围外',
+        icon: 'none',    //如果要纯文本，不要icon，将值设为'none'
+        duration: 2000     
+      })  
+    }else{      
+      this.mapCtx.moveToLocation({
+      latitude: latitude,
+      longitude: longitude,
+      complete: function(e){},
       
-          })}
 
-        },
-       
-			});
-    }
-
-		this.setData({
+    })
+    wx.getLocation({
+      type: 'gcj02',
+      success: (res) => {
+      },     
+    });
+    this.setData({
 			showPosition: true
-		});
+    });
+  }
+
 	},
   /*getScale:function(){
     
