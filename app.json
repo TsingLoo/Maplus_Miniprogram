@@ -7,6 +7,7 @@
     "pages/map/map",
     "pages/logs/logs",
     "pages/personal/personal",
+    "pages/personal2/personal2",
     "pages/personal_activity/personal_activity",
     "pages/AC_detail/AC_detail",
     "pages/DetailPage/DetailPage",

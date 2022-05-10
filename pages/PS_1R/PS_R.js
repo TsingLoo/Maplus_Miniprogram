@@ -176,7 +176,9 @@ submit:function(){
           success: function()
           {
             setTimeout(() => {
-              wx.navigateBack()
+              wx.navigateTo({
+                url: '/pages/personal2/personal2',
+              })
             }, 1000);
           }
           

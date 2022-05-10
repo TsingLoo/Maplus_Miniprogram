@@ -41,7 +41,7 @@ Page({
   console.log(app.globalData.userGroup);
   if(app.globalData.userGroup == 1){
     wx.showToast({
-      title: '此账号没有发布权限',
+      title: '无发布权限',
       icon:'error',
       duration:1000
    })

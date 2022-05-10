@@ -1,6 +1,6 @@
 <view>
 <button class="go_to_PS_R" type="primary" size="default" bindtap="go_to_PS_R">注册 R</button>
-<button class="go_to_PS_L" type="primary" size="default" bindtap="go_to_PS_L">登录 in</button>
+<button class="go_to_PS_L" type="primary" size="default" bindtap="LogOut">注销 out</button>
 <button
 class="go_to_change_PW"
 type="default"

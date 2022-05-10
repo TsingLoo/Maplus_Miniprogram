@@ -46,7 +46,7 @@ Page({
     var search = this.data.inputValue;
     if(search == ''){
       wx.showToast({
-        title: '请输入搜索内容！',
+        title: '请输入内容！',
         icon:'error',
         duration:1300
       }) 
