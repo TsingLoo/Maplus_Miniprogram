@@ -357,47 +357,47 @@ Page({
   
   },
   	// 激活定位控件
-	onChangeShowPosition:function (event) {
-    wx.startLocationUpdate({
-      success: (res) => {
-        wx.onLocationChange((event) => {
+    onChangeShowPosition:function (event) { 
+      var that=this 
+          const {value} = event.detail 
+          if (true) { 
+              wx.getLocation({ 
+                  type: 'gcj02', 
+                  success: (res) => { 
+                      const {latitude, longitude} = res; 
+                      this.setData({ 
+                          location: { 
+                              latitude, 
+                              longitude 
+                          } 
+            }); 
+            
+            if(latitude>31.279598||latitude<31.268347||longitude>120.746592||longitude<120.734742){ 
+              wx.showToast({ 
+                title: '您在地图显示范围外\r\nyou may outside map', 
+                icon: 'none',     
+                duration: 4000      
+              })   
+            }else{ 
+              this.mapCtx.moveToLocation({ 
+              latitude: latitude, 
+              longitude: longitude, 
+              complete: function(e){}, 
+         
+            })}
+   
+          }, 
+          
+              }); 
+      } 
+   
+          this.setData({ 
+              showPosition: true 
+          }); 
+      }, 
 
-          const {latitude} =event.latitude;
-          const {longitude} =event.longitude;
 
-          }
-        );
-      },
-      fail: (err) => {
-    consoler.log(err);
-      }
-    })
-    
-    if(latitude>31.279598||latitude<31.268347||longitude>120.746592||longitude<120.734742){
-      wx.showToast({
-        title: '您在地图显示范围外',
-        icon: 'none',    //如果要纯文本，不要icon，将值设为'none'
-        duration: 2000     
-      })  
-    }else{      
-      this.mapCtx.moveToLocation({
-      latitude: latitude,
-      longitude: longitude,
-      complete: function(e){},
-      
-
-    })
-    wx.getLocation({
-      type: 'gcj02',
-      success: (res) => {
-      },     
-    });
-    this.setData({
-			showPosition: true
-    });
-  }
-
-	},
+	
   /*getScale:function(){
     
     this.setData({
