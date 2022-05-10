@@ -22,36 +22,18 @@ Page({
     console.log(this.data.minScale)
 
   },
+  onHide:function(){},
 
 
 
   onLoad:function() {
     
+    this.mapCtx=wx.createMapContext('map')
     
-    wx.request({
-      url: 'https://' + app.globalData.domainPort + '/checkBuildingActivity',
-      method: 'GET',
-      success:(res)=>{
-        this.setData({
-          list:res.data
-        })
-            //若无活动，移除marker
-    
-    for(var i=0;i<16;i++){
-      if(!this.data.list[i]){
-        this.mapCtx.removeMarkers({
-          markerIds:[i+1],
-          complete:function(e){},
-        })
-      }
-    }
-        
-      },
-    }),
     
     
       
-    this.mapCtx=wx.createMapContext('map')
+    
     
     this.mapCtx.setBoundary({
       southwest:{
@@ -350,6 +332,27 @@ Page({
       scale:17, 
       complete:function(e){} 
                            
+  }),
+  this.mapCtx=wx.createMapContext('map')
+  wx.request({
+    url: 'https://' + app.globalData.domainPort + '/checkBuildingActivity',
+    method: 'GET',
+    success:(res)=>{
+      this.setData({
+        list:res.data
+      })
+          //若无活动，移除marker
+  
+  for(var i=0;i<16;i++){
+    if(!this.data.list[i]){
+      this.mapCtx.removeMarkers({
+        markerIds:[i+1],
+        complete:function(e){},
+      })
+    }
+  }
+      
+    },
   })
   
   },
