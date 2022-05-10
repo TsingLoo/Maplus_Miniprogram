@@ -1,4 +1,5 @@
 var WxParse = require('../components/wxParse/wxParse.js');
+const app = getApp();
 Page({
   data: {
     radio: '商务合作',
@@ -20,6 +21,7 @@ Page({
     url: '',        // 上传图片url
     radioV: '',    // 单选按钮所选
     mlList: '',    // 目录列表/所有单选
+    canRelease: true
   },
 
   onChange(val){  // 单选按钮发生变化
@@ -83,6 +85,8 @@ Page({
     })
   },
   uploadContent(){  // 点击发布
+
+  
     if(this.data.html == ''){
       wx.showToast({
         title: "文章不可为空",
@@ -90,9 +94,13 @@ Page({
         duration: 1000
       })
     } else {
+      if(!this.data.canRelease)
+      {
+        return;
+      }
       var nowTime = new Date().toJSON().substring(0, 10)
+   
       wx.request({
-        
         url: app.globalData.UrlHead + app.globalData.domainPort + '/createActivity',
         method: "POST",
         data:
@@ -114,6 +122,7 @@ Page({
 
         success:(res)=>
         {
+          console.log(res.data)
           if(res.data>=0)
           {
             wx.showToast({
@@ -121,10 +130,11 @@ Page({
               icon: 'none',
               duration: 2000
             })   
+            this.setData({
+              canRelease:false
+            })
             setTimeout(function () {
-              wx.switchTab({
-                url: '/pages/activities/mainPage/mainPage',
-              })
+              wx.navigateBack()
             }, 2000)
   
        
