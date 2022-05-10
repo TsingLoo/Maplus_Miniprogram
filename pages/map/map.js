@@ -7,6 +7,7 @@ Page({
     }
   },
   
+  
   getScale:function(){
     
     this.mapCtx.getScale({
@@ -20,9 +21,36 @@ Page({
   })*/
     console.log(this.data.minScale)
 
-  },   
+  },
+
+
 
   onLoad:function() {
+    
+    
+    wx.request({
+      url: 'https://' + app.globalData.domainPort + '/checkBuildingActivity',
+      method: 'GET',
+      success:(res)=>{
+        this.setData({
+          list:res.data
+        })
+            //若无活动，移除marker
+    
+    for(var i=0;i<16;i++){
+      if(!this.data.list[i]){
+        this.mapCtx.removeMarkers({
+          markerIds:[i+1],
+          complete:function(e){},
+        })
+      }
+    }
+        
+      },
+    }),
+    
+    
+      
     this.mapCtx=wx.createMapContext('map')
     
     this.mapCtx.setBoundary({
@@ -60,15 +88,7 @@ Page({
       complete: function(e){},
 
     })
-    //若无活动，移除marker
-    for(var i=0;i<16;i++){
-      if(this.data.list[i]==0){
-        this.mapCtx.removeMarkers({
-          markerIds:[i],
-          complete:function(e){},
-        })
-      }
-    }
+
 
 },
 
@@ -274,7 +294,7 @@ Page({
     enableSatellite: false,
     enableTraffic: false,
     enablePoi:false,
-    list:[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+    list:[],
     
   },
 
