@@ -12,7 +12,8 @@ Page({
     clubNameValue: '', // 活动所属俱乐部    ？
     activityDescValue: '', //活动简介
     timeValue: '', //活动时间
-    array: ['CB','FB','PB','MA','MB','IBSS','GYM'],
+    array: ['AS','CB','DB','EB','EE','ES','FB','GYM','HS',
+    'IA','IBSS','IR','PB','MA','MB','SA','SB','SC','SD'],
     index: 0,
     buildingValue: 'CB',//活动建筑物
     roomValue: '', //活动和房间
@@ -50,13 +51,10 @@ Page({
       // html:e.detail.content.html
       element: `<p style="text-align: center;"><strong>${this.data.titValue}</strong></p>
       <p style="text-align: center;"><br></p>
-
       <p style="text-align: left;"><em>${this.data.clubNameValue}</em></p>
       <p style="text-align: center;"><br></p>
-
       <p style="text-align: left;"><em>${this.data.publisherValue}</em></p>
       <p style="text-align: center;"><br></p>
-      
       <p style="text-align: left;"><em>${this.data.activityDescValue}</em></p> 
       <p style="text-align: center;"><br></p>
       <p style="text-align: left;"><em>${this.data.timeValue}</em></p> 
