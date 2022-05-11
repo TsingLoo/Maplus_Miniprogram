@@ -463,25 +463,16 @@ bindItemTap:function(e) {
   },
   refresh: function(){
     let that = this
-    //var feed = {}
-    
     wx.request({
-
-      url: app.globalData.UrlHead + app.globalData.domainPort + '/activity',
-
+      url: 'https://' + app.globalData.domainPort +  
+      '/buildingActivity' + app.globalData.building,
       method: 'GET',
-      success:function(res)
-      {
+      success:function(res){
         console.log(res.data)
-        that.setData(
-          {
+        that.setData({
             feed: res.data,
             feed_length: res.data.length
-          }
-        )
-        //console.log("that.data.trueFeed.data is " + that.data.trueFeed.data)
+          })
       }
     })}
-
-  
 })
