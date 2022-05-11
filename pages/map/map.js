@@ -22,36 +22,18 @@ Page({
     console.log(this.data.minScale)
 
   },
+  onHide:function(){},
 
 
 
   onLoad:function() {
     
+    this.mapCtx=wx.createMapContext('map')
     
-    wx.request({
-      url: 'https://' + app.globalData.domainPort + '/checkBuildingActivity',
-      method: 'GET',
-      success:(res)=>{
-        this.setData({
-          list:res.data
-        })
-            //若无活动，移除marker
-    
-    for(var i=0;i<16;i++){
-      if(!this.data.list[i]){
-        this.mapCtx.removeMarkers({
-          markerIds:[i+1],
-          complete:function(e){},
-        })
-      }
-    }
-        
-      },
-    }),
     
     
       
-    this.mapCtx=wx.createMapContext('map')
+    
     
     this.mapCtx.setBoundary({
       southwest:{
@@ -350,10 +332,71 @@ Page({
       scale:17, 
       complete:function(e){} 
                            
+  }),
+  this.mapCtx=wx.createMapContext('map')
+  wx.request({
+    url: 'https://' + app.globalData.domainPort + '/checkBuildingActivity',
+    method: 'GET',
+    success:(res)=>{
+      this.setData({
+        list:res.data
+      })
+          //若无活动，移除marker
+  
+  for(var i=0;i<16;i++){
+    if(!this.data.list[i]){
+      this.mapCtx.removeMarkers({
+        markerIds:[i+1],
+        complete:function(e){},
+      })
+    }
+  }
+      
+    },
   })
   
   },
   	// 激活定位控件
+    onChangeShowPosition:function (event) { 
+      var that=this 
+          const {value} = event.detail 
+          if (true) { 
+              wx.getLocation({ 
+                  type: 'gcj02', 
+                  success: (res) => { 
+                      const {latitude, longitude} = res; 
+                      this.setData({ 
+                          location: { 
+                              latitude, 
+                              longitude 
+                          } 
+            }); 
+            
+            if(latitude>31.279598||latitude<31.268347||longitude>120.746592||longitude<120.734742){ 
+              wx.showToast({ 
+                title: '您在地图显示范围外\r\nyou may outside map', 
+                icon: 'none',     
+                duration: 4000      
+              })   
+            }else{ 
+              this.mapCtx.moveToLocation({ 
+              latitude: latitude, 
+              longitude: longitude, 
+              complete: function(e){}, 
+         
+            })}
+   
+          }, 
+          
+              }); 
+      } 
+   
+          this.setData({ 
+              showPosition: true 
+          }); 
+      }, 
+
+
 	
   /*getScale:function(){
     
