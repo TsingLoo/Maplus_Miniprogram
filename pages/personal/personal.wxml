@@ -1,33 +1,12 @@
 <view>
-<button class="go_to_PS_R" type="primary" size="default" bindtap="go_to_PS_R">注册 R</button>
-<button class="go_to_PS_L" type="primary" size="default" bindtap="go_to_PS_L">登录 in</button>
-<button
-class="go_to_change_PW"
-type="default"
-size="default"
-bindtap="go_to_change_PW"
->改密码</button>
-
-<button
-class="go_to_change_NN"
-type="default"
-size="default"
-bindtap="go_to_change_NN"
->改昵称</button>
-
+  <button class="go_to_PS_R" type="primary" size="default" bindtap="go_to_PS_R">注册 R</button>
+  <button class="go_to_PS_L" type="primary" size="default" bindtap="go_to_PS_L">登录 in</button>
+  <button class="go_to_PS_L" type="primary" size="default" bindtap="logout">退出登录</button>
+  <button class="go_to_change_PW" type="default" size="default" bindtap="go_to_change_PW">改密码</button>
+  <button class="go_to_change_NN" type="default" size="default" bindtap="go_to_change_NN">改昵称</button>
+  <button class="go_to_collection" type="default" size="default" bindtap="go_to_collection">我的收藏</button>
+  <button class="go_to_personal_activity" type="default" size="default"bindtap="go_to_personal_activity">已报活动</button>
 </view>
 
-<button
-class="go_to_collection"
-type="default"
-size="default"
-bindtap="go_to_collection"
->我的收藏</button>
 
-<button
-class="go_to_personal_activity"
-type="default"
-size="default"
-bindtap="go_to_personal_activity"
->已报活动</button>
 

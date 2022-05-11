@@ -1,3 +1,4 @@
+const util = require("../../utils/util");
 var app = getApp()
 Page({
   feed: [],
@@ -11,32 +12,12 @@ Page({
   },
 
 
+
   upper: function () {
    //现在是发布新活动的按钮。
    //导向活动发布页1
-   if(app.globalData.logged == false)  {
-    wx.showToast({
-      title: '请先登录！',
-      icon:'error',
-      duration:1000
-   })
-   setTimeout(function () { 
-    wx.showModal({
-      title: '请先登录',
-      content: '是否立即登录？',
-      showCancel: true,
-      cancelText:"否",
-      cancelColor:'skyblue',
-      confirmText:"是",
-      confirmColor: 'skyblue',
-      success: function (res) {
-       if (res.cancel) {
-       } else {
-        wx.navigateTo({
-        url: '/pages/PS_2L/PS_L',
-        })}
-      }
-    })}, 1050)
+   if(app.globalData.logged == false){
+    util.notLog();
   }
   console.log(app.globalData.userGroup);
   if(app.globalData.userGroup == 1){

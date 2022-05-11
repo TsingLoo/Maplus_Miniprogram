@@ -1,3 +1,4 @@
+const util = require("../../utils/util")
 const app = getApp()
 
 Page({
@@ -22,28 +23,7 @@ go_to_change_PW(){
 
   if(app.globalData.logged == false)
   {
-    wx.showToast({
-      title: '请先登录！',
-      icon:'error',
-      duration:1000
-   }) 
-   setTimeout(function () { 
-    wx.showModal({
-      title: '请先登录',
-      content: '是否立即登录？',
-      showCancel: true,
-      cancelText:"否",
-      cancelColor:'skyblue',
-      confirmText:"是",
-      confirmColor: 'skyblue',
-      success: function (res) {
-       if (res.cancel) {
-       } else {
-        wx.navigateTo({
-        url: '/pages/PS_2L/PS_L',
-        })}
-      }
-    })}, 1050)
+    util.notLog();
   }else
   {
     wx.navigateTo({
@@ -58,28 +38,7 @@ go_to_change_NN(){
 
   if(app.globalData.logged == false)
   {
-    wx.showToast({
-      title: '请先登录！',
-      icon:'error',
-      duration:1000
-   }) 
-   setTimeout(function () { 
-    wx.showModal({
-      title: '请先登录',
-      content: '是否立即登录？',
-      showCancel: true,
-      cancelText:"否",
-      cancelColor:'skyblue',
-      confirmText:"是",
-      confirmColor: 'skyblue',
-      success: function (res) {
-       if (res.cancel) {
-       } else {
-        wx.navigateTo({
-        url: '/pages/PS_2L/PS_L',
-        })}
-      }
-    })}, 1050)
+    util.notLog();
   }else
   {
   wx.navigateTo({
@@ -91,61 +50,37 @@ go_to_change_NN(){
 go_to_collection(){
   if(app.globalData.logged == false)
   {
-    wx.showToast({
-      title: '请先登录！',
-      icon:'error',
-      duration:1000
-   }) 
-   setTimeout(function () { 
-    wx.showModal({
-      title: '请先登录',
-      content: '是否立即登录？',
-      showCancel: true,
-      cancelText:"否",
-      cancelColor:'skyblue',
-      confirmText:"是",
-      confirmColor: 'skyblue',
-      success: function (res) {
-       if (res.cancel) {
-       } else {
-        wx.navigateTo({
-        url: '/pages/PS_2L/PS_L',
-        })}
-      }
-    })}, 1050)
+   util.notLog();
   }else
   {
-  wx.navigateTo({
-    url: '/pages/collection/collection',
-  })
-}
+    wx.navigateTo({
+      url: '/pages/collection/collection',
+    })
+  }
+},
+
+logout: function()
+{
+  if(app.globalData.logged == false)
+  {
+   util.notLog();
+  }else
+  {
+    wx.setStorageSync('bufferUserName', "")
+    wx.setStorageSync('bufferId', -1)
+    wx.setStorageSync('bufferUserGroup', 0)
+    wx.setStorageSync('bufferLogged', false)
+    app.globalData.userName = ""
+    app.globalData.id = -1
+    app.globalData.userGroup = 0
+    app.globalData.logged = false
+  }
 },
 
 go_to_personal_activity(){
   if(app.globalData.logged == false)
   {
-    wx.showToast({
-      title: '请先登录！',
-      icon:'error',
-      duration:1000
-   })
-   setTimeout(function () { 
-    wx.showModal({
-      title: '请先登录',
-      content: '是否立即登录？',
-      showCancel: true,
-      cancelText:"否",
-      cancelColor:'skyblue',
-      confirmText:"是",
-      confirmColor: 'skyblue',
-      success: function (res) {
-       if (res.cancel) {
-       } else {
-        wx.navigateTo({
-        url: '/pages/PS_2L/PS_L',
-        })}
-      }
-    })}, 1050)    
+    util.notLog();
   }else
   {
   wx.navigateTo({

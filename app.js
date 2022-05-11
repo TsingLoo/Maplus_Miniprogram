@@ -24,9 +24,11 @@ App({
     PageNum: -1,
     UrlHead: "https://",
     domainPort: "www.tsingloo.com:4433",
+    
     id: -1, 
+    userGroup:0,
     userName: "",
-    userNickName: "",
+    userNickname: "",
     logged: false
   }
 })

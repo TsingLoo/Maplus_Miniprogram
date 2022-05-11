@@ -176,6 +176,9 @@ submit:function(){
       },
       success:function(res)
       {
+
+        console.log("注册成功返回的信息：" + res.data);
+
         that.setData({
           canRegist:false
         })
@@ -197,14 +200,14 @@ submit:function(){
         
         wx.setStorageSync('bufferUserName', that.data.userName)
         wx.setStorageSync('bufferId', res.data)
-        wx.setStorageSync('bufferUserGroup', 0)
+        wx.setStorageSync('bufferUserGroup', 1)
         wx.setStorageSync('bufferLogged', true)
         wx.setStorageSync(' bufferNickName', that.data.userNickname)
 
         app.globalData.id = res.data[0]
         app.globalData.userName = that.data.userName
         app.globalData.logged = true
-        app.globalData.userGroup = res.data[1]
+        app.globalData.userGroup = 1
         app.globalData.userNickname = that.data.userNickname
         console.log("Regist success, my id is" +res.data)
       },

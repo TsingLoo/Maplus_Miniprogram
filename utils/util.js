@@ -1,3 +1,5 @@
+var app = getApp()
+
 function formatTime(date) {
   var year = date.getFullYear()
   var month = date.getMonth() + 1
@@ -47,6 +49,32 @@ function getData(url){
   })
 }
 
+function notLog()
+{
+    wx.showToast({
+      title: '请先登录！',
+      icon:'error',
+      duration:1000
+   }) 
+   setTimeout(function () { 
+    wx.showModal({
+      title: '请先登录',
+      content: '是否立即登录？',
+      showCancel: true,
+      cancelText:"否",
+      cancelColor:'skyblue',
+      confirmText:"是",
+      confirmColor: 'skyblue',
+      success: function (res) {
+       if (res.cancel) {
+       } else {
+        wx.navigateTo({
+        url: '/pages/PS_2L/PS_L',
+        })}
+      }
+    })}, 1050)
+}
+
 function getComment()
 {
   return fake.fakeText;
@@ -68,6 +96,7 @@ function collectionNext() {
   return collection_next.next
 }
 
+module.exports.notLog = notLog;
 module.exports.getComment = getComment;
 module.exports.getDiscovery = getDiscovery;
 module.exports.discoveryNext = discoveryNext;
