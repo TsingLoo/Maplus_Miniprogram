@@ -10,7 +10,8 @@ data: {
   userPasswordStatus:"",
   userNameCheck: false,
   userNicknameCheck: false,
-  userPasswordCheck: false
+  userPasswordCheck: false,
+  canRegist: true
 },
 
 inputuserName:function(e){
@@ -158,6 +159,12 @@ submit:function(){
 
   if(this.data.userNameCheck&&this.data.userNicknameCheck&&this.data.userPasswordCheck)
   {
+    if(!this.data.canRegist)
+    {
+      return;
+    }
+
+
     var that = this
     wx.request({
       url: app.globalData.UrlHead+ app.globalData.domainPort +'/userRegister',
@@ -169,6 +176,9 @@ submit:function(){
       },
       success:function(res)
       {
+        that.setData({
+          canRegist:false
+        })
         wx.showToast({
           title: '注册成功',
           icon:'success',
