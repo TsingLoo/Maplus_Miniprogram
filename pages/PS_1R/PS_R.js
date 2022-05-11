@@ -199,11 +199,13 @@ submit:function(){
         wx.setStorageSync('bufferId', res.data)
         wx.setStorageSync('bufferUserGroup', 0)
         wx.setStorageSync('bufferLogged', true)
+        wx.setStorageSync(' bufferNickName', that.data.userNickname)
 
         app.globalData.id = res.data[0]
         app.globalData.userName = that.data.userName
         app.globalData.logged = true
         app.globalData.userGroup = res.data[1]
+        app.globalData.userNickname = that.data.userNickname
         console.log("Regist success, my id is" +res.data)
       },
       fail:function(res)
