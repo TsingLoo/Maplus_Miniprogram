@@ -1,6 +1,6 @@
 
 <view>
-  <button class="go_to_PS_R" type="primary" size="default" bindtap="go_to_PS_R">注册 R</button>
+  <button hidden="{{H_condition}}" class="go_to_PS_R" type="primary" size="default" bindtap="go_to_PS_R">注册 R</button>
   
   <button  
   class="go_to_PS_L" 

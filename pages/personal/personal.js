@@ -4,13 +4,17 @@ const app = getApp()
 Page({
 
   data:{
-    condition:"登录"
+    condition:"登录",
+    H_condition:false
   },
   onShow:function () {
     
       if(app.globalData.logged == true){
         this.setData({
           condition:"注销"
+        })
+        this.setData({
+          H_condition:true
         })
       }
    
@@ -34,6 +38,9 @@ Page({
       })
       this.setData({
         condition:"登录"
+      })
+      this.setData({
+        H_condition:false
       })
       wx.setStorageSync('bufferUserName', "")
       wx.setStorageSync('bufferId', -1)
