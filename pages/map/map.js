@@ -30,11 +30,6 @@ Page({
     
     this.mapCtx=wx.createMapContext('map')
     
-    
-    
-      
-    
-    
     this.mapCtx.setBoundary({
       southwest:{
         longitude:120.734742,
@@ -396,32 +391,6 @@ Page({
           }); 
       }, 
 
-
-	
-  /*getScale:function(){
-    
-    this.setData({
-      minScale:16,
-      complete:function(e){}
-  })
-    this.mapCtx.getScale({
-      success:function(res){
-      console.log(res.scale)
-      } 
-    }) 
-    console.log(this.data.minScale) 
-  }, */
- 
-  
-
-
-
-
-  
-
-
-
-
   
   submit() {   // 点击预览
     this.refresh();
@@ -442,8 +411,6 @@ var temp = this
   },
   lower: function (e) {
     wx.showNavigationBarLoading();
-    var that = this;
-    //setTimeout(function(){wx.hideNavigationBarLoading();that.nextLoad();}, 1000);
     console.log("lower")
   },
   
@@ -463,9 +430,36 @@ bindItemTap:function(e) {
   },
   refresh: function(){
     let that = this
+
+    if(this.data.markers.id == 1){
+      wx.request({
+        url: 'https://www.tsingloo.com:4433/buildingActivity/FB',
+        method: 'GET',
+        success:function(res){
+          console.log(res.data)
+          that.setData({
+              feed: res.data,
+              feed_length: res.data.length
+            })
+        }
+      })}
+
+      if(this.data.markers.id == 2){
+        wx.request({
+          url: 'https://www.tsingloo.com:4433/buildingActivity/SA-SD',
+          method: 'GET',
+          success:function(res){
+            console.log(res.data)
+            that.setData({
+                feed: res.data,
+                feed_length: res.data.length
+              })
+          }
+        })}
+
+    if(this.data.markers.id == 3){
     wx.request({
-      url: 'https://' + app.globalData.domainPort +  
-      '/buildingActivity' + app.globalData.building,
+      url: 'https://www.tsingloo.com:4433/buildingActivity/CB',
       method: 'GET',
       success:function(res){
         console.log(res.data)
@@ -475,4 +469,175 @@ bindItemTap:function(e) {
           })
       }
     })}
+
+    if(this.data.markers.id == 4){
+      wx.request({
+        url: 'https://www.tsingloo.com:4433/buildingActivity/PB',
+     method: 'GET',
+     success:function(res){
+       console.log(res.data)
+       that.setData({
+          feed: res.data,
+         feed_length: res.data.length
+         })
+        }
+      })}
+
+      if(this.data.markers.id == 5){
+        wx.request({
+      url: 'https://www.tsingloo.com:4433/buildingActivity/EE',
+       method: 'GET',
+       success:function(res){
+       console.log(res.data)
+         that.setData({
+          feed: res.data,
+         feed_length: res.data.length
+         })
+          }
+        })}
+
+        if(this.data.markers.id == 6){
+          wx.request({
+       url: 'https://www.tsingloo.com:4433/buildingActivity/EB',
+        method: 'GET',
+        success:function(res){
+         console.log(res.data)
+        that.setData({
+          feed: res.data,
+          feed_length: res.data.length
+          })
+            }
+          })}
+
+    if(this.data.markers.id == 7){
+    wx.request({
+    url: 'https://www.tsingloo.com:4433/buildingActivity/IR',
+    method: 'GET',
+     success:function(res){
+     console.log(res.data)
+     that.setData({
+      feed: res.data,
+   feed_length: res.data.length
+       })
+    }
+     })}
+
+     if(this.data.markers.id == 8){
+      wx.request({
+       url: 'https://www.tsingloo.com:4433/buildingActivity/IA',
+        method: 'GET',
+       success:function(res){
+        console.log(res.data)
+        that.setData({
+         feed: res.data,
+         feed_length: res.data.length
+         })
+        }
+      })}
+
+      if(this.data.markers.id == 9){
+        wx.request({
+         url: 'https://www.tsingloo.com:4433/buildingActivity/HS',
+          method: 'GET',
+         success:function(res){
+          console.log(res.data)
+          that.setData({
+           feed: res.data,
+           feed_length: res.data.length
+           })
+          }
+        })}
+
+        if(this.data.markers.id == 10){
+          wx.request({
+           url: 'https://www.tsingloo.com:4433/buildingActivity/BS',
+            method: 'GET',
+           success:function(res){
+            console.log(res.data)
+            that.setData({
+             feed: res.data,
+             feed_length: res.data.length
+             })
+            }
+          })}
+
+          if(this.data.markers.id == 11){
+            wx.request({
+             url: 'https://www.tsingloo.com:4433/buildingActivity/DB',
+              method: 'GET',
+             success:function(res){
+              console.log(res.data)
+              that.setData({
+               feed: res.data,
+               feed_length: res.data.length
+               })
+              }
+            })}
+
+            if(this.data.markers.id == 12){
+              wx.request({
+               url: 'https://www.tsingloo.com:4433/buildingActivity/ES',
+                method: 'GET',
+               success:function(res){
+                console.log(res.data)
+                that.setData({
+                 feed: res.data,
+                 feed_length: res.data.length
+                 })
+                }
+              })}
+
+     if(this.data.markers.id == 13){
+       wx.request({
+       url: 'https://www.tsingloo.com:4433/buildingActivity/AS',
+        method: 'GET',
+       success:function(res){
+      console.log(res.data)
+      that.setData({
+       feed: res.data,
+       feed_length: res.data.length
+       })
+      }
+      })}
+       
+      if(this.data.markers.id == 14){
+        wx.request({
+          url: 'https://www.tsingloo.com:4433/buildingActivity/MA',
+          method: 'GET',
+          success:function(res){
+            console.log(res.data)
+            that.setData({
+                feed: res.data,
+                feed_length: res.data.length
+              })
+          }
+        })}
+
+        if(this.data.markers.id == 15){
+          wx.request({
+            url: 'https://www.tsingloo.com:4433/buildingActivity/MB',
+            method: 'GET',
+            success:function(res){
+              console.log(res.data)
+              that.setData({
+                  feed: res.data,
+                  feed_length: res.data.length
+                })
+            }
+          })}
+
+    if(this.data.markers.id == 16){
+      wx.request({
+        url: 'https://www.tsingloo.com:4433/buildingActivity/GYM',
+        method: 'GET',
+        success:function(res){
+          console.log(res.data)
+          that.setData({
+              feed: res.data,
+              feed_length: res.data.length
+            })
+        }
+      })}
+
+  }
 })
