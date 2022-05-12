@@ -90,8 +90,18 @@ submit:function(event){
       {
         if(res.data == true)
         {
+          wx.showToast({
+            title: '修改成功',
+            icon:'success',
+            duration:1000
+
+          })
+
           console.log(res.data)
           console.log("修改成功")
+          wx.navigateBack({
+            delta: 0,
+          })
         }else
         {
           wx.showToast({
