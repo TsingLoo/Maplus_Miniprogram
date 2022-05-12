@@ -58,9 +58,10 @@ login:function(){
           success: function()
           {
             setTimeout(() => {
-              wx.navigateTo({
-                url: '/pages/personal2/personal2',
+              wx.navigateBack({
+                delta: 0,
               })
+
             }, 1000);
           }
           
@@ -84,6 +85,8 @@ login:function(){
         app.globalData.id = res.data[0]
         app.globalData.userGroup = res.data[1]
         app.globalData.logged = true
+
+        
       }
       
     },

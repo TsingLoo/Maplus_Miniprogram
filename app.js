@@ -12,6 +12,7 @@ App({
     this.globalData.logged = wx.getStorageSync('bufferLogged')
     this.globalData.userNickname = wx.getStorageSync('bufferNickname')
 
+
     console.log("current id is " + this.globalData.id)
     // 登录
     wx.login({
@@ -24,11 +25,13 @@ App({
     PageNum: -1,
     UrlHead: "https://",
     domainPort: "www.tsingloo.com:4433",
+
     
     id: -1, 
     userGroup:0,
     userName: "",
     userNickname: "",
-    logged: false
+    logged: false,
+
   }
 })
