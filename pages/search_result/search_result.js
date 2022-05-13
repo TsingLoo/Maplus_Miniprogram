@@ -1,7 +1,6 @@
 var app = getApp()
 
 Page({
-
   data: {
     feed: [],
     feed_length: 0
@@ -9,7 +8,7 @@ Page({
 
   onShow: function () {
     console.log('onLoad')
-    this.refresh();
+    this.getResult();
   },
 
   bindItemTap:function(e) {
@@ -27,8 +26,9 @@ Page({
 
     getResult: function(){
     let that = this
+    let content = require('../../pages/search_history/search_history.js')
     wx.request({
-    url: 'http://' + app.globalData.domainPort + '/searchActivity' + app.globalData.content,
+    url: 'https://www.tsingloo.com:4433/searchActivity/' + content.inputValue,
     method: 'GET',
     success:function(res)
     {

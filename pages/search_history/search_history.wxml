@@ -1,23 +1,15 @@
 <view class="search flex-wrp">
-<view class="search-left flex-item">
-<input/>
+<input class="search-input" value="{{inputValue}}" type="text" bindinput="getInputValue"
+bindconfirm="searchbegin" data-content="{{inputValue}}"></input>
+<image class="search-image" src="{{SearchIcon}}"
+bindtap="searchbegin" data-content="{{inputValue}}"></image>
 </view>
-<view class="search-right flex-item" bindtap="CheckResult">
-<image src="../../icon/search.png"></image>
-</view>
-</view>
-
-<view class="history">
-<van-row>        
-<van-col span="21">
-<view class="his_title">历史搜索</view>        
-</van-col>        
-<van-col span="1">
-<van-image width="55rpx" height="55rpx"
-src="/icon/ash-bin.png" bindtap="HistoryDelete" />                 
-</van-col>      
-</van-row>      
-
-<view wx:for="{{Record}}" wx:key="historyText">{{item.value}}</view>
-<view wx:if="{{Record.length == 0}}">你还没有搜索记录</view>
+<view class="head-headline justify">
+<view class="headline-size">搜索历史</view>
+<view class="delete image" catchtap="delete">
+<image src="{{DeleteIcon}}"></image>
+</view></view>
+<view class="chunk" wx:for="{{historyStorage}}" wx:key="index"
+bindtap='searchbegin' data-index='{{index}}' data-content="{{item}}">
+<text>{{item}}</text>
 </view>

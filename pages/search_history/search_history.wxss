@@ -1,27 +1,37 @@
 .search{
-  width: 735rpx;
+  width: 740rpx;
   height: 65rpx;
-  padding: 12.5rpx 0 12.5rpx 15rpx;
+  padding: 10rpx 0rpx 10rpx 10rpx;
   background:  #06ae56;
 }
-.search-left{
+.search-input{
+  width: 650rpx;
   background: #ffffff;
-  text-align: left;
-}
-.search-left input{
-  width: 550rpx;
-  padding: 10rpx 10rpx 0rpx;
+  padding: 10rpx 10rpx 10rpx 10rpx;
   font-size: 29rpx;
-  color:  #06ae56;
+  color: #06ae56;
 }
-.search-right image{
-width: 40rpx;
-height: 40rpx;
-padding: 15rpx 15rpx 15rpx 15rpx;
+.search-image{
+width: 45rpx;
+height: 45rpx;
+padding: 10rpx 5rpx 10rpx 15rpx;
 }
-.history{
-  width: 735rpx;
-  padding:15rpx 15rpx 15rpx 15rpx;
-  font-size: 35rpx;
-  color: #00070c;
+.delete image{
+width: 45rpx;
+height: 45rpx;
+padding: 20rpx 10rpx 0rpx 15rpx;
+}
+.head-headline{
+height: 45rpx;
+position: relative;
+display: flex;
+font-size: 33rpx;
+font-weight: bold;
+align-items: center;
+justify-content: space-between;
+}
+.chunk{
+font-size: 30rpx;
+padding-left: 5rpx;
+color: #4d4b4b;
 }
