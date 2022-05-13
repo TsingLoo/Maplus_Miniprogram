@@ -43,16 +43,16 @@ Page({
   
 bindItemTap:function(e) {
     //console.log(e.currentTarget.dataset.activityid),
-    let activityID = {
-      acid: e.currentTarget.dataset.activityid
-    };
+    // let activityID = {
+    //   acid: e.currentTarget.dataset.activityid
+    // };
     app.globalData.PageNum = e.currentTarget.dataset.activityid
     wx.navigateTo({
       url: '/pages/DetailPage/DetailPage',
-      success: res =>
-      {
-        res.eventChannel.emit('readActivityID',activityID)
-      }
+      // success: res =>
+      // {
+      //   res.eventChannel.emit('readActivityID',activityID)
+      // }
     }) 
   },
 

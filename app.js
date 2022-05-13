@@ -26,6 +26,8 @@ App({
     UrlHead: "https://",
     domainPort: "www.tsingloo.com:4433",
 
+    searchresult: [],
+
     
     id: -1, 
     userGroup:0,

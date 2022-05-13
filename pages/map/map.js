@@ -401,19 +401,20 @@ Page({
     wx.showNavigationBarLoading();
     console.log("lower")
   },
+
+
   
 bindItemTap:function(e) {
     //console.log(e.currentTarget.dataset.activityid),
-    let activityID = {
-      acid: e.currentTarget.dataset.activityid
-    };
+    console.log("only e" + e.currentTarget.dataset.activityid)
     app.globalData.PageNum = e.currentTarget.dataset.activityid
+    console.log("I am going to page" + app.globalData.PageNum)
     wx.navigateTo({
       url: '/pages/DetailPage/DetailPage',
-      success: res =>
-      {
-        res.eventChannel.emit('readActivityID',activityID)
-      }
+      // success: res =>
+      // {
+      //   res.eventChannel.emit('readActivityID',activityID)
+      // }
     }) 
   },
 
@@ -635,7 +636,9 @@ bindItemTap:function(e) {
               feed_length: res.data.length
             })
         }
-      })}
+      })
+    
+    }
     }
 
 })

@@ -1,15 +1,20 @@
 <view class="search flex-wrp">
-<input class="search-input" value="{{inputValue}}" type="text" bindinput="getInputValue"
-bindconfirm="searchbegin" data-content="{{inputValue}}"></input>
-<image class="search-image" src="{{SearchIcon}}"
-bindtap="searchbegin" data-content="{{inputValue}}"></image>
+  <input class="search-input" value="{{inputValue}}" type="text" bindinput="getInputValue" 
+    data-content="{{inputValue}}">
+  </input>
+  <image class="search-image" src="{{SearchIcon}}"
+    bindtap="searchbegin" data-content="{{inputValue}}">
+  </image>
 </view>
+
 <view class="head-headline justify">
-<view class="headline-size">搜索历史</view>
-<view class="delete image" catchtap="delete">
-<image src="{{DeleteIcon}}"></image>
-</view></view>
+  <view class="headline-size">搜索历史</view>
+  <view class="delete image" catchtap="delete">
+    <image src="{{DeleteIcon}}"></image>
+  </view>
+</view>
+
 <view class="chunk" wx:for="{{historyStorage}}" wx:key="index"
-bindtap='searchbegin' data-index='{{index}}' data-content="{{item}}">
-<text>{{item}}</text>
+  bindtap='getHistoryText' data-index='{{index}}' data-content="{{item}}">
+  <text>{{item}}</text>
 </view>
