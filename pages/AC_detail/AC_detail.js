@@ -13,7 +13,7 @@ Page({
     activityDescValue: '', //活动简介
     timeValue: '', //活动时间
     array: ['AS','CB','DB','EB','EE','ES','FB','GYM','HS',
-    'IA','IBSS','IR','PB','MA','MB','SA','SB','SC','SD'],
+    'IA','IBSS','IR','PB','MA','MB','SA-SD'],
     index: 0,
     buildingValue: 'CB',//活动建筑物
     roomValue: '', //活动和房间
