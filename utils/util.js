@@ -49,6 +49,15 @@ function getData(url){
   })
 }
 
+function compare(property) {
+  return function (a, b) {
+    var value1 = a[property];
+    var value2 = b[property];
+    return value2 - value1;
+  }
+}
+
+
 function notLog()
 {
     wx.showToast({
@@ -96,6 +105,7 @@ function collectionNext() {
   return collection_next.next
 }
 
+module.exports.compare = compare;
 module.exports.notLog = notLog;
 module.exports.getComment = getComment;
 module.exports.getDiscovery = getDiscovery;

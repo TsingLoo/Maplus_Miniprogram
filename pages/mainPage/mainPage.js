@@ -56,7 +56,18 @@ bindItemTap:function(e) {
     }) 
   },
 
-  
+  compare: function(hot)
+  {
+    return function(a,b)
+    {
+      let value1 = a[hot];
+      let value2 = b[hot];
+
+      return value1 - value2;
+
+    }
+  },
+
   //使用本地 fake 数据实现刷新效果
   refresh: function(){
     let that = this
@@ -72,7 +83,7 @@ bindItemTap:function(e) {
         console.log(res.data)
         that.setData(
           {
-            feed: res.data,
+            feed: res.data.sort(util.compare("hot")),
             feed_length: res.data.length
           }
         )

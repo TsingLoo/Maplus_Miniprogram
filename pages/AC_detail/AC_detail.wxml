@@ -6,12 +6,12 @@
      <van-button type="info" size="small" bindtap="submit">预览</van-button>
      <van-button type="info" size="small" bind:click="uploadContent">发布</van-button>
    </view>
-   <!-- 文章标题 -->
+   <!-- 活动标题 -->
    <view class="articleTitle">
      <van-cell-group>
        <van-field
          model:value="{{ titValue }}"
-         placeholder="请输入文章标题"
+         placeholder="请输入活动标题"
          border="{{ false }}"
        />
      </van-cell-group>
@@ -108,26 +108,14 @@
    <view class="line">
             </view>
 
-   <!-- 文章分类 -->
-   <view class="uploadRadio">
-     <van-radio-group
-       value="{{ radio }}" 
-       bind:change="onChange"
-       direction="horizontal">
-       <van-radio
-       disabled="{{item.scMlName == '积分兑换'}}"
-       wx:for="{{mlList}}"
-       wx:key="index"
-       name="{{item.scMlName}}">{{item.scMlName}}</van-radio>
-     </van-radio-group>
-   </view>
+
    <view class="mineBody">
      <!-- 富文本上传组件 -->
      <hf_editor 
      width="100%" 
      height="100%" 
      insertPicture="{{true}}" 
-     placeholder="编写文章..." 
+     placeholder="编写活动详情..." 
      bind:Content="getHtml" 
      bind:insertImage="insertImage" 
      id="hf_editor"/>

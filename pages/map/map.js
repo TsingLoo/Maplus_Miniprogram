@@ -1,4 +1,5 @@
 var app = getApp()
+const util = require("../../utils/util");
 Page({
   onShareAppMessage() {
     return {
@@ -434,7 +435,7 @@ bindItemTap:function(e) {
         success:function(res){
           console.log(res.data)
           that.setData({
-              feed: res.data,
+            feed: res.data.sort(util.compare("hot")),
               feed_length: res.data.length
             })
         }
@@ -448,7 +449,7 @@ bindItemTap:function(e) {
           success:function(res){
             console.log(res.data)
             that.setData({
-                feed: res.data,
+              feed: res.data.sort(util.compare("hot")),
                 feed_length: res.data.length
               })
           }
@@ -462,7 +463,7 @@ bindItemTap:function(e) {
       success:function(res){
         console.log(res.data)
         that.setData({
-            feed: res.data,
+          feed: res.data.sort(util.compare("hot")),
             feed_length: res.data.length
           })
       }
@@ -476,7 +477,7 @@ bindItemTap:function(e) {
      success:function(res){
        console.log(res.data)
        that.setData({
-          feed: res.data,
+        feed: res.data.sort(util.compare("hot")),
          feed_length: res.data.length
          })
         }
@@ -489,7 +490,7 @@ bindItemTap:function(e) {
        success:function(res){
        console.log(res.data)
          that.setData({
-          feed: res.data,
+          feed: res.data.sort(util.compare("hot")),
          feed_length: res.data.length
          })
           }
@@ -502,7 +503,7 @@ bindItemTap:function(e) {
         success:function(res){
          console.log(res.data)
         that.setData({
-          feed: res.data,
+          feed: res.data.sort(util.compare("hot")),
           feed_length: res.data.length
           })
             }
@@ -515,7 +516,7 @@ bindItemTap:function(e) {
      success:function(res){
      console.log(res.data)
      that.setData({
-      feed: res.data,
+      feed: res.data.sort(util.compare("hot")),
    feed_length: res.data.length
        })
     }
@@ -528,7 +529,7 @@ bindItemTap:function(e) {
        success:function(res){
         console.log(res.data)
         that.setData({
-         feed: res.data,
+          feed: res.data.sort(util.compare("hot")),
          feed_length: res.data.length
          })
         }
@@ -541,7 +542,7 @@ bindItemTap:function(e) {
          success:function(res){
           console.log(res.data)
           that.setData({
-           feed: res.data,
+            feed: res.data.sort(util.compare("hot")),
            feed_length: res.data.length
            })
           }
@@ -554,7 +555,7 @@ bindItemTap:function(e) {
            success:function(res){
             console.log(res.data)
             that.setData({
-             feed: res.data,
+              feed: res.data.sort(util.compare("hot")),
              feed_length: res.data.length
              })
             }
@@ -567,7 +568,7 @@ bindItemTap:function(e) {
              success:function(res){
               console.log(res.data)
               that.setData({
-               feed: res.data,
+                feed: res.data.sort(util.compare("hot")),
                feed_length: res.data.length
                })
               }
@@ -580,7 +581,7 @@ bindItemTap:function(e) {
                success:function(res){
                 console.log(res.data)
                 that.setData({
-                 feed: res.data,
+                  feed: res.data.sort(util.compare("hot")),
                  feed_length: res.data.length
                  })
                 }
@@ -593,7 +594,7 @@ bindItemTap:function(e) {
        success:function(res){
       console.log(res.data)
       that.setData({
-       feed: res.data,
+        feed: res.data.sort(util.compare("hot")),
        feed_length: res.data.length
        })
       }
@@ -606,7 +607,7 @@ bindItemTap:function(e) {
           success:function(res){
             console.log(res.data)
             that.setData({
-                feed: res.data,
+              feed: res.data.sort(util.compare("hot")),
                 feed_length: res.data.length
               })
           }
@@ -619,7 +620,7 @@ bindItemTap:function(e) {
             success:function(res){
               console.log(res.data)
               that.setData({
-                  feed: res.data,
+                feed: res.data.sort(util.compare("hot")),
                   feed_length: res.data.length
                 })
             }
@@ -632,7 +633,7 @@ bindItemTap:function(e) {
         success:function(res){
           console.log(res.data)
           that.setData({
-              feed: res.data,
+            feed: res.data.sort(util.compare("hot")),
               feed_length: res.data.length
             })
         }

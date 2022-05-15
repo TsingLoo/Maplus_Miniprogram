@@ -2,7 +2,7 @@ var WxParse = require('../components/wxParse/wxParse.js');
 const app = getApp();
 Page({
   data: {
-    radio: '商务合作',
+    //radio: '商务合作',
     html: '', // 实时富文本html结构
     element: '', // 
     ylShow: false, // 预览弹层
@@ -25,11 +25,7 @@ Page({
     canRelease: true
   },
 
-  onChange(val){  // 单选按钮发生变化
-    this.setData({
-      radioV: val.detail
-    })
-  },
+  
 
   getbuilding: function(e) {
     this.setData({
@@ -87,7 +83,7 @@ Page({
   
     if(this.data.html == ''){
       wx.showToast({
-        title: "文章不可为空",
+        title: "详情不可为空",
         icon: 'none',
         duration: 1000
       })
@@ -124,7 +120,7 @@ Page({
           if(res.data>=0)
           {
             wx.showToast({
-              title: "文章发布成功",
+              title: "活动发布成功",
               icon: 'none',
               duration: 2000
             })   
