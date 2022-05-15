@@ -55,19 +55,17 @@
        />
      </van-cell-group>
    </view>
-   <view class="line">
-            </view>
+   <view class="line"></view>
 
-      <!-- 活动时间 Time -->
-      <view class="time">
-     <van-cell-group>
-       <van-field
-         model:value="{{ timeValue }}"
-         placeholder="请输入活动时间"
-         border="{{ false }}"
-       />
-     </van-cell-group>
-   </view>
+ 
+  <!-- 活动时间 Time -->
+  <picker  mode="multiSelector" bindchange="bindStartMultiPickerChange" bindtap='pickerTap' bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+  {{startDate}}
+  </picker>
+
+
+
+    
    <view class="line">
             </view>
 
